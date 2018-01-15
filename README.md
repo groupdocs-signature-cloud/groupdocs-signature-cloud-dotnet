@@ -9,7 +9,7 @@ The complete source code is available in this repository folder, you can either 
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json)
 - [StyleCop.MSBuild](https://www.nuget.org/packages/StyleCop.MSBuild)
 
-NOTE: The DLLs included in the package may not be up to date. We recommned using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
+NOTE: The DLLs included in the package may not be up to date. We recommended using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
 ```
 Install-Package Newtonsoft.Json
 Install-Package StyleCop.MSBuild
