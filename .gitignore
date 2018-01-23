@@ -113,5 +113,4 @@ hs_err_pid*
 *.nuspec
 *.Nuget.csproj
 *.nupkg
-build.bat
-p.bat
+*.bat
