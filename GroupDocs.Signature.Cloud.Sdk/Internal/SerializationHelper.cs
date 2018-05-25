@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SerializationHelper.cs">
-//  Copyright (c) 2003-2017 Aspose Pty Ltd
+//  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,20 +41,38 @@ namespace GroupDocs.Signature.Cloud.Sdk.Internal
             string result = null;
             try
             {
-                if (obj != null)
+                while (obj != null)
                 {
-                    if (obj is SignOptionsData)
                     {
                         var optionsData = obj as SignOptionsData;
-                        optionsData.OptionsType = optionsData.GetType().Name;
+                        if (optionsData != null)
+                        {
+                            optionsData.OptionsType = optionsData.GetType().Name;
+                            break;
+                        }
                     }
 
-                    if (obj is VerifyOptionsData)
                     {
                         var optionsData = obj as VerifyOptionsData;
-                        optionsData.OptionsType = optionsData.GetType().Name;
+                        if (optionsData != null)
+                        {
+                            optionsData.OptionsType = optionsData.GetType().Name;
+                            break;
+                        }
                     }
 
+                    {
+                        var optionsData = obj as SearchOptionsData;
+                        if (optionsData != null)
+                        {
+                            optionsData.OptionsType = optionsData.GetType().Name;
+                            break;
+                        }
+                    }
+                }
+
+                if (obj != null)
+                {
                     result = JsonConvert.SerializeObject(obj, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
                 }
             }

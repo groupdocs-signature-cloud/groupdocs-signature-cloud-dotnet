@@ -21,6 +21,22 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         private readonly string _appKey = ConfigurationManager.AppSettings["AppKey"];
         private readonly string _apiBaseUrl = ConfigurationManager.AppSettings["ApiBaseUrl"];
 
+        public const string CommonText = "John Smith";
+        public const string CommonBarcodeTypeName = "Code39Standard";
+        public const string CommonBarCodeText = "123456789012";
+        public const string CommonQrCodeTypeName = "Aztec";
+        public const string CommonQrCodeText = "John Smith";
+        public const string CommonPassword = "1234567890";
+        public const string CommonImageGuid = @"images\JohnSmithSign.png";
+        public const string CommonCertificateGuid = @"certificates\SherlockHolmes.pfx";
+        public const string UriFileServer = @"http://localhost:52579/";
+        public const string CellsDigitalComments = @"CellsDigitalComment";
+        public static DateTime CellsDigitalSignDateTimeFrom = DateTime.MinValue;
+        public static DateTime CellsDigitalSignDateTimeTo = DateTime.MaxValue;
+        public const string PdfDigitalContact = @"PdfDigitalContact";
+        public const string PdfDigitalLocation = @"PdfDigitalLocation";
+        public const string PdfDigitalReason = @"PdfDigitalReason";
+
         protected SignatureApi SignatureApi;
         protected StorageApi StorageApi;
 
@@ -104,15 +120,48 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             return Path.GetFullPath(baseDir);
         }
 
-        protected void AssertResponse(VerifiedDocumentResponse response, bool result = true)
+        protected void AssertResponse(SignatureDocumentResponse response)
         {
             Assert.IsTrue(!string.IsNullOrEmpty(response.FileName));
-            //Assert.AreEqual(response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError), DocumentResponse.CodeEnum.OK);
-            Assert.IsTrue(response.Status.Contains("OK"));
-            if (result)
+            if(response.Code.HasValue)
             {
-                Assert.IsTrue(response.Result.GetValueOrDefault());
+                bool ready = (response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError) == DocumentResponse.CodeEnum.OK);
+                if(!ready)
+                {
+                    ready = (((int)response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError)) == 200);
+                }
+                Assert.IsTrue(ready);
             }
+            Assert.IsTrue(response.Status.Contains("OK"));
+            //Assert.IsTrue(string.IsNullOrEmpty(response.Folder));
+        }
+        protected void AssertResponse(VerifiedDocumentResponse response)
+        {
+            Assert.IsTrue(!string.IsNullOrEmpty(response.FileName));
+            if(response.Code.HasValue)
+            {
+                bool ready = (response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError) == DocumentResponse.CodeEnum.OK);
+                if(!ready)
+                {
+                    ready = (((int)response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError)) == 200);
+                }
+                Assert.IsTrue(ready);
+            }
+            Assert.IsTrue(response.Status.Contains("OK"));
+            Assert.IsTrue(response.Result.GetValueOrDefault());
+        }
+
+        protected void AssertResponse(SearchDocumentResponse response)
+        {
+            Assert.IsTrue(!string.IsNullOrEmpty(response.FileName));
+            bool ready = (response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError) == DocumentResponse.CodeEnum.OK);
+            if (!ready)
+            {
+                ready = (((int)response.Code.GetValueOrDefault(DocumentResponse.CodeEnum.InternalServerError)) == 200);
+            }
+            Assert.IsTrue(ready);
+            Assert.IsTrue(response.Status.Contains("OK"));
+            Assert.IsTrue(response.Signatures.Count > 0);
         }
     }
 }

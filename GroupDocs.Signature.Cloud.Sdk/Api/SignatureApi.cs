@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignatureApi.cs">
-//  Copyright (c) 2003-2017 Aspose Pty Ltd
+//  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -314,6 +314,83 @@ namespace GroupDocs.Signature.Cloud.Sdk
         }
 
         /// <summary>
+        /// Insert Signature into the Document 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostCollectionRequest" /></param>
+        /// <returns><see cref="SignatureDocumentResponse"/></returns>
+        public SignatureDocumentResponse PostCollection(PostCollectionRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostCollection");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/collection";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SignOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SignatureDocumentResponse)SerializationHelper.Deserialize(response, typeof(SignatureDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Insert Stamp Signature into the Document provided by URL 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostCollectionFromUrlRequest" /></param>
+        /// <returns><see cref="SignatureDocumentResponse"/></returns>
+        public SignatureDocumentResponse PostCollectionFromUrl(PostCollectionFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostCollectionFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/collection";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SignOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SignatureDocumentResponse)SerializationHelper.Deserialize(response, typeof(SignatureDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Insert Digital Signature into the Document 
         /// </summary>
         /// <param name="request">Request. <see cref="PostDigitalRequest" /></param>
@@ -551,6 +628,314 @@ namespace GroupDocs.Signature.Cloud.Sdk
         }
 
         /// <summary>
+        /// Search the Document with Barcode Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchBarcodeRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchBarcode(PostSearchBarcodeRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostSearchBarcode");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/barcode/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the url based Document with Barcode Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchBarcodeFromUrlRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchBarcodeFromUrl(PostSearchBarcodeFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostSearchBarcodeFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/barcode/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the Document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchCollectionRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchCollection(PostSearchCollectionRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostSearchCollection");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/collection/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the Document provided by URL. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchCollectionFromUrlRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchCollectionFromUrl(PostSearchCollectionFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostSearchCollectionFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/collection/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the Document with Digital Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchDigitalRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchDigital(PostSearchDigitalRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostSearchDigital");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/digital/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the Document from url with Digital Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchDigitalFromUrlRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchDigitalFromUrl(PostSearchDigitalFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostSearchDigitalFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/digital/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the Document with QRCode Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchQRCodeRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchQRCode(PostSearchQRCodeRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostSearchQRCode");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/qrcode/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Search the url based Document with QRCode Signatures 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostSearchQRCodeFromUrlRequest" /></param>
+        /// <returns><see cref="SearchDocumentResponse"/></returns>
+        public SearchDocumentResponse PostSearchQRCodeFromUrl(PostSearchQRCodeFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostSearchQRCodeFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/qrcode/search";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.SearchOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (SearchDocumentResponse)SerializationHelper.Deserialize(response, typeof(SearchDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Insert Stamp Signature into the Document 
         /// </summary>
         /// <param name="request">Request. <see cref="PostStampRequest" /></param>
@@ -782,6 +1167,83 @@ namespace GroupDocs.Signature.Cloud.Sdk
         }
 
         /// <summary>
+        /// Verify the Document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostVerificationCollectionRequest" /></param>
+        /// <returns><see cref="VerifiedDocumentResponse"/></returns>
+        public VerifiedDocumentResponse PostVerificationCollection(PostVerificationCollectionRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostVerificationCollection");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/{name}/collection/verification";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.VerifyOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (VerifiedDocumentResponse)SerializationHelper.Deserialize(response, typeof(VerifiedDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Verify the Document provided by URL. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostVerificationCollectionFromUrlRequest" /></param>
+        /// <returns><see cref="VerifiedDocumentResponse"/></returns>
+        public VerifiedDocumentResponse PostVerificationCollectionFromUrl(PostVerificationCollectionFromUrlRequest request)
+        {
+            // verify the required parameter 'url' is set
+            if (request.Url == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'url' when calling PostVerificationCollectionFromUrl");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/signature/collection/verification";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.VerifyOptionsCollectionData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+                "POST", 
+                postBody, 
+                null, 
+                null);
+
+            if (response != null)
+            {
+                return (VerifiedDocumentResponse)SerializationHelper.Deserialize(response, typeof(VerifiedDocumentResponse));
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Verify the Document with Digital Signatures 
         /// </summary>
         /// <param name="request">Request. <see cref="PostVerificationDigitalRequest" /></param>
@@ -860,7 +1322,7 @@ namespace GroupDocs.Signature.Cloud.Sdk
         }
 
         /// <summary>
-        /// Verify the Document with Barcode Signatures 
+        /// Verify the Document with QRCode Signatures 
         /// </summary>
         /// <param name="request">Request. <see cref="PostVerificationQRCodeRequest" /></param>
         /// <returns><see cref="VerifiedDocumentResponse"/></returns>
@@ -899,7 +1361,7 @@ namespace GroupDocs.Signature.Cloud.Sdk
         }
 
         /// <summary>
-        /// Verify the url based Document with Barcode Signatures 
+        /// Verify the url based Document with QRCode Signatures 
         /// </summary>
         /// <param name="request">Request. <see cref="PostVerificationQRCodeFromUrlRequest" /></param>
         /// <returns><see cref="VerifiedDocumentResponse"/></returns>

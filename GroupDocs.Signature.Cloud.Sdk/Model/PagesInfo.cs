@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="PagesInfo.cs">
-//  Copyright (c) 2003-2017 Aspose Pty Ltd
+//  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,17 +34,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Describes Pages information summary
+  /// Describes Pages information summary.
   /// </summary>  
   public class PagesInfo 
   {                       
         /// <summary>
-        /// Gets or sets TotalCount
+        /// Total pages count.
         /// </summary>  
         public int? TotalCount { get; set; }
 
         /// <summary>
-        /// Gets or sets Entries
+        /// Keeps list of information PageInfo for each page.
         /// </summary>  
         public List<PageInfo> Entries { get; set; }
 

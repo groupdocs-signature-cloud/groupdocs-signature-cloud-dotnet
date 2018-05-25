@@ -1,8 +1,11 @@
-﻿using GroupDocs.Signature.Cloud.Sdk.Api;
+﻿using System.Linq;
+
 
 namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
     using NUnit.Framework;
+
+    using GroupDocs.Signature.Cloud.Sdk.Api;
     using GroupDocs.Signature.Cloud.Sdk.Model;
     using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
     using GroupDocs.Signature.Cloud.Sdk.Test.Internal;
@@ -10,18 +13,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
     public class Verification_Text_ApiTests : BaseApiTest
     {
         /// <summary>
-        /// Test Verification Post Text Pdf Stamp
+        /// Test Post Verification Text - Cells
         /// </summary>
         [Test]
-        public void PostVerifyTextTest_PdfStamp()
+        public void PostVerifyTextTest_Cells()
         {
-            var file = TestFiles.SignedTextStamp_Pdf01;
-            var verifyOptionsData = new PdfVerifyTextOptionsData()
+            var file = TestFiles.SignedCellsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new CellsVerifyTextOptionsData()
             {
                 DocumentPageNumber = 1,
-                Text = "John Smith",
-                SignatureImplementation = PdfVerifyTextOptionsData.SignatureImplementationEnum.Stamp,
-                VerifyAllPages = false
+                VerifyAllPages = true,
+                Text = CommonText
             };
             var request = new PostVerificationTextRequest
             {
@@ -32,31 +34,179 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostVerificationText(request);
-
             AssertResponse(response);
         }
 
         /// <summary>
-        /// Test Signature Post Text from Url
+        /// Test Post Verification Text - Pdf
         /// </summary>
         [Test]
-        public void PostVerifyTextUrlTest()
+        public void PostVerifyTextTest_Pdf()
         {
+            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new PdfVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                SignatureImplementation = PdfVerifyTextOptionsData.SignatureImplementationEnum.Stamp,
+                Text = CommonText
+            };
+            var request = new PostVerificationTextRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationText(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text - Slides
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Slides()
+        {
+            var file = TestFiles.SignedSlidesDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new SlidesVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                Text = CommonText
+            };
+            var request = new PostVerificationTextRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationText(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text - Words
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Words()
+        {
+            var file = TestFiles.SignedWordsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
             var verifyOptionsData = new WordsVerifyTextOptionsData()
             {
                 DocumentPageNumber = 1,
-                Text = "1234567890",
-                VerifyAllPages = false
+                VerifyAllPages = true,
+                Text = CommonText
             };
+            var request = new PostVerificationTextRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationText(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text from Url - Cells
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Cells_URL()
+        {
+            var verifyOptionsData = new CellsVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                Text = CommonText
+            };
+
             var request = new PostVerificationTextFromUrlRequest
             {
-                Url = TestFiles.WordsUrl.Url,
+                Url = TestFiles.CellsSignedAllUrl.Url,
                 Password = null,
                 VerifyOptionsData = verifyOptionsData
             };
 
             var response = SignatureApi.PostVerificationTextFromUrl(request);
-            Assert.IsTrue(!string.IsNullOrEmpty(response.FileName));
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text from Url - Pdf
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Pdf_URL()
+        {
+            var verifyOptionsData = new PdfVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                Text = CommonText
+            };
+
+            var request = new PostVerificationTextFromUrlRequest
+            {
+                Url = TestFiles.PdfSignedAllUrl.Url,
+                Password = null,
+                VerifyOptionsData = verifyOptionsData
+            };
+
+            var response = SignatureApi.PostVerificationTextFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text from Url - Slides
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Slides_URL()
+        {
+            var verifyOptionsData = new SlidesVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                Text = CommonText
+            };
+
+            var request = new PostVerificationTextFromUrlRequest
+            {
+                Url = TestFiles.SlidesSignedAllUrl.Url,
+                Password = null,
+                VerifyOptionsData = verifyOptionsData
+            };
+
+            var response = SignatureApi.PostVerificationTextFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Text from Url - Words
+        /// </summary>
+        [Test]
+        public void PostVerifyTextTest_Words_URL()
+        {
+            var verifyOptionsData = new WordsVerifyTextOptionsData()
+            {
+                DocumentPageNumber = 1,
+                VerifyAllPages = true,
+                Text = CommonText
+            };
+
+            var request = new PostVerificationTextFromUrlRequest
+            {
+                Url = TestFiles.WordsSignedAllUrl.Url,
+                Password = null,
+                VerifyOptionsData = verifyOptionsData
+            };
+
+            var response = SignatureApi.PostVerificationTextFromUrl(request);
+            AssertResponse(response);
         }
     }
 }

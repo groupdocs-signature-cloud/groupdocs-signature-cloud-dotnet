@@ -9,12 +9,11 @@ The complete source code is available in this repository folder, you can either 
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json)
 - [StyleCop.MSBuild](https://www.nuget.org/packages/StyleCop.MSBuild)
 
-NOTE: The DLLs included in the package may not be up to date. We recommended using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
+NOTE: The DLLs included in the package may not be the latest version. We recommned using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
 ```
 Install-Package Newtonsoft.Json
 Install-Package StyleCop.MSBuild
 ``` 
-
 ## Getting Started
 
 ```csharp
@@ -41,10 +40,10 @@ namespace Example
 
             try
             {
-                var request = new GetSupportedFileFormatsRequest();
+                var request = new GetSupportedFormatsRequest();
 
                 // Get supported file formats
-                var response = apiInstance.GetSupportedFileFormats(request);
+                var response = apiInstance.GetSupportedFormats(request);
 
                 foreach (var format in response.Formats)
                 {
@@ -53,18 +52,17 @@ namespace Example
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SignatureApi GetSupportedFileFormats: " + e.Message);
+                Debug.Print("Something went wrong: " + e.Message);
             }
-
         }
     }
 }
 ```
 
-# Licensing
+## Licensing
 All GroupDocs.Signature for Cloud SDKs are licensed under [MIT License](LICENSE).
 
-# Resources
+## Resources
 + [**Website**](https://www.groupdocs.cloud)
 + [**Product Home**](https://products.groupdocs.cloud/signature/cloud)
 + [**Documentation**](https://docs.groupdocs.cloud/display/signaturecloud/Home)

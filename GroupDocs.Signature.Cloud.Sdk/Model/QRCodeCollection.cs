@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="QRCodeCollection.cs">
-//  Copyright (c) 2003-2017 Aspose Pty Ltd
+//  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,59 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GroupDocs.Signature.Cloud.Sdk.Model 
+namespace GroupDocs.Signature.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Describes collection of supported QRCode types.
-  /// </summary>  
-  public class QRCodeCollection 
-  {                       
+    /// <summary>
+    /// Describes collection of supported QRCode types.
+    /// </summary>  
+    public class QRCodeCollection
+    {
+        #region Static properties
+
+        static QRCodeCollection()
+        {
+            Aztec = "Aztec";
+            DataMatrix = "DataMatrix";
+            GS1DataMatrix = "GS1DataMatrix";
+            GS1QR = "GS1QR";
+            QR = "QR";
+        }
+
+        /// <summary>
+        /// Gets a predefined QRCode name for Aztec QRCode Type object.
+        /// </summary>
+        public static string Aztec { get; private set; }
+
+        /// <summary>
+        /// Gets a predefined QRCode name for DataMatrix QRCode Type object.
+        /// </summary>
+        public static string DataMatrix { get; private set; }
+
+        /// <summary>
+        /// Gets a predefined QRCode name for GS1DataMatrix QRCode Type object.
+        /// </summary>
+        public static string GS1DataMatrix { get; private set; }
+
+        /// <summary>
+        /// Gets a predefined QRCode name for GS1QR QRCode Type object.
+        /// </summary>
+        public static string GS1QR { get; private set; }
+
+        /// <summary>
+        /// Gets a predefined QRCode name for QR QRCode Type object.
+        /// </summary>
+        public static string QR { get; private set; }
+        
+        #endregion
+
         /// <summary>
         /// List of QRCode Types.
         /// </summary>  
@@ -47,13 +85,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
-        public override string ToString()  
+        public override string ToString()
         {
-          var sb = new StringBuilder();
-          sb.Append("class QRCodeCollection {\n");
-          sb.Append("  QRCodeTypes: ").Append(this.QRCodeTypes).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class QRCodeCollection {\n");
+            sb.Append("  QRCodeTypes: ").Append(this.QRCodeTypes).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

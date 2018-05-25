@@ -10,10 +10,9 @@
 
         public string Url { get; set; }
 
-        public string AttachmentName { get; set; }
-
-        public string AttachmentPassword { get; set; }
-
+        public TestFile()
+        {
+        }
         public TestFile(string fileName)
         {
             FileName = fileName;

@@ -8,6 +8,7 @@ using Configuration = GroupDocs.Signature.Cloud.Sdk.Api.Configuration;
 
 namespace GroupDocs.Signature.Cloud.Sdk.Test
 {
+    using GroupDocs.Signature.Cloud.Sdk.Test.Internal;
     [SetUpFixture]
     public class TestsSetup
     {
@@ -33,13 +34,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
         [OneTimeSetUp]
         public void BeforeAllTests()
         {
-            //UploadTestFiles();
+            var path = GetTestDataPath();
+            TestFiles.Initialize(path);
+            UploadTestFiles(path);
         }
 
-        private void UploadTestFiles()
+        private void UploadTestFiles(string path)
         {
-            var path = GetTestDataPath();
-
             var dirs = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
             foreach (var dir in dirs)
             {
@@ -74,7 +75,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
             if (workingDir == null)
                 workingDir = Directory.GetCurrentDirectory();
 
-            var baseDir = Path.Combine(workingDir, "..\\..\\..\\..\\..", "TestData");
+            var baseDir = Path.Combine(workingDir, "Resources", "TestData");
 
             return Path.GetFullPath(baseDir);
         }

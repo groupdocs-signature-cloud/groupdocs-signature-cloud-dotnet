@@ -61,15 +61,22 @@ OpenAPI spec version: 1.0
   <ItemGroup>
     <Compile Include="Api\BaseApiTest.cs" />
     <Compile Include="Api\BarcodesApiTests.cs" />
+    <Compile Include="Api\SignaturesProviderApiTest.cs" />
     <Compile Include="Api\FormatsApiTests.cs" />
     <Compile Include="Api\DocumentInfoApiTests.cs" />
     <Compile Include="Api\QRCodesApiTests.cs" />
+    <Compile Include="Api\Search_Digital_ApiTests.cs" />
+    <Compile Include="Api\Search_QRCode_ApiTests.cs" />
+    <Compile Include="Api\Signature\PdfSignaturesProvider_ApiTests.cs" />
     <Compile Include="Api\Signature_Barcode_ApiTests.cs" />
+    <Compile Include="Api\Signature_Collection_BaseApiTests.cs" />
     <Compile Include="Api\Signature_Digital_ApiTests.cs" />
     <Compile Include="Api\Signature_Image_ApiTests.cs" />
     <Compile Include="Api\Signature_QRCode_ApiTests.cs" />
     <Compile Include="Api\Signature_Stamp_ApiTests.cs" />
     <Compile Include="Api\Signature_Text_ApiTests.cs" />
+    <Compile Include="Api\Search_Barcode_ApiTests.cs" />
+    <Compile Include="Api\Verification_Digital_ApiTests.cs" />
     <Compile Include="Api\Verification_Barcode_ApiTests.cs" />
     <Compile Include="Api\Verification_QRCode_ApiTests.cs" />
     <Compile Include="Api\Verification_Text_ApiTests.cs" />
@@ -84,94 +91,118 @@ OpenAPI spec version: 1.0
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\TestData\Certificates\test03_rsa_sha1_1024.pfx">
+    <None Include="Resources\TestData\certificates\SherlockHolmes.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Certificates\test_dsa_sha1_1024.cer">
+    <None Include="Resources\TestData\certificates\test03_rsa_sha1_1024.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Certificates\test_rsa_sha1_1024.cer">
+    <None Include="Resources\TestData\certificates\test_dsa_sha1_1024.cer">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Certificates\test_rsa_sha1_1024.pfx">
+    <None Include="Resources\TestData\certificates\test_rsa_sha1_1024.cer">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_BarCode.docx">
+    <None Include="Resources\TestData\certificates\test_rsa_sha1_1024.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_BarCode.pdf">
+    <None Include="Resources\TestData\signed\SignedForVerificationAll.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_BarCode.pptx">
+    <None Include="Resources\TestData\signed\SignedForVerificationAll.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_BarCode.xls">
+    <None Include="Resources\TestData\signed\SignedForVerificationAll.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_Digital.docx">
+    <None Include="Resources\TestData\signed\SignedForVerificationAll.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_Digital.pdf">
+    <None Include="Resources\TestData\signed\Signed_BarCode.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_Digital.xls">
+    <None Include="Resources\TestData\signed\Signed_BarCode.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_QRCode.docx">
+    <None Include="Resources\TestData\signed\Signed_BarCode.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_QRCode.pdf">
+    <None Include="Resources\TestData\signed\Signed_BarCode.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_QRCode.pptx">
+    <None Include="Resources\TestData\signed\Signed_Digital.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_QRCode.xls">
+    <None Include="Resources\TestData\signed\Signed_Digital.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_TextStamp.docx">
+    <None Include="Resources\TestData\signed\Signed_Digital.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_TextStamp.pdf">
+    <None Include="Resources\TestData\signed\Signed_QRCode.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_TextStamp.pps">
+    <None Include="Resources\TestData\signed\Signed_QRCode.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_TextStamp.xls">
+    <None Include="Resources\TestData\signed\Signed_QRCode.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Signed\Signed_TextSticket.pdf">
+    <None Include="Resources\TestData\signed\Signed_QRCode.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\01_pages.docx">
+    <None Include="Resources\TestData\signed\Signed_TextStamp.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\01_pages.pdf">
+    <None Include="Resources\TestData\signed\Signed_TextStamp.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\01_pages.pptx">
+    <None Include="Resources\TestData\signed\Signed_TextStamp.pps">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\01_pages.xlsx">
+    <None Include="Resources\TestData\signed\Signed_TextStamp.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\01_pages_pwd.pdf">
+    <None Include="Resources\TestData\signed\Signed_TextSticket.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\02_pages.docx">
+    <None Include="Resources\TestData\storage\01_pages.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\02_pages.pdf">
+    <None Include="Resources\TestData\storage\01_pages.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\02_pages.pptx">
+    <None Include="Resources\TestData\storage\01_pages.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\02_pages.xlsx">
+    <None Include="Resources\TestData\storage\01_pages.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\TestData\Storage\02_pages_pwd.docx">
+    <None Include="Resources\TestData\storage\01_pages_pwd.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\01_pages_pwd.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\01_pages_pwd.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\01_sheet_pwd.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\02_pages.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\02_pages.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\02_pages.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\02_pages.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TestData\storage\02_pages_pwd.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -185,19 +216,41 @@ OpenAPI spec version: 1.0
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\TestData\Images\signature_01.jpg">
+    <Folder Include="Api\Search\" />
+    <Folder Include="Api\Verification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\TestData\docimages\ImagesWithoutAnySignature.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\TestData\Images\signature_02.jpg">
+    <Content Include="Resources\TestData\docimages\SignedForVerificationAll.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\TestData\Images\signature_03.jpg">
+    <Content Include="Resources\TestData\images\JohnSmithSign.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\TestData\Storage\01_pages.jpg">
+    <Content Include="Resources\TestData\images\signature_01.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\TestData\Storage\01_pages.png">
+    <Content Include="Resources\TestData\images\signature_02.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\images\signature_03.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\signed\SignedForVerificationAll.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\signed\Signed_BarCode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\signed\Signed_QRCode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\storage\01_pages.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestData\storage\01_pages.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

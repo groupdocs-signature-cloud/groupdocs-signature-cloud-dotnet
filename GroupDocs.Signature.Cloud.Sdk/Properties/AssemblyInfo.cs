@@ -34,8 +34,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GroupDocs.Signature.Cloud.Sdk.Properties")]
-[assembly: AssemblyCopyright("Copyright © 2017")]
+[assembly: AssemblyProduct("GroupDocs.Signature.Cloud.Sdk")]
+[assembly: AssemblyCopyright("Copyright 2003-2018 Aspose Pty Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,7 +53,9 @@ using System.Runtime.InteropServices;
 //      Minor Version 
 //      Build Number
 //      Revision
-[assembly: AssemblyVersion("17.12.0.0")]
-[assembly: AssemblyFileVersion("17.12.0.0")]
+[assembly: AssemblyVersion("18.5.0.0")]
+[assembly: AssemblyFileVersion("18.5.0.0")]
 
+#if DEBUG
 [assembly: InternalsVisibleTo("GroupDocs.Signature.Cloud.Sdk.Test")]
+#endif
