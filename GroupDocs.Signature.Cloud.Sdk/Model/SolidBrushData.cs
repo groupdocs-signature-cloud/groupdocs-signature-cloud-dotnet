@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PdfSignStampOptionsData.cs">
+// <copyright company="Aspose Pty Ltd" file="SolidBrushData.cs">
 //  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,10 +34,15 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Pdf Documents.
+  /// Represents solid brush. It could be used instead background color property.
   /// </summary>  
-  public class PdfSignStampOptionsData : SignStampOptionsData 
+  public class SolidBrushData : BrushData 
   {                       
+        /// <summary>
+        /// Gets or sets color of solid brush.
+        /// </summary>  
+        public Color Color { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -45,7 +50,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PdfSignStampOptionsData {\n");
+          sb.Append("class SolidBrushData {\n");
+          sb.Append("  Color: ").Append(this.Color).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

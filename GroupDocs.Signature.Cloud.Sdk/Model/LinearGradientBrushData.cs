@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PdfSignStampOptionsData.cs">
+// <copyright company="Aspose Pty Ltd" file="LinearGradientBrushData.cs">
 //  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,10 +34,25 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Pdf Documents.
+  /// Represents linear gradient brush.
   /// </summary>  
-  public class PdfSignStampOptionsData : SignStampOptionsData 
+  public class LinearGradientBrushData : BrushData 
   {                       
+        /// <summary>
+        /// Gets or sets start gradient color.
+        /// </summary>  
+        public Color StartColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets finish gradient color.
+        /// </summary>  
+        public Color EndColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets gradient angle.
+        /// </summary>  
+        public double? Angle { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -45,7 +60,10 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PdfSignStampOptionsData {\n");
+          sb.Append("class LinearGradientBrushData {\n");
+          sb.Append("  StartColor: ").Append(this.StartColor).Append("\n");
+          sb.Append("  EndColor: ").Append(this.EndColor).Append("\n");
+          sb.Append("  Angle: ").Append(this.Angle).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

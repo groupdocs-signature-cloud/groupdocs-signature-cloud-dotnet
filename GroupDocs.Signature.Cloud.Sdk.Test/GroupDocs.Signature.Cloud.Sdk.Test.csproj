@@ -68,6 +68,7 @@ OpenAPI spec version: 1.0
     <Compile Include="Api\Search_Digital_ApiTests.cs" />
     <Compile Include="Api\Search_QRCode_ApiTests.cs" />
     <Compile Include="Api\Signature\PdfSignaturesProvider_ApiTests.cs" />
+    <Compile Include="Api\Signature_Extensions_ApiTests.cs" />
     <Compile Include="Api\Signature_Barcode_ApiTests.cs" />
     <Compile Include="Api\Signature_Collection_BaseApiTests.cs" />
     <Compile Include="Api\Signature_Digital_ApiTests.cs" />

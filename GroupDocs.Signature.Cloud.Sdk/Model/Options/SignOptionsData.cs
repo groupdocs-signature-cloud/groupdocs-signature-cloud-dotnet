@@ -49,7 +49,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public PagesSetupData PagesSetup { get; set; }
 
         /// <summary>
-        /// Internal property that specify the name of Options
+        /// Internal property that specify the name of Options.
         /// </summary>  
         public string OptionsType { get; set; }
 

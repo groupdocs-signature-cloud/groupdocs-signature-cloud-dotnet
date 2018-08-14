@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PdfSignStampOptionsData.cs">
+// <copyright company="Aspose Pty Ltd" file="TextureBrushData.cs">
 //  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,10 +34,15 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Pdf Documents.
+  /// Represents texture brush.
   /// </summary>  
-  public class PdfSignStampOptionsData : SignStampOptionsData 
+  public class TextureBrushData : BrushData 
   {                       
+        /// <summary>
+        /// Gets or sets the texture image file Guid.
+        /// </summary>  
+        public string ImageGuid { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -45,7 +50,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PdfSignStampOptionsData {\n");
+          sb.Append("class TextureBrushData {\n");
+          sb.Append("  ImageGuid: ").Append(this.ImageGuid).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

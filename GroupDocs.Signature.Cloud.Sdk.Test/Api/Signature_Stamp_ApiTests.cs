@@ -346,6 +346,85 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Stamp - Slides
+        /// </summary>
+        [Test]
+        public void PostSignStampTest_Slides_Rizwan()
+        {
+            var file = TestFiles.SlidesDocs.FirstOrDefault();
+            var signOptionsData = new SlidesSignStampOptionsData()
+            {
+
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundBrush = new LinearGradientBrushData() {StartColor = new Color(Color.LightBlue.Web), EndColor = new Color(Color.DarkBlue.Web), Angle = 45.0},
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.OuterArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea,
+                Left = 2,
+                Top = 2,
+                Width = 200,
+                Height = 150,
+                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                RotationAngle = 0,
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Top,
+                Margin = new PaddingData { All = 10 },
+                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                Opacity = 1.0,
+                SignAllPages = false,
+                DocumentPageNumber = 1,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                }
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Height = 20,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Text = " * John Smith * ",
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextColor = new Color(Color.DarkOrange.Web),
+                     TextBottomIntent = 5,
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.Default, Transparency = 0.7, Weight = 2.0 },
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.Default, Transparency = 0.5, Weight = 2.0 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Height = 30,
+                     BackgroundColor = new Color(Color.Transparent.Web, 0),
+                     Text = "Rizwan at GroupDocs",
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextColor = new Color(Color.Gold.Web),
+                     TextBottomIntent = 3,
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     Visible = true
+                 });
+
+            var request = new PostStampRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostStamp(request);
+            AssertResponse(response);
+        }
+
+
+        /// <summary>
         /// Test Post Signature Stamp - Words
         /// </summary>
         [Test]

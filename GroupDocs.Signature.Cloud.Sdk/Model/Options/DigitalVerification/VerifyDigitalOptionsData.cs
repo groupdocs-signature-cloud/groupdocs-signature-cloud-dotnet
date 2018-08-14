@@ -39,6 +39,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   public class VerifyDigitalOptionsData : VerifyOptionsData 
   {                       
         /// <summary>
+        /// Document Page Number to be verified. If property is not set - all Pages of Document will be verified for first occurrence. Value is not supported for digital verification.
+        /// </summary>  
+        public int? DocumentPageNumber { get; set; }
+
+        /// <summary>
+        /// Page Options to specify pages to be verified. Value is not supported for digital verification.
+        /// </summary>  
+        public PagesSetupData PagesSetup { get; set; }
+
+        /// <summary>
         /// Password of Digital Certificate if required
         /// </summary>  
         public string Password { get; set; }
@@ -56,6 +66,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class VerifyDigitalOptionsData {\n");
+          sb.Append("  DocumentPageNumber: ").Append(this.DocumentPageNumber).Append("\n");
+          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
           sb.Append("  CertificateGuid: ").Append(this.CertificateGuid).Append("\n");
           sb.Append("}\n");

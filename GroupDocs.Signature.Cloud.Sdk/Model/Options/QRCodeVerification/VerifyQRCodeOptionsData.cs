@@ -34,7 +34,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Verify QRCode Options - keeps options to verify QRCode Signature of Document
+  /// Verify QRCode Options - keeps options to verify QRCode Signature of Document.
   /// </summary>  
   public class VerifyQRCodeOptionsData : VerifyTextOptionsData 
   {                       

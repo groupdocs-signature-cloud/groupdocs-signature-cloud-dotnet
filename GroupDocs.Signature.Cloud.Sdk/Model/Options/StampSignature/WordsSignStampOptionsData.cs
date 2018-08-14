@@ -34,7 +34,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Cells Documents.
+  /// Represents the Stamp Signature Options for Words Documents.
   /// </summary>  
   public class WordsSignStampOptionsData : SignStampOptionsData 
   {                       

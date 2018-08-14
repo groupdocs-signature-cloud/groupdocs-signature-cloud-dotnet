@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
     using NUnit.Framework;
@@ -9,7 +10,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
     public class Search_Barcode_ApiTests : BaseApiTest
     {
         /// <summary>
-        /// Test Search Post Barcode - Pdf
+        /// Test Search Post Barcode - Cells
         /// </summary>
         [Test]
         public void PostSearchBarcodeTest_Cells()
@@ -32,6 +33,76 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostSearchBarcode(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Search Barcode from Url - Cells
+        /// </summary>
+        [Test]
+        public void PostSearchBarcodeTest_Cells_URL()
+        {
+            var searchOptionsData = new CellsSearchBarcodeOptionsData()
+            {
+                DocumentPageNumber = 1,
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Contains,
+                SearchAllPages = true,
+                Text = CommonBarCodeText
+            };
+
+            var request = new PostSearchBarcodeFromUrlRequest
+            {
+                Url = TestFiles.CellsSignedAllUrl.Url,
+                Password = null,
+                SearchOptionsData = searchOptionsData
+            };
+
+            var response = SignatureApi.PostSearchBarcodeFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Search Post Barcode - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostSearchBarcodeTest_Cells_Collection()
+        {
+            var file = TestFiles.SignedCellsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+
+            SearchOptionsCollectionData collection = new SearchOptionsCollectionData();
+            collection.Items = new List<SearchOptionsData>();
+            var searchOptionsData = new CellsSearchBarcodeOptionsData()
+            {
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Exact,
+                Text = "12345678",
+                DocumentPageNumber = 1,
+                SearchAllPages = false
+            };
+
+            collection.Items.Add(searchOptionsData);
+
+            searchOptionsData = new CellsSearchBarcodeOptionsData()
+            {
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Contains,
+                Text = "1234",
+                DocumentPageNumber = 2,
+                SearchAllPages = false
+            };
+
+            collection.Items.Add(searchOptionsData);
+
+            var request = new PostSearchCollectionRequest()
+            {
+                Name = file.FileName,
+                SearchOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostSearchCollection(request);
             AssertResponse(response);
         }
 
@@ -140,32 +211,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostSearchBarcode(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Search Barcode from Url - Cells
-        /// </summary>
-        [Test]
-        public void PostSearchBarcodeTest_Cells_URL()
-        {
-            var searchOptionsData = new CellsSearchBarcodeOptionsData()
-            {
-                DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Contains,
-                SearchAllPages = true,
-                Text = CommonBarCodeText
-            };
-
-            var request = new PostSearchBarcodeFromUrlRequest
-            {
-                Url = TestFiles.CellsSignedAllUrl.Url,
-                Password = null,
-                SearchOptionsData = searchOptionsData
-            };
-
-            var response = SignatureApi.PostSearchBarcodeFromUrl(request);
             AssertResponse(response);
         }
 

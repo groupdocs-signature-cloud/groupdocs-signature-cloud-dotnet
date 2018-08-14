@@ -232,11 +232,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public MarginMeasureTypeEnum? MarginMeasureType { get; set; }
 
         /// <summary>
-        /// Text of signature
-        /// </summary>  
-        public string Text { get; set; }
-
-        /// <summary>
         /// Left X position of Signature on Document Page in Measure values (pixels or percent see  LocationMeasureType property)
         /// </summary>  
         public int? Left { get; set; }
@@ -267,6 +262,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public PaddingData Margin { get; set; }
 
         /// <summary>
+        /// Text of signature
+        /// </summary>  
+        public string Text { get; set; }
+
+        /// <summary>
         /// Put signature on all document pages.
         /// </summary>  
         public bool? SignAllPages { get; set; }
@@ -292,6 +292,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Color BackgroundColor { get; set; }
 
         /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  If this property has a value it will be used instead BackgroundBrush property.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -299,7 +304,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class SignTextOptionsData {\n");
-          sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  Left: ").Append(this.Left).Append("\n");
           sb.Append("  Top: ").Append(this.Top).Append("\n");
           sb.Append("  Width: ").Append(this.Width).Append("\n");
@@ -312,11 +316,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  VerticalAlignment: ").Append(this.VerticalAlignment).Append("\n");
           sb.Append("  Margin: ").Append(this.Margin).Append("\n");
           sb.Append("  MarginMeasureType: ").Append(this.MarginMeasureType).Append("\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  SignAllPages: ").Append(this.SignAllPages).Append("\n");
           sb.Append("  Font: ").Append(this.Font).Append("\n");
           sb.Append("  ForeColor: ").Append(this.ForeColor).Append("\n");
           sb.Append("  BorderColor: ").Append(this.BorderColor).Append("\n");
           sb.Append("  BackgroundColor: ").Append(this.BackgroundColor).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

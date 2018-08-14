@@ -57,9 +57,65 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Horizontal alignment of text inside a signature.
+        /// </summary>
+        /// <value>Horizontal alignment of text inside a signature.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextHorizontalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Left for "Left"
+            /// </summary>            
+            Left,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Right for "Right"
+            /// </summary>            
+            Right            
+        }
+
+        /// <summary>
+        /// Vertical alignment of text inside a signature.
+        /// </summary>
+        /// <value>Vertical alignment of text inside a signature.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextVerticalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Top for "Top"
+            /// </summary>            
+            Top,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Bottom for "Bottom"
+            /// </summary>            
+            Bottom            
+        }
+
+        /// <summary>
         /// Gets or sets the type of text signature implementation.
         /// </summary>
         public SignatureImplementationEnum? SignatureImplementation { get; set; }
+
+        /// <summary>
+        /// Horizontal alignment of text inside a signature.
+        /// </summary>
+        public TextHorizontalAlignmentEnum? TextHorizontalAlignment { get; set; }
+
+        /// <summary>
+        /// Vertical alignment of text inside a signature.
+        /// </summary>
+        public TextVerticalAlignmentEnum? TextVerticalAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the signature border transparency (value from 0.0 (opaque) through 1.0 (clear)).
@@ -77,6 +133,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public double? BackgroundTransparency { get; set; }
 
         /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property. For TextStamp implementation RadialGradientBrush is not applicable, it is replaced by LinearGradientBrush. It is not used for Watermark implementation.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -88,6 +149,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  BorderWeight: ").Append(this.BorderWeight).Append("\n");
           sb.Append("  BackgroundTransparency: ").Append(this.BackgroundTransparency).Append("\n");
           sb.Append("  SignatureImplementation: ").Append(this.SignatureImplementation).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
+          sb.Append("  TextHorizontalAlignment: ").Append(this.TextHorizontalAlignment).Append("\n");
+          sb.Append("  TextVerticalAlignment: ").Append(this.TextVerticalAlignment).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

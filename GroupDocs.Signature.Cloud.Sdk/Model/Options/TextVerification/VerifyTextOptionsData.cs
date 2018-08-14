@@ -34,17 +34,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Verify Text Options - keeps options to verify Text Signature of Document
+  /// Verify Text Options - keeps options to verify Text Signature of Document.
   /// </summary>  
   public class VerifyTextOptionsData : VerifyOptionsData 
   {                       
         /// <summary>
-        /// Specify Signature Text if it should be verified
+        /// Specify Signature Text if it should be verified.
         /// </summary>  
         public string Text { get; set; }
 
         /// <summary>
-        /// Flag to verify each Document Page
+        /// Flag to verify each Document Page.
         /// </summary>  
         public bool? VerifyAllPages { get; set; }
 

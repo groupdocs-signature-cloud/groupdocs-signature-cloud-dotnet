@@ -100,6 +100,52 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Horizontal alignment of text inside a signature. This feature is supported only for Image and Annotation signature implementations  (see  SignatureImplementation property).
+        /// </summary>
+        /// <value>Horizontal alignment of text inside a signature. This feature is supported only for Image and Annotation signature implementations  (see  SignatureImplementation property).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextHorizontalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Left for "Left"
+            /// </summary>            
+            Left,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Right for "Right"
+            /// </summary>            
+            Right            
+        }
+
+        /// <summary>
+        /// Vertical alignment of text inside a signature. This feature is supported only for Image signature implementation  (see  SignatureImplementation property).        
+        /// </summary>
+        /// <value>Vertical alignment of text inside a signature. This feature is supported only for Image signature implementation  (see  SignatureImplementation property).        </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextVerticalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Top for "Top"
+            /// </summary>            
+            Top,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Bottom for "Bottom"
+            /// </summary>            
+            Bottom            
+        }
+
+        /// <summary>
         /// Gets or sets the type of text signature implementation.
         /// </summary>
         public SignatureImplementationEnum? SignatureImplementation { get; set; }
@@ -108,6 +154,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// Gets or sets the type of form field to put text signature into it. This property could be used only with PdfTextSignatureImplementation &#x3D; TextToFormField. Value by default is AllTextTypes.
         /// </summary>
         public FormTextFieldTypeEnum? FormTextFieldType { get; set; }
+
+        /// <summary>
+        /// Horizontal alignment of text inside a signature. This feature is supported only for Image and Annotation signature implementations  (see  SignatureImplementation property).
+        /// </summary>
+        public TextHorizontalAlignmentEnum? TextHorizontalAlignment { get; set; }
+
+        /// <summary>
+        /// Vertical alignment of text inside a signature. This feature is supported only for Image signature implementation  (see  SignatureImplementation property).        
+        /// </summary>
+        public TextVerticalAlignmentEnum? TextVerticalAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the signature opacity (value from 0.0 (clear) through 1.0 (opaque)). By default the value is 1.0.
@@ -125,6 +181,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string FormTextFieldTitle { get; set; }
 
         /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property. For Stamp implementation LinearGradientBrush (ColorStart) and RadialGradientBrush (ColorInner) are used   as SolidBrush. It is not used for Annotation, Sticker, TextToFormField and Watermark implementations.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,6 +198,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  SignatureImplementation: ").Append(this.SignatureImplementation).Append("\n");
           sb.Append("  FormTextFieldTitle: ").Append(this.FormTextFieldTitle).Append("\n");
           sb.Append("  FormTextFieldType: ").Append(this.FormTextFieldType).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
+          sb.Append("  TextHorizontalAlignment: ").Append(this.TextHorizontalAlignment).Append("\n");
+          sb.Append("  TextVerticalAlignment: ").Append(this.TextVerticalAlignment).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

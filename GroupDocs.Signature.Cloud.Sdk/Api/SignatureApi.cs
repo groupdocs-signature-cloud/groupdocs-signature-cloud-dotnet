@@ -1304,6 +1304,7 @@ namespace GroupDocs.Signature.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.Url);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "certificateGuid", request.CertificateGuid);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             var postBody = SerializationHelper.Serialize(request.VerifyOptionsData); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(

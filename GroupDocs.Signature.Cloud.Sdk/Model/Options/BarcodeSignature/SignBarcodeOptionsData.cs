@@ -130,6 +130,26 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string BarcodeTypeName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Fore color of Barcode bars Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color ForeColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the border color of signature. Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the background color of signature. Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property. BackgroundBrush has limited scope of application for Bar-codes. SolidBrush, LinearGradientBrush (ColorStart) and RadialGradientBrush (ColorInner) are used   instead BackgroundColor. TextureBrush is not used.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Gets or sets the signature border visibility.
         /// </summary>  
         public bool? BorderVisiblity { get; set; }
@@ -158,6 +178,10 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class SignBarcodeOptionsData {\n");
           sb.Append("  BarcodeTypeName: ").Append(this.BarcodeTypeName).Append("\n");
+          sb.Append("  ForeColor: ").Append(this.ForeColor).Append("\n");
+          sb.Append("  BorderColor: ").Append(this.BorderColor).Append("\n");
+          sb.Append("  BackgroundColor: ").Append(this.BackgroundColor).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
           sb.Append("  BorderVisiblity: ").Append(this.BorderVisiblity).Append("\n");
           sb.Append("  BorderDashStyle: ").Append(this.BorderDashStyle).Append("\n");
           sb.Append("  BorderWeight: ").Append(this.BorderWeight).Append("\n");

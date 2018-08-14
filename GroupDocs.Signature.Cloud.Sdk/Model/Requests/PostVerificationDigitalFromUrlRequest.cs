@@ -45,12 +45,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model.Requests
         /// <param name="url">The url of document.</param>
         /// <param name="verifyOptionsData">Verification Options</param>
         /// <param name="password">Document password if required.</param>
+        /// <param name="certificateGuid">Digital certificate Guid.</param>
         /// <param name="storage">The file storage which have to be used.</param>
-        public PostVerificationDigitalFromUrlRequest(string url, VerifyOptionsData verifyOptionsData = null, string password = null, string storage = null)             
+        public PostVerificationDigitalFromUrlRequest(string url, VerifyOptionsData verifyOptionsData = null, string password = null, string certificateGuid = null, string storage = null)             
         {
             this.Url = url;
             this.VerifyOptionsData = verifyOptionsData;
             this.Password = password;
+            this.CertificateGuid = certificateGuid;
             this.Storage = storage;
         }
 
@@ -68,6 +70,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model.Requests
         /// Document password if required.
         /// </summary>  
         public string Password { get; set; }
+
+        /// <summary>
+        /// Digital certificate Guid.
+        /// </summary>  
+        public string CertificateGuid { get; set; }
 
         /// <summary>
         /// The file storage which have to be used.

@@ -251,6 +251,61 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Text - Slides
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Slides_Rizwan()
+        {
+            var file = TestFiles.SlidesDocs.FirstOrDefault();
+            var signOptionsData = new SlidesSignTextOptionsData()
+            {
+                BorderTransparency = 0.0,
+                BorderWeight = 1.0,
+                BackgroundTransparency = 0.0,
+                SignatureImplementation = SlidesSignTextOptionsData.SignatureImplementationEnum.TextStamp,
+                BackgroundBrush = new LinearGradientBrushData() { StartColor = new Color(Color.CornflowerBlue.Web), EndColor = new Color(Color.DarkBlue.Web), Angle = 0.0},
+                Left = 1,
+                Top = 1,
+                Width = 200,
+                Height = 50,
+                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
+                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+                RotationAngle = 0,
+                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Top,
+                Margin = new PaddingData { All = 10 },
+                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
+                Text = "Rizwan at GroupDocs",
+                SignAllPages = false,
+                Font = new SignatureFontData() {FontFamily = "Times New Roman", FontSize = 24.0, Bold = true, Italic = false, Underline = false},
+                ForeColor = new Color(Color.DarkSlateBlue.Web),
+                BorderColor = new Color(Color.Black.Web),
+                BackgroundColor = new Color(Color.Transparent.Web, 0),
+                DocumentPageNumber = 0,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                }
+            };
+
+            var request = new PostTextRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostText(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Text - Words
         /// </summary>
         [Test]

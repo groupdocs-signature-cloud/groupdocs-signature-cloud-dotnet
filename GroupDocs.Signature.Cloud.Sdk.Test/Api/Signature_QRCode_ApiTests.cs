@@ -131,6 +131,60 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             AssertResponse(response);
         }
 
+        [Test]
+        public void PostSignQRCodeTest_Images_Rizwan()
+        {
+            var file = TestFiles.ImagesDocs.FirstOrDefault();
+            var signOptionsData = new ImagesSignQRCodeOptionsData()
+            {
+                QRCodeTypeName = "Aztec",
+                BorderVisiblity = true,
+                BorderDashStyle = SignQRCodeOptionsData.BorderDashStyleEnum.Dash,
+                BorderWeight = 1.0,
+                Opacity = 0.8,
+                Text = "123456789012",
+                Left = 2,
+                Top = 2,
+                Width = 200,
+                Height = 100,
+                LocationMeasureType = SignQRCodeOptionsData.LocationMeasureTypeEnum.Pixels,
+                SizeMeasureType = SignQRCodeOptionsData.SizeMeasureTypeEnum.Pixels,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+                RotationAngle = 0,
+                HorizontalAlignment = SignQRCodeOptionsData.HorizontalAlignmentEnum.Left,
+                LogoGuid = "images/signature_01.jpg",
+                VerticalAlignment = SignQRCodeOptionsData.VerticalAlignmentEnum.Top,
+                Margin = new PaddingData { All = 10 },
+                MarginMeasureType = SignQRCodeOptionsData.MarginMeasureTypeEnum.Pixels,
+                SignAllPages = false,
+                Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 14.0, Bold = false, Italic = false, Underline = false },
+                ForeColor = new Color(Color.Black.Web),
+                BorderColor = new Color(Color.Black.Web),
+                BackgroundColor = new Color(Color.Transparent.Web, 0),
+                DocumentPageNumber = 1,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                }
+            };
+
+            var request = new PostQRCodeRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostQRCode(request);
+            AssertResponse(response);
+        }
+
+
         /// <summary>
         /// Test Post Signature QRCode - PDF
         /// </summary>

@@ -130,6 +130,26 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string QRCodeTypeName { get; set; }
 
         /// <summary>
+        /// Gets or sets the Fore color of Barcode bars Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color ForeColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the border color of signature. Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the background color of signature. Using of this property could cause problems with verification. Use it carefully with maximum contrast with background.
+        /// </summary>  
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property. BackgroundBrush has limited scope of application for Qr-codes. SolidBrush, LinearGradientBrush (ColorStart) and RadialGradientBrush (ColorInner) are used   instead BackgroundColor. TextureBrush is not used.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Gets or sets the signature border visibility.
         /// </summary>  
         public bool? BorderVisiblity { get; set; }
@@ -150,6 +170,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public PaddingData InnerMargins { get; set; }
 
         /// <summary>
+        /// Gets or sets the QR-code logo image file name. This property in use only if LogoStream is not specified. Using of this property could cause problems with verification. Use it carefully.
+        /// </summary>  
+        public string LogoGuid { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -158,12 +183,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class SignQRCodeOptionsData {\n");
           sb.Append("  QRCodeTypeName: ").Append(this.QRCodeTypeName).Append("\n");
+          sb.Append("  ForeColor: ").Append(this.ForeColor).Append("\n");
+          sb.Append("  BorderColor: ").Append(this.BorderColor).Append("\n");
+          sb.Append("  BackgroundColor: ").Append(this.BackgroundColor).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
           sb.Append("  BorderVisiblity: ").Append(this.BorderVisiblity).Append("\n");
           sb.Append("  BorderDashStyle: ").Append(this.BorderDashStyle).Append("\n");
           sb.Append("  BorderWeight: ").Append(this.BorderWeight).Append("\n");
           sb.Append("  Opacity: ").Append(this.Opacity).Append("\n");
           sb.Append("  CodeTextAlignment: ").Append(this.CodeTextAlignment).Append("\n");
           sb.Append("  InnerMargins: ").Append(this.InnerMargins).Append("\n");
+          sb.Append("  LogoGuid: ").Append(this.LogoGuid).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

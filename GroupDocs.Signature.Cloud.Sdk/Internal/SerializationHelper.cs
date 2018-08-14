@@ -69,6 +69,45 @@ namespace GroupDocs.Signature.Cloud.Sdk.Internal
                             break;
                         }
                     }
+
+                    {
+                        var optionsData = obj as SignOptionsCollectionData;
+                        if (optionsData != null)
+                        {
+                            foreach (var item in optionsData.Items)
+                            {
+                                item.OptionsType = item.GetType().Name;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    {
+                        var optionsData = obj as VerifyOptionsCollectionData;
+                        if (optionsData != null)
+                        {
+                            foreach (var item in optionsData.Items)
+                            {
+                                item.OptionsType = item.GetType().Name;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    {
+                        var optionsData = obj as SearchOptionsCollectionData;
+                        if (optionsData != null)
+                        {
+                            foreach (var item in optionsData.Items)
+                            {
+                                item.OptionsType = item.GetType().Name;
+                            }
+
+                            break;
+                        }
+                    }
                 }
 
                 if (obj != null)

@@ -39,75 +39,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   public class CellsSignTextOptionsData : SignTextOptionsData 
   {                       
         /// <summary>
-        /// Measure type (pixels or percent) for Left and Top properties. This property is obsolete.
-        /// </summary>
-        /// <value>Measure type (pixels or percent) for Left and Top properties. This property is obsolete.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum LocationMeasureTypeEnum
-        { 
-            /// <summary>
-            /// Enum Pixels for "Pixels"
-            /// </summary>            
-            Pixels,
-            
-            /// <summary>
-            /// Enum Percents for "Percents"
-            /// </summary>            
-            Percents,
-            
-            /// <summary>
-            /// Enum Millimeters for "Millimeters"
-            /// </summary>            
-            Millimeters            
-        }
-
-        /// <summary>
-        /// Measure type (pixels or percent) for Width and Height properties. This property is obsolete.
-        /// </summary>
-        /// <value>Measure type (pixels or percent) for Width and Height properties. This property is obsolete.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SizeMeasureTypeEnum
-        { 
-            /// <summary>
-            /// Enum Pixels for "Pixels"
-            /// </summary>            
-            Pixels,
-            
-            /// <summary>
-            /// Enum Percents for "Percents"
-            /// </summary>            
-            Percents,
-            
-            /// <summary>
-            /// Enum Millimeters for "Millimeters"
-            /// </summary>            
-            Millimeters            
-        }
-
-        /// <summary>
-        /// Gets or sets the measure type (pixels or percent) for Margin. This property is obsolete.
-        /// </summary>
-        /// <value>Gets or sets the measure type (pixels or percent) for Margin. This property is obsolete.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum MarginMeasureTypeEnum
-        { 
-            /// <summary>
-            /// Enum Pixels for "Pixels"
-            /// </summary>            
-            Pixels,
-            
-            /// <summary>
-            /// Enum Percents for "Percents"
-            /// </summary>            
-            Percents,
-            
-            /// <summary>
-            /// Enum Millimeters for "Millimeters"
-            /// </summary>            
-            Millimeters            
-        }
-
-        /// <summary>
         /// Gets or sets the signature border style.
         /// </summary>
         /// <value>Gets or sets the signature border style.</value>
@@ -174,19 +105,50 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Measure type (pixels or percent) for Left and Top properties. This property is obsolete.
+        /// Horizontal alignment of text inside a signature.
         /// </summary>
-        public LocationMeasureTypeEnum? LocationMeasureType { get; set; }
+        /// <value>Horizontal alignment of text inside a signature.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextHorizontalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Left for "Left"
+            /// </summary>            
+            Left,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Right for "Right"
+            /// </summary>            
+            Right            
+        }
 
         /// <summary>
-        /// Measure type (pixels or percent) for Width and Height properties. This property is obsolete.
+        /// Vertical alignment of text inside a signature.
         /// </summary>
-        public SizeMeasureTypeEnum? SizeMeasureType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the measure type (pixels or percent) for Margin. This property is obsolete.
-        /// </summary>
-        public MarginMeasureTypeEnum? MarginMeasureType { get; set; }
+        /// <value>Vertical alignment of text inside a signature.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextVerticalAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum Top for "Top"
+            /// </summary>            
+            Top,
+            
+            /// <summary>
+            /// Enum Center for "Center"
+            /// </summary>            
+            Center,
+            
+            /// <summary>
+            /// Enum Bottom for "Bottom"
+            /// </summary>            
+            Bottom            
+        }
 
         /// <summary>
         /// Gets or sets the signature border style.
@@ -199,9 +161,39 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public SignatureImplementationEnum? SignatureImplementation { get; set; }
 
         /// <summary>
+        /// Horizontal alignment of text inside a signature.
+        /// </summary>
+        public TextHorizontalAlignmentEnum? TextHorizontalAlignment { get; set; }
+
+        /// <summary>
+        /// Vertical alignment of text inside a signature.
+        /// </summary>
+        public TextVerticalAlignmentEnum? TextVerticalAlignment { get; set; }
+
+        /// <summary>
+        /// Gets or sets worksheet number for signing. Minimal value is 1.
+        /// </summary>  
+        public int? DocumentPageNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position of the top edge of the Signature area in pixels. This property is mutually exclusive with Row property. If Top property is set RowNumber will be reset to 0.
+        /// </summary>  
+        public int? Top { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position of the left edge of the Signature area in pixels. This property is mutually exclusive with Column property. If Left property is set ColumnNumber will be reset to 0.
+        /// </summary>  
+        public int? Left { get; set; }
+
+        /// <summary>
         /// Gets or sets the space between Sign and worksheet edges. (works ONLY if horizontal or vertical alignment are specified).
         /// </summary>  
         public PaddingData Margin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property. For TextStamp implementation RadialGradientBrush is not applicable, it is replaced by LinearGradientBrush. It is not used for Watermark implementation.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
 
         /// <summary>
         /// Gets or sets worksheet number for signing. DocumentPageNumber parameter contains the same value.
@@ -246,19 +238,22 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class CellsSignTextOptionsData {\n");
+          sb.Append("  DocumentPageNumber: ").Append(this.DocumentPageNumber).Append("\n");
+          sb.Append("  Top: ").Append(this.Top).Append("\n");
+          sb.Append("  Left: ").Append(this.Left).Append("\n");
           sb.Append("  Margin: ").Append(this.Margin).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
           sb.Append("  SheetNumber: ").Append(this.SheetNumber).Append("\n");
           sb.Append("  RowNumber: ").Append(this.RowNumber).Append("\n");
           sb.Append("  ColumnNumber: ").Append(this.ColumnNumber).Append("\n");
-          sb.Append("  LocationMeasureType: ").Append(this.LocationMeasureType).Append("\n");
-          sb.Append("  SizeMeasureType: ").Append(this.SizeMeasureType).Append("\n");
-          sb.Append("  MarginMeasureType: ").Append(this.MarginMeasureType).Append("\n");
           sb.Append("  BorderVisiblity: ").Append(this.BorderVisiblity).Append("\n");
           sb.Append("  BorderDashStyle: ").Append(this.BorderDashStyle).Append("\n");
           sb.Append("  BorderTransparency: ").Append(this.BorderTransparency).Append("\n");
           sb.Append("  BorderWeight: ").Append(this.BorderWeight).Append("\n");
           sb.Append("  BackgroundTransparency: ").Append(this.BackgroundTransparency).Append("\n");
           sb.Append("  SignatureImplementation: ").Append(this.SignatureImplementation).Append("\n");
+          sb.Append("  TextHorizontalAlignment: ").Append(this.TextHorizontalAlignment).Append("\n");
+          sb.Append("  TextVerticalAlignment: ").Append(this.TextVerticalAlignment).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

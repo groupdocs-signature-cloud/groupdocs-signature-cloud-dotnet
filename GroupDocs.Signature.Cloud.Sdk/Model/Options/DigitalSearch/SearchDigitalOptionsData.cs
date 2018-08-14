@@ -39,9 +39,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   public class SearchDigitalOptionsData : SearchOptionsData 
   {                       
         /// <summary>
-        /// Value is not supported for Digital Signatures search.
+        /// Gets or sets Document page number for searching. Value is optional.  Value is not supported for Digital Signatures search.
         /// </summary>  
         public int? DocumentPageNumber { get; set; }
+
+        /// <summary>
+        /// Options to specify pages for Signature searching. Value is not supported for Digital Signatures search.
+        /// </summary>  
+        public PagesSetupData PagesSetup { get; set; }
+
+        /// <summary>
+        /// Flag to search on each Document page. Value is not supported for Digital Signatures search.
+        /// </summary>  
+        public bool? SearchAllPages { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -52,6 +62,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class SearchDigitalOptionsData {\n");
           sb.Append("  DocumentPageNumber: ").Append(this.DocumentPageNumber).Append("\n");
+          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("  SearchAllPages: ").Append(this.SearchAllPages).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

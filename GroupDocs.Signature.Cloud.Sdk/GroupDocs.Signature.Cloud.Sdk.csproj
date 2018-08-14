@@ -102,9 +102,11 @@
     <Compile Include="Model\BarcodeCollection.cs" />
     <Compile Include="Model\BarcodeType.cs" />
     <Compile Include="Model\BorderLineData.cs" />
+    <Compile Include="Model\BrushData.cs" />
     <Compile Include="Model\DocumentInfo.cs" />
     <Compile Include="Model\Format.cs" />
     <Compile Include="Model\FormatCollection.cs" />
+    <Compile Include="Model\LinearGradientBrushData.cs" />
     <Compile Include="Model\Options\BarcodeSearch\CellsSearchBarcodeOptionsData.cs" />
     <Compile Include="Model\Options\BarcodeSearch\ImagesSearchBarcodeOptionsData.cs" />
     <Compile Include="Model\Options\BarcodeSearch\PdfSearchBarcodeOptionsData.cs" />
@@ -188,6 +190,7 @@
     <Compile Include="Model\PagesSetupData.cs" />
     <Compile Include="Model\QRCodeCollection.cs" />
     <Compile Include="Model\QRCodeType.cs" />
+    <Compile Include="Model\RadialGradientBrushData.cs" />
     <Compile Include="Model\Requests\GetBarcodesRequest.cs" />
     <Compile Include="Model\Requests\GetDocumentInfoFromUrlRequest.cs" />
     <Compile Include="Model\Requests\GetDocumentInfoRequest.cs" />
@@ -250,8 +253,10 @@
     <Compile Include="Model\Signatures\QRCode\QRCodeSignatureData.cs" />
     <Compile Include="Model\Signatures\QRCode\SlidesQRCodeSignatureData.cs" />
     <Compile Include="Model\Signatures\QRCode\WordsQRCodeSignatureData.cs" />
+    <Compile Include="Model\SolidBrushData.cs" />
     <Compile Include="Model\StampLineData.cs" />
     <Compile Include="Model\Color.cs" />
+    <Compile Include="Model\TextureBrushData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -34,10 +34,25 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Cells Documents.
+  /// Represents the Stamp Signature Options for Image Documents.
   /// </summary>  
   public class ImagesSignStampOptionsData : SignStampOptionsData 
   {                       
+        /// <summary>
+        /// Gets or sets document page number for signing. This property can only be used for multi-frames image formats (Tiff). Minimal value is 1.
+        /// </summary>  
+        public int? DocumentPageNumber { get; set; }
+
+        /// <summary>
+        /// Options to specify pages to be signed. This property can only be used for multi-frames image formats (Tiff).
+        /// </summary>  
+        public PagesSetupData PagesSetup { get; set; }
+
+        /// <summary>
+        /// Put signature on all document pages. This property can only be used for multi-frames image formats (Tiff).
+        /// </summary>  
+        public bool? SignAllPages { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -46,6 +61,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ImagesSignStampOptionsData {\n");
+          sb.Append("  DocumentPageNumber: ").Append(this.DocumentPageNumber).Append("\n");
+          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("  SignAllPages: ").Append(this.SignAllPages).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

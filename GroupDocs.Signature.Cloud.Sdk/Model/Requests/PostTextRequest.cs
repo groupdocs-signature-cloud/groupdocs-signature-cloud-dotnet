@@ -47,7 +47,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model.Requests
         /// <param name="password">Document password if required.</param>
         /// <param name="folder">The folder name.</param>
         /// <param name="storage">The file storage which have to be used.</param>
-        public PostTextRequest(string name, SignTextOptionsData signOptionsData = null, string password = null, string folder = null, string storage = null)             
+        public PostTextRequest(string name, SignOptionsData signOptionsData = null, string password = null, string folder = null, string storage = null)             
         {
             this.Name = name;
             this.SignOptionsData = signOptionsData;
@@ -64,7 +64,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Text Signature Options for corresponding Document Type
         /// </summary>  
-        public SignTextOptionsData SignOptionsData { get; set; }
+        public SignOptionsData SignOptionsData { get; set; }
 
         /// <summary>
         /// Document password if required.

@@ -36,7 +36,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
         {
             var path = GetTestDataPath();
             TestFiles.Initialize(path);
-            UploadTestFiles(path);
+            //UploadTestFiles(path);
         }
 
         private void UploadTestFiles(string path)

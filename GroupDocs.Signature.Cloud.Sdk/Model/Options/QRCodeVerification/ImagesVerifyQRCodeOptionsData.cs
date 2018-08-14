@@ -39,6 +39,21 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   public class ImagesVerifyQRCodeOptionsData : VerifyQRCodeOptionsData 
   {                       
         /// <summary>
+        /// Gets or sets document page number for verifying. This property can only be used for multi-frames image formats (Tiff). Minimal value is 1.
+        /// </summary>  
+        public int? DocumentPageNumber { get; set; }
+
+        /// <summary>
+        /// Options to specify pages to be verified. This property can only be used for multi-frames image formats (Tiff).
+        /// </summary>  
+        public PagesSetupData PagesSetup { get; set; }
+
+        /// <summary>
+        /// Verify all document pages. This property can only be used for multi-frames image formats (Tiff).
+        /// </summary>  
+        public bool? VerifyAllPages { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -46,6 +61,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ImagesVerifyQRCodeOptionsData {\n");
+          sb.Append("  DocumentPageNumber: ").Append(this.DocumentPageNumber).Append("\n");
+          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("  VerifyAllPages: ").Append(this.VerifyAllPages).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

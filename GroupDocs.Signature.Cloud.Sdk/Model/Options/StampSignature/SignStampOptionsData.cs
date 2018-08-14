@@ -120,6 +120,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Color BackgroundColor { get; set; }
 
         /// <summary>
+        /// Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property.
+        /// </summary>  
+        public BrushData BackgroundBrush { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -130,6 +135,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  OuterLines: ").Append(this.OuterLines).Append("\n");
           sb.Append("  InnerLines: ").Append(this.InnerLines).Append("\n");
           sb.Append("  BackgroundColor: ").Append(this.BackgroundColor).Append("\n");
+          sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
           sb.Append("  BackgroundColorCropType: ").Append(this.BackgroundColorCropType).Append("\n");
           sb.Append("  BackgroundImageCropType: ").Append(this.BackgroundImageCropType).Append("\n");
           sb.Append("}\n");

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PdfSignStampOptionsData.cs">
+// <copyright company="Aspose Pty Ltd" file="RadialGradientBrushData.cs">
 //  Copyright (c) 2003-2018 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,10 +34,20 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the Stamp Signature Options for Pdf Documents.
+  /// Represents radial gradient brush.
   /// </summary>  
-  public class PdfSignStampOptionsData : SignStampOptionsData 
+  public class RadialGradientBrushData : BrushData 
   {                       
+        /// <summary>
+        /// Gets or sets inner gradient color.
+        /// </summary>  
+        public Color InnerColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets outer gradient color.
+        /// </summary>  
+        public Color OuterColor { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -45,7 +55,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PdfSignStampOptionsData {\n");
+          sb.Append("class RadialGradientBrushData {\n");
+          sb.Append("  InnerColor: ").Append(this.InnerColor).Append("\n");
+          sb.Append("  OuterColor: ").Append(this.OuterColor).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
