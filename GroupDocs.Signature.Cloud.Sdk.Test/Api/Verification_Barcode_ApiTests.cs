@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
@@ -24,114 +25,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
                 MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
                 VerifyAllPages = true,
                 Text = CommonBarCodeText
-            };
-            var request = new PostVerificationBarcodeRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationBarcode(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Barcode - Images
-        /// </summary>
-        [Test]
-        public void PostVerifyBarcodeTest_Images()
-        {
-            var file = TestFiles.SignedImagesDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new ImagesVerifyBarcodeOptionsData()
-            {
-                DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
-                VerifyAllPages = true,
-                Text = CommonBarCodeText
-            };
-            var request = new PostVerificationBarcodeRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationBarcode(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Barcode - Pdf
-        /// </summary>
-        [Test]
-        public void PostVerifyBarcodeTest_Pdf()
-        {
-            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new PdfVerifyBarcodeOptionsData()
-            {
-                DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
-                VerifyAllPages = true,
-                Text = CommonBarCodeText
-            };
-            var request = new PostVerificationBarcodeRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationBarcode(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Barcode - Slides
-        /// </summary>
-        [Test]
-        public void PostVerifyBarcodeTest_Slides()
-        {
-            var file = TestFiles.SignedSlidesDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new SlidesVerifyBarcodeOptionsData()
-            {
-                DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
-                VerifyAllPages = true,
-                Text = CommonBarCodeText
-            };
-            var request = new PostVerificationBarcodeRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationBarcode(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Barcode - Words
-        /// </summary>
-        [Test]
-        public void PostVerifyBarcodeTest_Words()
-        {
-            var file = TestFiles.SignedWordsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new WordsVerifyBarcodeOptionsData()
-            {
-                DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
-                Text = CommonBarCodeText,
-                VerifyAllPages = false
             };
             var request = new PostVerificationBarcodeRequest
             {
@@ -172,6 +65,77 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Verify Post Barcode - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostVerifyBarcodeTest_Cells_Collection()
+        {
+            var file = TestFiles.SignedCellsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+
+            VerifyOptionsCollectionData collection = new VerifyOptionsCollectionData();
+            collection.Items = new List<VerifyOptionsData>();
+            var verifyOptionsData = new CellsVerifyBarcodeOptionsData()
+            {
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Exact,
+                Text = "12345678",
+                DocumentPageNumber = 1,
+                VerifyAllPages = false
+            };
+
+            collection.Items.Add(verifyOptionsData);
+
+            verifyOptionsData = new CellsVerifyBarcodeOptionsData()
+            {
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
+                Text = "1234",
+                DocumentPageNumber = 2,
+                VerifyAllPages = false
+            };
+
+            collection.Items.Add(verifyOptionsData);
+
+            var request = new PostVerificationCollectionRequest()
+            {
+                Name = file.FileName,
+                VerifyOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationCollection(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Barcode - Images
+        /// </summary>
+        [Test]
+        public void PostVerifyBarcodeTest_Images()
+        {
+            var file = TestFiles.SignedImagesDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new ImagesVerifyBarcodeOptionsData()
+            {
+                DocumentPageNumber = 1,
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
+                VerifyAllPages = true,
+                Text = CommonBarCodeText
+            };
+            var request = new PostVerificationBarcodeRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationBarcode(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Verification Barcode from Url - Images
         /// </summary>
         [Test]
@@ -194,6 +158,33 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostVerificationBarcodeFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Barcode - Pdf
+        /// </summary>
+        [Test]
+        public void PostVerifyBarcodeTest_Pdf()
+        {
+            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new PdfVerifyBarcodeOptionsData()
+            {
+                DocumentPageNumber = 1,
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
+                VerifyAllPages = true,
+                Text = CommonBarCodeText
+            };
+            var request = new PostVerificationBarcodeRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationBarcode(request);
             AssertResponse(response);
         }
 
@@ -224,6 +215,33 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Verification Barcode - Slides
+        /// </summary>
+        [Test]
+        public void PostVerifyBarcodeTest_Slides()
+        {
+            var file = TestFiles.SignedSlidesDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new SlidesVerifyBarcodeOptionsData()
+            {
+                DocumentPageNumber = 1,
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
+                VerifyAllPages = true,
+                Text = CommonBarCodeText
+            };
+            var request = new PostVerificationBarcodeRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationBarcode(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Verification Barcode from Url - Slides
         /// </summary>
         [Test]
@@ -246,6 +264,33 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostVerificationBarcodeFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Barcode - Words
+        /// </summary>
+        [Test]
+        public void PostVerifyBarcodeTest_Words()
+        {
+            var file = TestFiles.SignedWordsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new WordsVerifyBarcodeOptionsData()
+            {
+                DocumentPageNumber = 1,
+                BarcodeTypeName = CommonBarcodeTypeName,
+                MatchType = VerifyBarcodeOptionsData.MatchTypeEnum.Contains,
+                Text = CommonBarCodeText,
+                VerifyAllPages = false
+            };
+            var request = new PostVerificationBarcodeRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationBarcode(request);
             AssertResponse(response);
         }
 

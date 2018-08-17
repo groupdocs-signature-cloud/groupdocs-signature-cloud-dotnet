@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
@@ -17,54 +18,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         {
             var file = TestFiles.SignedCellsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
             var verifyOptionsData = new CellsVerifyDigitalOptionsData()
-            {
-                Password = CommonPassword,
-                CertificateGuid = CommonCertificateGuid
-            };
-            var request = new PostVerificationDigitalRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationDigital(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Digital - Pdf
-        /// </summary>
-        [Test]
-        public void PostVerifyDigitalTest_Pdf()
-        {
-            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new PdfVerifyDigitalOptionsData()
-            {
-                Password = CommonPassword,
-                CertificateGuid = CommonCertificateGuid
-            };
-            var request = new PostVerificationDigitalRequest
-            {
-                Name = file.FileName,
-                VerifyOptionsData = verifyOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostVerificationDigital(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Verification Digital - Words
-        /// </summary>
-        [Test]
-        public void PostVerifyDigitalTest_Words()
-        {
-            var file = TestFiles.SignedWordsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
-            var verifyOptionsData = new WordsVerifyDigitalOptionsData()
             {
                 Password = CommonPassword,
                 CertificateGuid = CommonCertificateGuid
@@ -105,6 +58,60 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Verify Post Digital - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostVerifyDigitalTest_Cells_Collection()
+        {
+            var file = TestFiles.SignedCellsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+
+            VerifyOptionsCollectionData collection = new VerifyOptionsCollectionData();
+            collection.Items = new List<VerifyOptionsData>();
+            var verifyOptionsData = new CellsVerifyDigitalOptionsData();
+
+            collection.Items.Add(verifyOptionsData);
+
+            verifyOptionsData = new CellsVerifyDigitalOptionsData();
+
+            collection.Items.Add(verifyOptionsData);
+
+            var request = new PostVerificationCollectionRequest()
+            {
+                Name = file.FileName,
+                VerifyOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationCollection(request);
+            AssertResponse(response);
+        }
+        
+        /// <summary>
+        /// Test Post Verification Digital - Pdf
+        /// </summary>
+        [Test]
+        public void PostVerifyDigitalTest_Pdf()
+        {
+            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new PdfVerifyDigitalOptionsData()
+            {
+                Password = CommonPassword,
+                CertificateGuid = CommonCertificateGuid
+            };
+            var request = new PostVerificationDigitalRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationDigital(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Verification Digital from Url - Pdf
         /// </summary>
         [Test]
@@ -124,6 +131,30 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostVerificationDigitalFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Verification Digital - Words
+        /// </summary>
+        [Test]
+        public void PostVerifyDigitalTest_Words()
+        {
+            var file = TestFiles.SignedWordsDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var verifyOptionsData = new WordsVerifyDigitalOptionsData()
+            {
+                Password = CommonPassword,
+                CertificateGuid = CommonCertificateGuid
+            };
+            var request = new PostVerificationDigitalRequest
+            {
+                Name = file.FileName,
+                VerifyOptionsData = verifyOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostVerificationDigital(request);
             AssertResponse(response);
         }
 

@@ -60,6 +60,98 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Image from Url - Cells
+        /// </summary>
+        [Test]
+        public void PostSignImageTest_Cells_URL()
+        {
+            var signOptionsData = new CellsSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = CellsSignImageOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                RowNumber = 2,
+                ColumnNumber = 2,
+                LocationMeasureType = CellsSignImageOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = CellsSignImageOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9
+            };
+
+            var request = new PostImageFromUrlRequest
+            {
+                Url = TestFiles.CellsUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostImageFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Sign Post Image - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostSignImageTest_Cells_Collection()
+        {
+            var file = TestFiles.CellsDocs.FirstOrDefault(p => p.FileName.Contains("02_pages"));
+
+            SignOptionsCollectionData collection = new SignOptionsCollectionData();
+            collection.Items = new List<SignOptionsData>();
+            var signOptionsData = new CellsSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 1,
+                SignAllPages = false,
+                Width = 200,
+                Height = 100
+            };
+
+            collection.Items.Add(signOptionsData);
+
+            signOptionsData = new CellsSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 2,
+                SignAllPages = false,
+                Width = 100,
+                Height = 200
+            };
+
+            collection.Items.Add(signOptionsData);
+
+            var request = new PostCollectionRequest()
+            {
+                Name = file.FileName,
+                SignOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostCollection(request);
+            AssertResponse(response);
+        }
+        
+        /// <summary>
         /// Test Post Signature Image - Images
         /// </summary>
         [Test]
@@ -106,6 +198,54 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostImage(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Signature Image from Url - Images
+        /// </summary>
+        [Test]
+        public void PostSignImageTest_Images_URL()
+        {
+            var signOptionsData = new ImagesSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9
+            };
+
+            var request = new PostImageFromUrlRequest
+            {
+                Url = TestFiles.ImagesUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostImageFromUrl(request);
             AssertResponse(response);
         }
 
@@ -160,6 +300,54 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Image from Url - PDF
+        /// </summary>
+        [Test]
+        public void PostSignImageTest_Pdf_URL()
+        {
+            var signOptionsData = new PdfSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9
+            };
+
+            var request = new PostImageFromUrlRequest
+            {
+                Url = TestFiles.PdfUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostImageFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Image - Slides
         /// </summary>
         [Test]
@@ -210,6 +398,54 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Image from Url - Slides
+        /// </summary>
+        [Test]
+        public void PostSignImageTest_Slides_URL()
+        {
+            var signOptionsData = new SlidesSignImageOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9
+            };
+
+            var request = new PostImageFromUrlRequest
+            {
+                Url = TestFiles.SlidesUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostImageFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Image - Words
         /// </summary>
         [Test]
@@ -256,198 +492,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostImage(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Image from Url - Cells
-        /// </summary>
-        [Test]
-        public void PostSignImageTest_Cells_URL()
-        {
-            var signOptionsData = new CellsSignImageOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                SheetNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = CellsSignImageOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                RowNumber = 2,
-                ColumnNumber = 2,
-                LocationMeasureType = CellsSignImageOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = CellsSignImageOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9
-            };
-
-            var request = new PostImageFromUrlRequest
-            {
-                Url = TestFiles.CellsUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostImageFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Image from Url - Images
-        /// </summary>
-        [Test]
-        public void PostSignImageTest_Images_URL()
-        {
-            var signOptionsData = new ImagesSignImageOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9
-            };
-
-            var request = new PostImageFromUrlRequest
-            {
-                Url = TestFiles.ImagesUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostImageFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Image from Url - PDF
-        /// </summary>
-        [Test]
-        public void PostSignImageTest_Pdf_URL()
-        {
-            var signOptionsData = new PdfSignImageOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9
-            };
-
-            var request = new PostImageFromUrlRequest
-            {
-                Url = TestFiles.PdfUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostImageFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Image from Url - Slides
-        /// </summary>
-        [Test]
-        public void PostSignImageTest_Slides_URL()
-        {
-            var signOptionsData = new SlidesSignImageOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignImageOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignImageOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignImageOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignImageOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignImageOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9
-            };
-
-            var request = new PostImageFromUrlRequest
-            {
-                Url = TestFiles.SlidesUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostImageFromUrl(request);
             AssertResponse(response);
         }
 

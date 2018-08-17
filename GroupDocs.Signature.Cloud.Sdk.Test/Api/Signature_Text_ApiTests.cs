@@ -74,297 +74,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
-        /// Test Post Signature Text - Images
-        /// </summary>
-        [Test]
-        public void PostSignTextTest_Images()
-        {
-            var file = TestFiles.ImagesDocs.FirstOrDefault();
-            var signOptionsData = new ImagesSignTextOptionsData()
-            {
-                Text = CommonText,
-                SignatureImplementation = ImagesSignTextOptionsData.SignatureImplementationEnum.TextAsImage,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                BackgroundColor = new Color(Color.BlueViolet.Web),
-                BorderColor = new Color(Color.DarkOrange.Web),
-                ForeColor = new Color(Color.DarkOrange.Web),
-                Font = new SignatureFontData(),
-                RotationAngle = 45,
-                Opacity = 0.9,
-                Stretch = SignTextOptionsData.StretchEnum.None,
-                BorderDashStyle = ImagesSignTextOptionsData.BorderDashStyleEnum.Solid,
-                BorderTransparency = 0,
-                BorderWeight = 1,
-                BackgroundTransparency = 0
-            };
-
-            var request = new PostTextRequest
-            {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostText(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Text - PDF
-        /// </summary>
-        [Test]
-        public void PostSignTextTest_Pdf()
-        {
-            var file = TestFiles.PdfDocs.FirstOrDefault();
-            var signOptionsData = new PdfSignTextOptionsData()
-            {
-                Text = CommonText,
-                SignatureImplementation = PdfSignTextOptionsData.SignatureImplementationEnum.Stamp,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                BackgroundColor = new Color(Color.BlueViolet.Web),
-                BorderColor = new Color(Color.DarkOrange.Web),
-                ForeColor = new Color(Color.DarkOrange.Web),
-                Font = new SignatureFontData(),
-                RotationAngle = 45,
-                Stretch = SignTextOptionsData.StretchEnum.None,
-                Opacity = 0.8,
-                SignatureID = 12,
-                FormTextFieldTitle = CommonText,
-                FormTextFieldType = PdfSignTextOptionsData.FormTextFieldTypeEnum.PlainText
-            };
-
-            var request = new PostTextRequest
-            {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostText(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Text - Slides
-        /// </summary>
-        [Test]
-        public void PostSignTextTest_Slides()
-        {
-            var file = TestFiles.SlidesDocs.FirstOrDefault();
-            var signOptionsData = new SlidesSignTextOptionsData()
-            {
-                Text = CommonText,
-                SignatureImplementation = SlidesSignTextOptionsData.SignatureImplementationEnum.TextStamp,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                BackgroundColor = new Color(Color.BlueViolet.Web),
-                BorderColor = new Color(Color.DarkOrange.Web),
-                ForeColor = new Color(Color.DarkOrange.Web),
-                Font = new SignatureFontData(),
-                BorderTransparency = 0.55,
-                BorderWeight = 12,
-                BackgroundTransparency = 0.8,
-                RotationAngle = 45,
-                Stretch = SignTextOptionsData.StretchEnum.None,
-            };
-
-            var request = new PostTextRequest
-            {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostText(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Text - Slides
-        /// </summary>
-        [Test]
-        public void PostSignTextTest_Slides_Rizwan()
-        {
-            var file = TestFiles.SlidesDocs.FirstOrDefault();
-            var signOptionsData = new SlidesSignTextOptionsData()
-            {
-                BorderTransparency = 0.0,
-                BorderWeight = 1.0,
-                BackgroundTransparency = 0.0,
-                SignatureImplementation = SlidesSignTextOptionsData.SignatureImplementationEnum.TextStamp,
-                BackgroundBrush = new LinearGradientBrushData() { StartColor = new Color(Color.CornflowerBlue.Web), EndColor = new Color(Color.DarkBlue.Web), Angle = 0.0},
-                Left = 1,
-                Top = 1,
-                Width = 200,
-                Height = 50,
-                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
-                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
-                Stretch = SignTextOptionsData.StretchEnum.None,
-                RotationAngle = 0,
-                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Top,
-                Margin = new PaddingData { All = 10 },
-                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
-                Text = "Rizwan at GroupDocs",
-                SignAllPages = false,
-                Font = new SignatureFontData() {FontFamily = "Times New Roman", FontSize = 24.0, Bold = true, Italic = false, Underline = false},
-                ForeColor = new Color(Color.DarkSlateBlue.Web),
-                BorderColor = new Color(Color.Black.Web),
-                BackgroundColor = new Color(Color.Transparent.Web, 0),
-                DocumentPageNumber = 0,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                }
-            };
-
-            var request = new PostTextRequest
-            {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostText(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Text - Words
-        /// </summary>
-        [Test]
-        public void PostSignTextTest_Words()
-        {
-            var file = TestFiles.WordsDocs.FirstOrDefault();
-            var signOptionsData = new WordsSignTextOptionsData()
-            {
-                Text = CommonText,
-                SignatureImplementation = WordsSignTextOptionsData.SignatureImplementationEnum.TextStamp,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 100,
-                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                BackgroundColor = new Color(Color.BlueViolet.Web),
-                BorderColor = new Color(Color.DarkOrange.Web),
-                ForeColor = new Color(Color.DarkOrange.Web),
-                Font = new SignatureFontData(),
-                BorderDashStyle = WordsSignTextOptionsData.BorderDashStyleEnum.Dot,
-                BorderTransparency = 0.55,
-                BorderWeight = 12,
-                BackgroundTransparency = 0.8,
-                RotationAngle = 45,
-                Stretch = SignTextOptionsData.StretchEnum.None,
-            };
-
-            var request = new PostTextRequest
-            {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
-                Password = null,
-                Folder = file.Folder
-            };
-
-            var response = SignatureApi.PostText(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
         /// Test Post Signature Text from Url - Cells
         /// </summary>
         [Test]
@@ -426,6 +135,112 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Sign Post Text - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Cells_Collection()
+        {
+            var file = TestFiles.CellsDocs.FirstOrDefault(p => p.FileName.Contains("02_pages"));
+
+            SignOptionsCollectionData collection = new SignOptionsCollectionData();
+            collection.Items = new List<SignOptionsData>();
+            var signOptionsData = new CellsSignTextOptionsData()
+            {
+                Text = CommonText,
+                SheetNumber = 1,
+                SignAllPages = false,
+                // Size properties
+                Width = 200,
+                Height = 100
+            };
+
+            collection.Items.Add(signOptionsData);
+
+            signOptionsData = new CellsSignTextOptionsData()
+            {
+                Text = CommonText,
+                SheetNumber = 2,
+                SignAllPages = false,
+                // Size properties
+                Width = 200,
+                Height = 100
+            };
+
+            collection.Items.Add(signOptionsData);
+
+            var request = new PostCollectionRequest()
+            {
+                Name = file.FileName,
+                SignOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostCollection(request);
+            AssertResponse(response);
+        }
+        
+        /// <summary>
+        /// Test Post Signature Text - Images
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Images()
+        {
+            var file = TestFiles.ImagesDocs.FirstOrDefault();
+            var signOptionsData = new ImagesSignTextOptionsData()
+            {
+                Text = CommonText,
+                SignatureImplementation = ImagesSignTextOptionsData.SignatureImplementationEnum.TextAsImage,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                BackgroundColor = new Color(Color.BlueViolet.Web),
+                BorderColor = new Color(Color.DarkOrange.Web),
+                ForeColor = new Color(Color.DarkOrange.Web),
+                Font = new SignatureFontData(),
+                RotationAngle = 45,
+                Opacity = 0.9,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+                BorderDashStyle = ImagesSignTextOptionsData.BorderDashStyleEnum.Solid,
+                BorderTransparency = 0,
+                BorderWeight = 1,
+                BackgroundTransparency = 0
+            };
+
+            var request = new PostTextRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostText(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Text from Url - Images
         /// </summary>
         [Test]
@@ -480,6 +295,65 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostTextFromUrl(request);
+            AssertResponse(response);
+        }
+        
+        /// <summary>
+        /// Test Post Signature Text - PDF
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Pdf()
+        {
+            var file = TestFiles.PdfDocs.FirstOrDefault();
+            var signOptionsData = new PdfSignTextOptionsData()
+            {
+                Text = CommonText,
+                SignatureImplementation = PdfSignTextOptionsData.SignatureImplementationEnum.Stamp,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                BackgroundColor = new Color(Color.BlueViolet.Web),
+                BorderColor = new Color(Color.DarkOrange.Web),
+                ForeColor = new Color(Color.DarkOrange.Web),
+                Font = new SignatureFontData(),
+                RotationAngle = 45,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+                Opacity = 0.8,
+                SignatureID = 12,
+                FormTextFieldTitle = CommonText,
+                FormTextFieldType = PdfSignTextOptionsData.FormTextFieldTypeEnum.PlainText
+            };
+
+            var request = new PostTextRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostText(request);
             AssertResponse(response);
         }
 
@@ -539,6 +413,64 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             var response = SignatureApi.PostTextFromUrl(request);
             AssertResponse(response);
         }
+        
+        /// <summary>
+        /// Test Post Signature Text - Slides
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Slides()
+        {
+            var file = TestFiles.SlidesDocs.FirstOrDefault();
+            var signOptionsData = new SlidesSignTextOptionsData()
+            {
+                Text = CommonText,
+                SignatureImplementation = SlidesSignTextOptionsData.SignatureImplementationEnum.TextStamp,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                BackgroundColor = new Color(Color.BlueViolet.Web),
+                BorderColor = new Color(Color.DarkOrange.Web),
+                ForeColor = new Color(Color.DarkOrange.Web),
+                Font = new SignatureFontData(),
+                BorderTransparency = 0.55,
+                BorderWeight = 12,
+                BackgroundTransparency = 0.8,
+                RotationAngle = 45,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+            };
+
+            var request = new PostTextRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostText(request);
+            AssertResponse(response);
+        }
 
         /// <summary>
         /// Test Post Signature Text from Url - Slides
@@ -593,6 +525,65 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostTextFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Signature Text - Words
+        /// </summary>
+        [Test]
+        public void PostSignTextTest_Words()
+        {
+            var file = TestFiles.WordsDocs.FirstOrDefault();
+            var signOptionsData = new WordsSignTextOptionsData()
+            {
+                Text = CommonText,
+                SignatureImplementation = WordsSignTextOptionsData.SignatureImplementationEnum.TextStamp,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 100,
+                SizeMeasureType = SignTextOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = SignTextOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignTextOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignTextOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = SignTextOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                BackgroundColor = new Color(Color.BlueViolet.Web),
+                BorderColor = new Color(Color.DarkOrange.Web),
+                ForeColor = new Color(Color.DarkOrange.Web),
+                Font = new SignatureFontData(),
+                BorderDashStyle = WordsSignTextOptionsData.BorderDashStyleEnum.Dot,
+                BorderTransparency = 0.55,
+                BorderWeight = 12,
+                BackgroundTransparency = 0.8,
+                RotationAngle = 45,
+                Stretch = SignTextOptionsData.StretchEnum.None,
+            };
+
+            var request = new PostTextRequest
+            {
+                Name = file.FileName,
+                SignOptionsData = signOptionsData,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostText(request);
             AssertResponse(response);
         }
 

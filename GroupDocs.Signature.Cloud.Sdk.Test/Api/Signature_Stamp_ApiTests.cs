@@ -97,6 +97,241 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Stamp from Url - Cells
+        /// </summary>
+        [Test]
+        public void PostSignStampTest_Cells_URL()
+        {
+            var signOptionsData = new CellsSignStampOptionsData
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = CellsSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                RowNumber = 2,
+                ColumnNumber = 2,
+                LocationMeasureType = CellsSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = CellsSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
+                     Visible = true
+                 });
+
+            var request = new PostStampFromUrlRequest
+            {
+                Url = TestFiles.CellsUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostStampFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Sign Post Stamp - Cells Collection
+        /// </summary>
+        [Test]
+        public void PostSignStampTest_Cells_Collection()
+        {
+            var file = TestFiles.CellsDocs.FirstOrDefault(p => p.FileName.Contains("02_pages"));
+
+            SignOptionsCollectionData collection = new SignOptionsCollectionData();
+            collection.Items = new List<SignOptionsData>();
+            var signOptionsData = new CellsSignStampOptionsData
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = CellsSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                RowNumber = 2,
+                ColumnNumber = 2,
+                LocationMeasureType = CellsSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = CellsSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
+                     Visible = true
+                 });
+
+            collection.Items.Add(signOptionsData);
+
+            signOptionsData = new CellsSignStampOptionsData
+            {
+                ImageGuid = CommonImageGuid,
+                SheetNumber = 2,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = CellsSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                RowNumber = 2,
+                ColumnNumber = 2,
+                LocationMeasureType = CellsSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = CellsSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
+                     Visible = true
+                 });
+
+            collection.Items.Add(signOptionsData);
+
+            var request = new PostCollectionRequest()
+            {
+                Name = file.FileName,
+                SignOptionsCollectionData = collection,
+                Password = null,
+                Folder = file.Folder
+            };
+
+            var response = SignatureApi.PostCollection(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Stamp - Images
         /// </summary>
         [Test]
@@ -176,6 +411,87 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostStamp(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
+        /// Test Post Signature Stamp from Url - Images
+        /// </summary>
+        [Test]
+        public void PostSignStampTest_Images_URL()
+        {
+            var signOptionsData = new ImagesSignStampOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
+                     Visible = true
+                 });
+
+            var request = new PostStampFromUrlRequest
+            {
+                Url = TestFiles.ImagesUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostStampFromUrl(request);
             AssertResponse(response);
         }
 
@@ -263,6 +579,87 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test Post Signature Stamp from Url - PDF
+        /// </summary>
+        [Test]
+        public void PostSignStampTest_Pdf_URL()
+        {
+            var signOptionsData = new PdfSignStampOptionsData()
+            {
+                ImageGuid = CommonImageGuid,
+                DocumentPageNumber = 1,
+                SignAllPages = false,
+                PagesSetup = new PagesSetupData()
+                {
+                    EvenPages = false,
+                    FirstPage = true,
+                    LastPage = false,
+                    OddPages = false,
+                    PageNumbers = new List<int?>() { 1 }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
+            };
+            signOptionsData.OuterLines = new List<StampLineData>();
+            signOptionsData.OuterLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
+                     Visible = true
+                 });
+            signOptionsData.InnerLines = new List<StampLineData>();
+            signOptionsData.InnerLines.Add(
+                 new StampLineData()
+                 {
+                     Text = CommonText,
+                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
+                     TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
+                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
+                     Visible = true
+                 });
+
+            var request = new PostStampFromUrlRequest
+            {
+                Url = TestFiles.PdfUrl.Url,
+                Password = null,
+                SignOptionsData = signOptionsData
+            };
+
+            var response = SignatureApi.PostStampFromUrl(request);
+            AssertResponse(response);
+        }
+
+        /// <summary>
         /// Test Post Signature Stamp - Slides
         /// </summary>
         [Test]
@@ -346,33 +743,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         }
 
         /// <summary>
-        /// Test Post Signature Stamp - Slides
+        /// Test Post Signature Stamp from Url - Slides
         /// </summary>
         [Test]
-        public void PostSignStampTest_Slides_Rizwan()
+        public void PostSignStampTest_Slides_URL()
         {
-            var file = TestFiles.SlidesDocs.FirstOrDefault();
             var signOptionsData = new SlidesSignStampOptionsData()
             {
-
-                BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                BackgroundBrush = new LinearGradientBrushData() {StartColor = new Color(Color.LightBlue.Web), EndColor = new Color(Color.DarkBlue.Web), Angle = 45.0},
-                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.OuterArea,
-                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea,
-                Left = 2,
-                Top = 2,
-                Width = 200,
-                Height = 150,
-                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
-                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
-                RotationAngle = 0,
-                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Top,
-                Margin = new PaddingData { All = 10 },
-                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
-                Opacity = 1.0,
-                SignAllPages = false,
+                ImageGuid = CommonImageGuid,
                 DocumentPageNumber = 1,
+                SignAllPages = false,
                 PagesSetup = new PagesSetupData()
                 {
                     EvenPages = false,
@@ -380,49 +760,68 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
                     LastPage = false,
                     OddPages = false,
                     PageNumbers = new List<int?>() { 1 }
-                }
+                },
+                // Size properties
+                Width = 200,
+                Height = 150,
+                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
+                // Location properties
+                Top = 2,
+                Left = 2,
+                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
+                // Alignment properties
+                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
+                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
+                Margin = new PaddingData { All = 5 },
+                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
+                //Appearance properties
+                RotationAngle = 45,
+                Opacity = 0.9,
+                BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
+                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
             };
             signOptionsData.OuterLines = new List<StampLineData>();
             signOptionsData.OuterLines.Add(
                  new StampLineData()
                  {
-                     Height = 20,
-                     BackgroundColor = new Color(Color.BlueViolet.Web),
-                     Text = " * John Smith * ",
+                     Text = CommonText,
                      Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
-                     TextColor = new Color(Color.DarkOrange.Web),
                      TextBottomIntent = 5,
+                     TextColor = new Color(Color.Gold.Web),
                      TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.Default, Transparency = 0.7, Weight = 2.0 },
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.Default, Transparency = 0.5, Weight = 2.0 },
+                     BackgroundColor = new Color(Color.BlueViolet.Web),
+                     Height = 20,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
                      Visible = true
                  });
             signOptionsData.InnerLines = new List<StampLineData>();
             signOptionsData.InnerLines.Add(
                  new StampLineData()
                  {
-                     Height = 30,
-                     BackgroundColor = new Color(Color.Transparent.Web, 0),
-                     Text = "Rizwan at GroupDocs",
+                     Text = CommonText,
                      Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
-                     TextColor = new Color(Color.Gold.Web),
                      TextBottomIntent = 3,
+                     TextColor = new Color(Color.Gold.Web),
                      TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
+                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
+                     Height = 30,
+                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
+                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
                      Visible = true
                  });
 
-            var request = new PostStampRequest
+            var request = new PostStampFromUrlRequest
             {
-                Name = file.FileName,
-                SignOptionsData = signOptionsData,
+                Url = TestFiles.SlidesUrl.Url,
                 Password = null,
-                Folder = file.Folder
+                SignOptionsData = signOptionsData
             };
 
-            var response = SignatureApi.PostStamp(request);
+            var response = SignatureApi.PostStampFromUrl(request);
             AssertResponse(response);
         }
-
 
         /// <summary>
         /// Test Post Signature Stamp - Words
@@ -504,330 +903,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             };
 
             var response = SignatureApi.PostStamp(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Stamp from Url - Cells
-        /// </summary>
-        [Test]
-        public void PostSignStampTest_Cells_URL()
-        {
-            var signOptionsData = new CellsSignStampOptionsData
-            {
-                ImageGuid = CommonImageGuid,
-                SheetNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 150,
-                SizeMeasureType = CellsSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                RowNumber = 2,
-                ColumnNumber = 2,
-                LocationMeasureType = CellsSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = CellsSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9,
-                BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
-                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
-            };
-            signOptionsData.OuterLines = new List<StampLineData>();
-            signOptionsData.OuterLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 5,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
-                     BackgroundColor = new Color(Color.BlueViolet.Web),
-                     Height = 20,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
-                     Visible = true
-                 });
-            signOptionsData.InnerLines = new List<StampLineData>();
-            signOptionsData.InnerLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 3,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
-                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                     Height = 30,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
-                     Visible = true
-                 });
-
-            var request = new PostStampFromUrlRequest
-            {
-                Url = TestFiles.CellsUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostStampFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Stamp from Url - Images
-        /// </summary>
-        [Test]
-        public void PostSignStampTest_Images_URL()
-        {
-            var signOptionsData = new ImagesSignStampOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 150,
-                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9,
-                BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
-                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
-            };
-            signOptionsData.OuterLines = new List<StampLineData>();
-            signOptionsData.OuterLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 5,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
-                     BackgroundColor = new Color(Color.BlueViolet.Web),
-                     Height = 20,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
-                     Visible = true
-                 });
-            signOptionsData.InnerLines = new List<StampLineData>();
-            signOptionsData.InnerLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 3,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
-                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                     Height = 30,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
-                     Visible = true
-                 });
-
-            var request = new PostStampFromUrlRequest
-            {
-                Url = TestFiles.ImagesUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostStampFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Stamp from Url - PDF
-        /// </summary>
-        [Test]
-        public void PostSignStampTest_Pdf_URL()
-        {
-            var signOptionsData = new PdfSignStampOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 150,
-                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9,
-                BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
-                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
-            };
-            signOptionsData.OuterLines = new List<StampLineData>();
-            signOptionsData.OuterLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 5,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
-                     BackgroundColor = new Color(Color.BlueViolet.Web),
-                     Height = 20,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
-                     Visible = true
-                 });
-            signOptionsData.InnerLines = new List<StampLineData>();
-            signOptionsData.InnerLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 3,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
-                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                     Height = 30,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
-                     Visible = true
-                 });
-
-            var request = new PostStampFromUrlRequest
-            {
-                Url = TestFiles.PdfUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostStampFromUrl(request);
-            AssertResponse(response);
-        }
-
-        /// <summary>
-        /// Test Post Signature Stamp from Url - Slides
-        /// </summary>
-        [Test]
-        public void PostSignStampTest_Slides_URL()
-        {
-            var signOptionsData = new SlidesSignStampOptionsData()
-            {
-                ImageGuid = CommonImageGuid,
-                DocumentPageNumber = 1,
-                SignAllPages = false,
-                PagesSetup = new PagesSetupData()
-                {
-                    EvenPages = false,
-                    FirstPage = true,
-                    LastPage = false,
-                    OddPages = false,
-                    PageNumbers = new List<int?>() { 1 }
-                },
-                // Size properties
-                Width = 200,
-                Height = 150,
-                SizeMeasureType = ImagesSignStampOptionsData.SizeMeasureTypeEnum.Pixels,
-                // Location properties
-                Top = 2,
-                Left = 2,
-                LocationMeasureType = ImagesSignStampOptionsData.LocationMeasureTypeEnum.Pixels,
-                // Alignment properties
-                HorizontalAlignment = SignStampOptionsData.HorizontalAlignmentEnum.Left,
-                VerticalAlignment = SignStampOptionsData.VerticalAlignmentEnum.Center,
-                Margin = new PaddingData { All = 5 },
-                MarginMeasureType = ImagesSignStampOptionsData.MarginMeasureTypeEnum.Pixels,
-                //Appearance properties
-                RotationAngle = 45,
-                Opacity = 0.9,
-                BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                BackgroundColorCropType = SignStampOptionsData.BackgroundColorCropTypeEnum.InnerArea,
-                BackgroundImageCropType = SignStampOptionsData.BackgroundImageCropTypeEnum.MiddleArea
-            };
-            signOptionsData.OuterLines = new List<StampLineData>();
-            signOptionsData.OuterLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 5,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.FullTextRepeat,
-                     BackgroundColor = new Color(Color.BlueViolet.Web),
-                     Height = 20,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.DarkOrange.Web), Style = BorderLineData.StyleEnum.LongDashDot, Transparency = 0.7, Weight = 1.4 },
-                     Visible = true
-                 });
-            signOptionsData.InnerLines = new List<StampLineData>();
-            signOptionsData.InnerLines.Add(
-                 new StampLineData()
-                 {
-                     Text = CommonText,
-                     Font = new SignatureFontData() { FontFamily = "Times New Roman", FontSize = 20, Bold = true, Italic = true, Underline = true },
-                     TextBottomIntent = 3,
-                     TextColor = new Color(Color.Gold.Web),
-                     TextRepeatType = StampLineData.TextRepeatTypeEnum.None,
-                     BackgroundColor = new Color(Color.CornflowerBlue.Web),
-                     Height = 30,
-                     InnerBorder = new BorderLineData() { Color = new Color(Color.OliveDrab.Web), Style = BorderLineData.StyleEnum.LongDash, Transparency = 0.5, Weight = 1.2 },
-                     OuterBorder = new BorderLineData() { Color = new Color(Color.GhostWhite.Web), Style = BorderLineData.StyleEnum.Dot, Transparency = 0.4, Weight = 1.4 },
-                     Visible = true
-                 });
-
-            var request = new PostStampFromUrlRequest
-            {
-                Url = TestFiles.SlidesUrl.Url,
-                Password = null,
-                SignOptionsData = signOptionsData
-            };
-
-            var response = SignatureApi.PostStampFromUrl(request);
             AssertResponse(response);
         }
 

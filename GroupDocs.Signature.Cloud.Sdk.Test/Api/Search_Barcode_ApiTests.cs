@@ -139,14 +139,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         [Test]
         public void PostSearchBarcodeTest_Pdf()
         {
-            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("SignedForVerificationAll"));
+            var file = TestFiles.SignedPdfDocs.FirstOrDefault(p => p.FileName.Contains("Signed_BarCode"));
             var searchOptionsData = new PdfSearchBarcodeOptionsData()
             {
                 DocumentPageNumber = 1,
-                BarcodeTypeName = CommonBarcodeTypeName,
-                MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Contains,
-                SearchAllPages = true,
-                Text = CommonBarCodeText
+                //BarcodeTypeName = CommonBarcodeTypeName,
+                //MatchType = SearchBarcodeOptionsData.MatchTypeEnum.Contains,
+                //SearchAllPages = true,
+                //Text = CommonBarCodeText
             };
             var request = new PostSearchBarcodeRequest
             {
