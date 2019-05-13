@@ -67,14 +67,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
             DownloadFolder = Path.Combine(GetTestDataPath(), "Downloaded");
             if (Directory.Exists(DownloadFolder))
             {
-                //ClearFolder(DownloadFolder);
+                ClearFolder(DownloadFolder);
             }
             else
             {
                 Directory.CreateDirectory(DownloadFolder);
             }
 
-            //UploadTestFiles();
+            UploadTestFiles();
         }
 
         [TearDown]
