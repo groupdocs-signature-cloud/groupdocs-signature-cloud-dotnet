@@ -315,7 +315,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Api
             {
                 Type = ParameterType.HttpHeader,
                 Name = "x-groupdocs-client-version",
-                Value = "18.11.0"
+                Value = "19.05.0"
             }
         };
 
