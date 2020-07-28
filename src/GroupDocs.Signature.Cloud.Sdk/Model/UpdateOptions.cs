@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="Signature.cs">
+// <copyright company="Aspose Pty Ltd" file="UpdateOptions.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,15 +34,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Describes base class for signatures
+    /// Base container class for update signature options
     /// </summary>  
-    [JsonConverter(typeof(SearchSignatureJsonConverter))] 
-    public class Signature 
+    public class UpdateOptions 
     {                       
         /// <summary>
-        /// Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
+        /// Specifies the type of signature
         /// </summary>
-        /// <value>Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)</value>
+        /// <value>Specifies the type of signature</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SignatureTypeEnum
         { 
@@ -83,44 +82,24 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
+        /// Specifies the type of signature
         /// </summary>
         public SignatureTypeEnum? SignatureType { get; set; }
 
         /// <summary>
-        /// Specifies the page signature was found on
-        /// </summary>  
-        public int? PageNumber { get; set; }
-
-        /// <summary>
-        /// Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.
+        /// Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.              
         /// </summary>  
         public string SignatureId { get; set; }
-
-        /// <summary>
-        /// Get or set flag to indicate if this component is Signature or document content. This property is being used with Update method to set element as signature (true) or document element (false).             
-        /// </summary>  
-        public bool? IsSignature { get; set; }
-
-        /// <summary>
-        /// Get or set the signature creation date
-        /// </summary>  
-        public DateTime? CreatedOn { get; set; }
-
-        /// <summary>
-        /// Get or set the signature modification date
-        /// </summary>  
-        public DateTime? ModifiedOn { get; set; }
-
-        /// <summary>
-        /// Specifies top position of signature
-        /// </summary>  
-        public int? Top { get; set; }
 
         /// <summary>
         /// Specifies left position of signature
         /// </summary>  
         public int? Left { get; set; }
+
+        /// <summary>
+        /// Specifies top position of signature
+        /// </summary>  
+        public int? Top { get; set; }
 
         /// <summary>
         /// Specifies width of signature
@@ -133,23 +112,31 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public int? Height { get; set; }
 
         /// <summary>
+        /// Get or set flag to indicate if this component is Signature or document content. This property is being used with Update method to set element as signature (true) or document element (false).             
+        /// </summary>  
+        public bool? IsSignature { get; set; }
+
+        /// <summary>
+        /// The text to update text signature
+        /// </summary>  
+        public string Text { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class Signature {\n");
+          sb.Append("class UpdateOptions {\n");
           sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  PageNumber: ").Append(this.PageNumber).Append("\n");
           sb.Append("  SignatureId: ").Append(this.SignatureId).Append("\n");
-          sb.Append("  IsSignature: ").Append(this.IsSignature).Append("\n");
-          sb.Append("  CreatedOn: ").Append(this.CreatedOn).Append("\n");
-          sb.Append("  ModifiedOn: ").Append(this.ModifiedOn).Append("\n");
-          sb.Append("  Top: ").Append(this.Top).Append("\n");
           sb.Append("  Left: ").Append(this.Left).Append("\n");
+          sb.Append("  Top: ").Append(this.Top).Append("\n");
           sb.Append("  Width: ").Append(this.Width).Append("\n");
           sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  IsSignature: ").Append(this.IsSignature).Append("\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

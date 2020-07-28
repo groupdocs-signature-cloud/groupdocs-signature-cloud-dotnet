@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignDigitalOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,6 +39,49 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     public class SignDigitalOptions : SignImageOptions 
     {                       
         /// <summary>
+        /// XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             
+        /// </summary>
+        /// <value>XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum XAdESTypeEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum XAdES for "XAdES"
+            /// </summary>            
+            XAdES            
+        }
+
+        /// <summary>
+        /// XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             
+        /// </summary>
+        public XAdESTypeEnum? XAdESType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the reason of signature.
+        /// </summary>  
+        public string Reason { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature contact.
+        /// </summary>  
+        public string Contact { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature location.
+        /// </summary>  
+        public string Location { get; set; }
+
+        /// <summary>
+        /// Gets or sets the visibility of signature.
+        /// </summary>  
+        public bool? Visible { get; set; }
+
+        /// <summary>
         /// Gets or sets the password of digital certificate
         /// </summary>  
         public string Password { get; set; }
@@ -46,7 +89,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the digital certificate file GUID
         /// </summary>  
-        public string CertificateGuid { get; set; }
+        public string CertificateFilePath { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +99,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class SignDigitalOptions {\n");
+          sb.Append("  Reason: ").Append(this.Reason).Append("\n");
+          sb.Append("  Contact: ").Append(this.Contact).Append("\n");
+          sb.Append("  Location: ").Append(this.Location).Append("\n");
+          sb.Append("  Visible: ").Append(this.Visible).Append("\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
-          sb.Append("  CertificateGuid: ").Append(this.CertificateGuid).Append("\n");
+          sb.Append("  CertificateFilePath: ").Append(this.CertificateFilePath).Append("\n");
+          sb.Append("  XAdESType: ").Append(this.XAdESType).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

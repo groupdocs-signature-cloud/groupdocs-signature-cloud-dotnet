@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignResult.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,6 +54,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string DownloadUrl { get; set; }
 
         /// <summary>
+        /// List of newly created signatures
+        /// </summary>  
+        public List<Signature> Succeeded { get; set; }
+
+        /// <summary>
+        /// List of signatures that were failed to create
+        /// </summary>  
+        public List<Signature> Failed { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +74,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
           sb.Append("  Size: ").Append(this.Size).Append("\n");
           sb.Append("  DownloadUrl: ").Append(this.DownloadUrl).Append("\n");
+          sb.Append("  Succeeded: ").Append(this.Succeeded).Append("\n");
+          sb.Append("  Failed: ").Append(this.Failed).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -24,28 +24,26 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Search
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
-    public class TestsSearchQRCode : BaseApiTest
+    public class TestsSearchQrCode : BaseApiTest
     {
         [Test]
-        public void SearchQRCodeImage()
+        public void SearchQrCodeImage()
         {
             // Set request
             var testFile = TestFiles.ImageStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -57,14 +55,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
         }
 
         [Test]
-        public void SearchQRCodePdf()
+        public void SearchQrCodePdf()
         {
             // Set request
             var testFile = TestFiles.PdfStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -76,14 +73,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
         }
 
         [Test]
-        public void SearchQRCodePresentation()
+        public void SearchQrCodePresentation()
         {
             // Set request
             var testFile = TestFiles.PresentationStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -95,14 +91,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
         }
 
         [Test]
-        public void SearchQRCodeSpreadsheet()
+        public void SearchQrCodeSpreadsheet()
         {
             // Set request
             var testFile = TestFiles.SpreadsheetStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -114,14 +109,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
         }
 
         [Test]
-        public void SearchQRCodeWordProcessing()
+        public void SearchQrCodeWordProcessing()
         {
             // Set request
             var testFile = TestFiles.WordProcessingStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -164,12 +158,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
                 bool exists = false;
                 foreach (var signature in result.Signatures)
                 {
-                    QRCodeSignature QRCodeSignature = signature as QRCodeSignature;
+                    QRCodeSignature qrCodeSignature = signature as QRCodeSignature;
 
-                    if (QRCodeSignature != null &&
-                        QRCodeSignature.SignatureType.ToString() == option.SignatureType.ToString() &&
-                        QRCodeSignature.QRCodeType == option.QRCodeType &&
-                        QRCodeSignature.Text == option.Text)
+                    if (qrCodeSignature != null &&
+                        qrCodeSignature.SignatureType.ToString() == option.SignatureType.ToString() &&
+                        qrCodeSignature.QRCodeType == option.QRCodeType &&
+                        qrCodeSignature.Text == option.Text)
                     {
                         exists = true;
                         break;

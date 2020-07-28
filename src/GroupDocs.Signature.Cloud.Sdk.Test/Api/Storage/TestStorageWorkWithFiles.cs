@@ -23,12 +23,11 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using GroupDocs.Signature.Cloud.Sdk.Api;
+using System.Linq;
 using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
-using System.Linq;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Storage
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Storage
 {
     public class TestStorageWorkWithFiles : BaseApiTest
     {

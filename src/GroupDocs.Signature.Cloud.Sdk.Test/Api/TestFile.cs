@@ -26,7 +26,7 @@
 
 using GroupDocs.Signature.Cloud.Sdk.Model;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
     public class TestFile
     {

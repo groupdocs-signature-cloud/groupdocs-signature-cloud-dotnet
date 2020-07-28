@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="AssemblyInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="TextSignature.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -23,6 +23,43 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace GroupDocs.Signature.Cloud.Sdk.Model 
+{
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    
+    /// <summary>
+    /// Contains Text signature properties
+    /// </summary>  
+    public class TextSignature : Signature 
+    {                       
+        /// <summary>
+        /// Specifies signature text
+        /// </summary>  
+        public string Text { get; set; }
 
-[assembly: InternalsVisibleTo("GroupDocs.Signature.Cloud.Sdk.Test")]
+        /// <summary>
+        /// Text signature implementation
+        /// </summary>  
+        public string SignatureImplementation { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class TextSignature {\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("  SignatureImplementation: ").Append(this.SignatureImplementation).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
+    }
+}

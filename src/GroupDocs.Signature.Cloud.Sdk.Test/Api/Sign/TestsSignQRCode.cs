@@ -22,22 +22,22 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
-    public class TestsSignQRCode : BaseApiTest
+    public class TestsSignQrCode : BaseApiTest
     {
         [Test]
-        public void SignQRCodeImage()
+        public void SignQrCodeImage()
         {
             // Set request
             var testFile = TestFiles.ImageStorage.FirstOrDefault();
@@ -46,7 +46,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -62,7 +61,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
         }
 
         [Test]
-        public void SignQRCodePdf()
+        public void SignQrCodePdf()
         {
             // Set request
             var testFile = TestFiles.PdfStorage.FirstOrDefault();
@@ -71,7 +70,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -87,7 +85,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
         }
 
         [Test]
-        public void SignQRCodePresentation()
+        public void SignQrCodePresentation()
         {
             // Set request
             var testFile = TestFiles.PresentationStorage.FirstOrDefault();
@@ -96,7 +94,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -112,7 +109,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
         }
 
         [Test]
-        public void SignQRCodeSpreadsheet()
+        public void SignQrCodeSpreadsheet()
         {
             // Set request
             var testFile = TestFiles.SpreadsheetStorage.FirstOrDefault();
@@ -121,7 +118,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -137,7 +133,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
         }
 
         [Test]
-        public void SignQRCodeWordProcessing()
+        public void SignQrCodeWordProcessing()
         {
             // Set request
             var testFile = TestFiles.WordProcessingStorage.FirstOrDefault();
@@ -146,7 +142,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -185,13 +180,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             // set signature appearance
             options.ForeColor = new Color() { Web = "BlueViolet" };
-            options.BorderColor = new Color() { Web = "DarkOrange" };
+            options.Border = new BorderLine
+            {
+                Visible = true,
+                Style = BorderLine.StyleEnum.Dash,
+                Weight = 12,
+                Color = new Color() {Web = "DarkOrange"}
+            };
+
             options.BackgroundColor = new Color() { Web = "DarkOrange" };
-            options.Opacity = 0.8;
+            options.Transparency = 0.8;
             options.InnerMargins = new Padding() { All = 2 };
-            options.BorderVisiblity = true;
-            options.BorderDashStyle = SignTextOptions.BorderDashStyleEnum.Dash;
-            options.BorderWeight = 12;
 
             //set pages for signing (each of these page settings could be used singly)
             options.AllPages = false;

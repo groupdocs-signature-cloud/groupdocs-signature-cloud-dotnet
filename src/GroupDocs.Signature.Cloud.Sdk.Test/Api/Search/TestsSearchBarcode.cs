@@ -24,16 +24,15 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Search
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsSearchBarcode : BaseApiTest
     {
@@ -45,7 +44,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -64,7 +62,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -83,7 +80,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -102,7 +98,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };
@@ -121,7 +116,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
             var fileInfo = testFile.GetFileInfo();
             var options = new SearchBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
             searchSettings.Options = new List<SearchOptions>() { options };

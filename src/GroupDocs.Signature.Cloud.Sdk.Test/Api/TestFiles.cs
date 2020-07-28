@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
     public static class TestFiles
     {
@@ -34,65 +34,65 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
         //Images
         public static readonly List<TestFile> ImageStorage = new List<TestFile>
         {
-            new TestFile(@"Images\01_pages.jpg"){ Extension = "jpg", FileFormat = "Jpg", MaxPageHeight = 1000, MaxPageWidth = 1000, PagesCount = 1, Size = 90269},
-            new TestFile(@"Images\01_pages.png"){ Extension = "png", FileFormat = "Png", MaxPageHeight = 1000, MaxPageWidth = 1000, PagesCount = 1, Size = 11011},
+            new TestFile(@"Images\01_pages.jpg"){ Extension = "jpg", FileFormat = "JPEG Image", MaxPageHeight = 1000, MaxPageWidth = 1000, PagesCount = 1, Size = 90269},
+            new TestFile(@"Images\01_pages.png"){ Extension = "png", FileFormat = "Portable Network Graphic", MaxPageHeight = 1000, MaxPageWidth = 1000, PagesCount = 1, Size = 11011},
         };
 
         public static readonly List<TestFile> ImageStorageSigned = new List<TestFile>
         {
-            new TestFile(@"Signed\SignedForVerificationAll.png"){ Extension = "png", FileFormat = "Png", Size = 27533},
+            new TestFile(@"Signed\SignedForVerificationAll.png"){ Extension = "png", FileFormat = "Portable Network Graphic", Size = 27533},
         };
 
         //Pdf
         public static readonly List<TestFile> PdfStorage = new List<TestFile>
         {
-            new TestFile(@"Pdf\01_pages.pdf"){ Extension = "pdf", FileFormat = "Pdf", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 55321},
-            new TestFile(@"Pdf\01_pages_pwd.pdf"){ Extension = "pdf", FileFormat = "Pdf", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 94273, Password = TestFiles.CommonPassword},
-            new TestFile(@"Pdf\02_pages.pdf"){ Extension = "pdf", FileFormat = "Pdf", MaxPageHeight = 841, MaxPageWidth = 595, PagesCount = 2, Size = 396944},
+            new TestFile(@"Pdf\01_pages.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 55321},
+            new TestFile(@"Pdf\01_pages_pwd.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 94273, Password = TestFiles.CommonPassword},
+            new TestFile(@"Pdf\02_pages.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", MaxPageHeight = 841, MaxPageWidth = 595, PagesCount = 2, Size = 396944},
         };
 
         public static readonly List<TestFile> PdfStorageSigned = new List<TestFile>
         {
-            new TestFile(@"Signed\SignedForVerificationAll.pdf"){ Extension = "pdf", FileFormat = "Pdf", Size = 164060},
+            new TestFile(@"Signed\SignedForVerificationAll.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", Size = 164060},
         };
 
         //Presentations
         public static readonly List<TestFile> PresentationStorage = new List<TestFile>
         {
-            new TestFile(@"Presentations\01_pages.pptx"){ Extension = "pptx", FileFormat = "Pptx", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 1, Size = 42146},
-            new TestFile(@"Presentations\01_pages_pwd.pptx"){ Extension = "pptx", FileFormat = "Pptx", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 1, Size = 38912, Password = TestFiles.CommonPassword},
-            new TestFile(@"Presentations\02_pages.pptx"){ Extension = "pptx", FileFormat = "Pptx", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 2, Size = 51673},
+            new TestFile(@"Presentations\01_pages.pptx"){ Extension = "pptx", FileFormat = "PowerPoint Open XML Presentation", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 1, Size = 42146},
+            new TestFile(@"Presentations\01_pages_pwd.pptx"){ Extension = "pptx", FileFormat = "PowerPoint Open XML Presentation", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 1, Size = 38912, Password = TestFiles.CommonPassword},
+            new TestFile(@"Presentations\02_pages.pptx"){ Extension = "pptx", FileFormat = "PowerPoint Open XML Presentation", MaxPageHeight = 540, MaxPageWidth = 720, PagesCount = 2, Size = 51673},
         };
 
         public static readonly List<TestFile> PresentationStorageSigned = new List<TestFile>
         {
-            new TestFile(@"Signed\SignedForVerificationAll.pptx"){ Extension = "pptx", FileFormat = "Pptx", Size = 43205},
+            new TestFile(@"Signed\SignedForVerificationAll.pptx"){ Extension = "pptx", FileFormat = "PowerPoint Open XML Presentation", Size = 43205},
         };
 
         //SpreadSheets
         public static readonly List<TestFile> SpreadsheetStorage = new List<TestFile>
         {
-            new TestFile(@"Spreadsheets\01_pages.xlsx"){ Extension = "xlsx", FileFormat = "Xlsx", MaxPageHeight = 637, MaxPageWidth = 765, PagesCount = 1, Size = 12260},
-            new TestFile(@"Spreadsheets\01_pages_pwd.xlsx"){ Extension = "xlsx", FileFormat = "Xlsx", MaxPageHeight = 1424, MaxPageWidth = 1165, PagesCount = 1, Size = 1001472, Password = TestFiles.CommonPassword},
-            new TestFile(@"Spreadsheets\02_pages.xlsx"){ Extension = "xlsx", FileFormat = "Xlsx", MaxPageHeight = 846, MaxPageWidth = 867, PagesCount = 2, Size = 22396},
+            new TestFile(@"Spreadsheets\01_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 637, MaxPageWidth = 765, PagesCount = 1, Size = 12260},
+            new TestFile(@"Spreadsheets\01_pages_pwd.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 1424, MaxPageWidth = 1165, PagesCount = 1, Size = 1001472, Password = TestFiles.CommonPassword},
+            new TestFile(@"Spreadsheets\02_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 846, MaxPageWidth = 867, PagesCount = 2, Size = 22396},
         };
 
         public static readonly List<TestFile> SpreadsheetStorageSigned = new List<TestFile>
         {
-            new TestFile(@"Signed\SignedForVerificationAll.xlsx"){ Extension = "xlsx", FileFormat = "Xlsx", Size = 318157},
+            new TestFile(@"Signed\SignedForVerificationAll.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", Size = 318157},
         };
 
         //WordProcessing
         public static readonly List<TestFile> WordProcessingStorage = new List<TestFile>
         {
-            new TestFile(@"WordProcessing\01_pages.docx"){ Extension = "docx", FileFormat = "Docx", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 1359584},
-            new TestFile(@"WordProcessing\01_pages_pwd.docx"){ Extension = "docx", FileFormat = "Docx", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 1069568, Password = TestFiles.CommonPassword},
-            new TestFile(@"WordProcessing\02_pages.docx"){ Extension = "docx", FileFormat = "Docx", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 2, Size = 1356395},
+            new TestFile(@"WordProcessing\01_pages.docx"){ Extension = "docx", FileFormat = "Microsoft Word Open XML Document", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 1359584},
+            new TestFile(@"WordProcessing\01_pages_pwd.docx"){ Extension = "docx", FileFormat = "Microsoft Word Open XML Document", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 1, Size = 1069568, Password = TestFiles.CommonPassword},
+            new TestFile(@"WordProcessing\02_pages.docx"){ Extension = "docx", FileFormat = "Microsoft Word Open XML Document", MaxPageHeight = 792, MaxPageWidth = 612, PagesCount = 2, Size = 1356395},
         };
 
         public static readonly List<TestFile> WordProcessingStorageSigned = new List<TestFile>
         {
-            new TestFile(@"Signed\SignedForVerificationAll.docx"){ Extension = "docx", FileFormat = "Docx", Size = 1358290},
+            new TestFile(@"Signed\SignedForVerificationAll.docx"){ Extension = "docx", FileFormat = "Microsoft Word Open XML Document", Size = 1358290},
         };
 
         //Additional
@@ -105,26 +105,26 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test
             new TestFile(@"Additional\signature_03.jpg")
         };
 
-        private static List<TestFile> allFiles = null;
+        private static List<TestFile> _allFiles;
 
         public static List<TestFile> AllFiles {
             get {
-                if (allFiles == null)
+                if (_allFiles == null)
                 {
-                    allFiles = new List<TestFile>();
-                    allFiles.AddRange(ImageStorage);
-                    allFiles.AddRange(ImageStorageSigned);
-                    allFiles.AddRange(PdfStorage);
-                    allFiles.AddRange(PdfStorageSigned);
-                    allFiles.AddRange(PresentationStorage);
-                    allFiles.AddRange(PresentationStorageSigned);
-                    allFiles.AddRange(SpreadsheetStorage);
-                    allFiles.AddRange(SpreadsheetStorageSigned);
-                    allFiles.AddRange(WordProcessingStorage);
-                    allFiles.AddRange(WordProcessingStorageSigned);
-                    allFiles.AddRange(AdditionalStorage);
+                    _allFiles = new List<TestFile>();
+                    _allFiles.AddRange(ImageStorage);
+                    _allFiles.AddRange(ImageStorageSigned);
+                    _allFiles.AddRange(PdfStorage);
+                    _allFiles.AddRange(PdfStorageSigned);
+                    _allFiles.AddRange(PresentationStorage);
+                    _allFiles.AddRange(PresentationStorageSigned);
+                    _allFiles.AddRange(SpreadsheetStorage);
+                    _allFiles.AddRange(SpreadsheetStorageSigned);
+                    _allFiles.AddRange(WordProcessingStorage);
+                    _allFiles.AddRange(WordProcessingStorageSigned);
+                    _allFiles.AddRange(AdditionalStorage);
                 }
-                return allFiles;
+                return _allFiles;
             }
         } 
 

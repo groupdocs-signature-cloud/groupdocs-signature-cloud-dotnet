@@ -64,7 +64,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client
                     }
                 }
 
-                return null;
+                System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
+                xmlDoc.LoadXml(json);
+                return JsonConvert.SerializeXmlNode(xmlDoc);
             }
             catch (IOException e)
             {

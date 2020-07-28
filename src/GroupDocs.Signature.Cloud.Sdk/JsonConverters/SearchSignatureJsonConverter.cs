@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 namespace GroupDocs.Signature.Cloud.Sdk
@@ -20,26 +16,23 @@ namespace GroupDocs.Signature.Cloud.Sdk
         /// <returns></returns>
         protected override Signature Create(Type objectType, JObject jObject)
         {
-            Signature result = null;
-            Signature.SignatureTypeEnum signatureType = GetSignatureType(jObject);
-            // check SignatureType
-            // check for barcode options
-            if (result == null && signatureType == Signature.SignatureTypeEnum.Barcode)
-            {
-                result = new BarcodeSignature();
-            }
-            // check for qrcode options
-            if (result == null && signatureType == Signature.SignatureTypeEnum.QRCode)
-            {
-                result = new QRCodeSignature();
-            }
-            // check for digital options
-            if (result == null && signatureType == Signature.SignatureTypeEnum.Digital)
-            {
-                result = new DigitalSignature();
-            }
+            var signatureType = GetSignatureType(jObject);
+            if (signatureType == Signature.SignatureTypeEnum.Barcode)
+                return new BarcodeSignature();
 
-            return result;
+            if (signatureType == Signature.SignatureTypeEnum.QRCode)
+                return new QRCodeSignature();
+
+            if (signatureType == Signature.SignatureTypeEnum.Digital)
+                return new DigitalSignature();
+
+            if (signatureType == Signature.SignatureTypeEnum.Text)
+                return new TextSignature();
+
+            if (signatureType == Signature.SignatureTypeEnum.Image)
+                return new ImageSignature();
+
+            return new Signature();
         }
 
         protected Signature.SignatureTypeEnum GetSignatureType(JObject jObject)
@@ -52,7 +45,11 @@ namespace GroupDocs.Signature.Cloud.Sdk
             }
             if (!string.IsNullOrEmpty(type))
             {
-                if (!Enum.TryParse<Signature.SignatureTypeEnum>(type, out result))
+                try
+                {
+                    result = (Signature.SignatureTypeEnum)Enum.Parse(typeof(Signature.SignatureTypeEnum), type);
+                }
+                catch (Exception)
                 {
                     result = Signature.SignatureTypeEnum.None;
                 }

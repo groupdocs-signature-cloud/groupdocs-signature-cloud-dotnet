@@ -22,17 +22,17 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsSignImage : BaseApiTest
     {
@@ -46,7 +46,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignImageOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -71,7 +70,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignImageOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -96,7 +94,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignImageOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -121,7 +118,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignImageOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -146,7 +142,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignImageOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -166,7 +161,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.SignatureType = SignatureTypeEnum.Image;
 
             // set signature properties
-            options.ImageGuid = @"Additional\JohnSmithSign.png";
+            options.ImageFilePath = @"Additional\JohnSmithSign.png";
 
             // set signature position on a page
             options.Left = 100;
@@ -182,20 +177,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.MarginMeasureType = SignImageOptions.MarginMeasureTypeEnum.Pixels;
 
             // set signature appearance
-            options.Opacity = 0.8;
+            options.Transparency = 0.8;
 
             //set pages for signing (each of these page settings could be used singly)
-            options.AllPages = false;
-            options.Page = 1;
-            options.PagesSetup = new PagesSetup()
-            {
-                EvenPages = false,
-                FirstPage = true,
-                LastPage = false,
-                OddPages = false,
-                PageNumbers = new List<int?>() { 1 }
-            };
-
             options.Page = 1;
             options.AllPages = true;
             options.PagesSetup = new PagesSetup()

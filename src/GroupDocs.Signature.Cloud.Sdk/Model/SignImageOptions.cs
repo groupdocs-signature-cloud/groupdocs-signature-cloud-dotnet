@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignImageOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -92,11 +92,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public enum HorizontalAlignmentEnum
         { 
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
-            /// <summary>
             /// Enum None for "None"
             /// </summary>            
             None,
@@ -124,11 +119,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         { 
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -201,7 +191,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the signature image file name. This property is used only if ImageStream is not specified
         /// </summary>  
-        public string ImageGuid { get; set; }
+        public string ImageFilePath { get; set; }
 
         /// <summary>
         /// Left X position of Signature on Document Page in Measure values (pixels or percent see MeasureType LocationMeasureType). (works if horizontal alignment is not specified). For Spreadsheet documents this property is mutually exclusive with Column property. If Left property is set ColumnNumber will be reset to 0
@@ -234,9 +224,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Padding Margin { get; set; }
 
         /// <summary>
-        /// Gets or sets the additional opacity for sign image (value from 0.0 (clear) through 1.0 (opaque)). By default the value is 1.0
+        /// Gets or sets the signature transparency(value from 0.0 (opaque) through 1.0 (clear)). Default value is 0 (opaque).
         /// </summary>  
-        public double? Opacity { get; set; }
+        public double? Transparency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the signature border properties
+        /// </summary>  
+        public BorderLine Border { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -246,7 +241,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class SignImageOptions {\n");
-          sb.Append("  ImageGuid: ").Append(this.ImageGuid).Append("\n");
+          sb.Append("  ImageFilePath: ").Append(this.ImageFilePath).Append("\n");
           sb.Append("  Left: ").Append(this.Left).Append("\n");
           sb.Append("  Top: ").Append(this.Top).Append("\n");
           sb.Append("  Width: ").Append(this.Width).Append("\n");
@@ -258,7 +253,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  VerticalAlignment: ").Append(this.VerticalAlignment).Append("\n");
           sb.Append("  Margin: ").Append(this.Margin).Append("\n");
           sb.Append("  MarginMeasureType: ").Append(this.MarginMeasureType).Append("\n");
-          sb.Append("  Opacity: ").Append(this.Opacity).Append("\n");
+          sb.Append("  Transparency: ").Append(this.Transparency).Append("\n");
+          sb.Append("  Border: ").Append(this.Border).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

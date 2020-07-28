@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="AssemblyInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="ImageSignature.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -23,6 +23,43 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace GroupDocs.Signature.Cloud.Sdk.Model 
+{
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    
+    /// <summary>
+    /// Contains Image signature properties             
+    /// </summary>  
+    public class ImageSignature : Signature 
+    {                       
+        /// <summary>
+        /// Specifies the image size
+        /// </summary>  
+        public int? Size { get; set; }
 
-[assembly: InternalsVisibleTo("GroupDocs.Signature.Cloud.Sdk.Test")]
+        /// <summary>
+        /// Specifies the format of image
+        /// </summary>  
+        public string Format { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class ImageSignature {\n");
+          sb.Append("  Size: ").Append(this.Size).Append("\n");
+          sb.Append("  Format: ").Append(this.Format).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
+    }
+}

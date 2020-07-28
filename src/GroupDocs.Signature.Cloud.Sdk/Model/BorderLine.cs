@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="BorderLine.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,11 +45,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleEnum
         { 
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
             /// <summary>
             /// Enum Solid for "Solid"
             /// </summary>            
@@ -103,7 +98,32 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             /// <summary>
             /// Enum LongDashDotDot for "LongDashDotDot"
             /// </summary>            
-            LongDashDotDot            
+            LongDashDotDot,
+            
+            /// <summary>
+            /// Enum RoundDot for "RoundDot"
+            /// </summary>            
+            RoundDot,
+            
+            /// <summary>
+            /// Enum SquareDot for "SquareDot"
+            /// </summary>            
+            SquareDot,
+            
+            /// <summary>
+            /// Enum DashDotDot for "DashDotDot"
+            /// </summary>            
+            DashDotDot,
+            
+            /// <summary>
+            /// Enum DashLongDash for "DashLongDash"
+            /// </summary>            
+            DashLongDash,
+            
+            /// <summary>
+            /// Enum DashLongDashDot for "DashLongDashDot"
+            /// </summary>            
+            DashLongDashDot            
         }
 
         /// <summary>
@@ -127,6 +147,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Color Color { get; set; }
 
         /// <summary>
+        /// Gets or sets the border visibility
+        /// </summary>  
+        public bool? Visible { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +163,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  Transparency: ").Append(this.Transparency).Append("\n");
           sb.Append("  Weight: ").Append(this.Weight).Append("\n");
           sb.Append("  Color: ").Append(this.Color).Append("\n");
+          sb.Append("  Visible: ").Append(this.Visible).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -22,17 +22,17 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsSignDigital : BaseApiTest
     {
@@ -51,7 +51,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignDigitalOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -81,7 +80,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignDigitalOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -106,7 +104,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignDigitalOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -126,8 +123,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.SignatureType = SignatureTypeEnum.Digital;
 
             // set signature properties
-            options.ImageGuid = @"Additional\signature_01.jpg";
-            options.CertificateGuid = @"Additional\SherlockHolmes.pfx";
+            options.ImageFilePath = @"Additional\signature_01.jpg";
+            options.CertificateFilePath = @"Additional\SherlockHolmes.pfx";
             options.Password = "1234567890";
 
             // set signature position on a page
@@ -144,7 +141,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.MarginMeasureType = SignImageOptions.MarginMeasureTypeEnum.Pixels;
 
             // set signature appearance
-            options.Opacity = 0.8;
+            options.Transparency = 0.8;
 
             //set pages for signing (each of these page settings could be used singly)
             options.AllPages = false;

@@ -29,13 +29,12 @@ using System.Reflection;
 using System.Text;
 using GroupDocs.Signature.Cloud.Sdk.Api;
 using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
+using Newtonsoft.Json;
+using NUnit.Framework;
 using Configuration = GroupDocs.Signature.Cloud.Sdk.Client.Configuration;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 {
-    using Newtonsoft.Json;
-    using NUnit.Framework;
-
     public class BaseApiTest
     {
         private readonly string _appSid = Config.AppSid;

@@ -24,17 +24,14 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Search
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
-
     public class TestsSearchCollection : BaseApiTest
     {
         [Test]
@@ -46,22 +43,20 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
 
             var optionsBarcode = new SearchBarcodeOptions();
             TestsSearchBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Image;
 
             //Digital search is not supported for images
 
-            var optionsQRCode = new SearchQRCodeOptions();
-            TestsSearchQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Image;
+            var optionsQrCode = new SearchQRCodeOptions();
+            TestsSearchQrCode.PopulateOptions(optionsQrCode);
 
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
-            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQRCode };
+            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQrCode };
             var request = new SearchSignaturesRequest(searchSettings);
 
             // Get and check result 
             var response = SignatureApi.SearchSignatures(request);
-            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQRCode }, response, testFile);
+            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQrCode }, response, testFile);
         }
 
         [Test]
@@ -73,24 +68,21 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
 
             var optionsBarcode = new SearchBarcodeOptions();
             TestsSearchBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Pdf;
 
-            var optionsQRCode = new SearchQRCodeOptions();
-            TestsSearchQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Pdf;
+            var optionsQrCode = new SearchQRCodeOptions();
+            TestsSearchQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new SearchDigitalOptions();
             TestsSearchDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Pdf;
 
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
-            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital };
+            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital };
             var request = new SearchSignaturesRequest(searchSettings);
 
             // Get and check result 
             var response = SignatureApi.SearchSignatures(request);
-            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital }, response, testFile);
+            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital }, response, testFile);
         }
 
         [Test]
@@ -102,22 +94,20 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
 
             var optionsBarcode = new SearchBarcodeOptions();
             TestsSearchBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Presentation;
 
             //Digital search is not supported for presentations
 
-            var optionsQRCode = new SearchQRCodeOptions();
-            TestsSearchQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Presentation;
+            var optionsQrCode = new SearchQRCodeOptions();
+            TestsSearchQrCode.PopulateOptions(optionsQrCode);
 
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
-            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQRCode };
+            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQrCode };
             var request = new SearchSignaturesRequest(searchSettings);
 
             // Get and check result 
             var response = SignatureApi.SearchSignatures(request);
-            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQRCode }, response, testFile);
+            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQrCode }, response, testFile);
         }
 
         [Test]
@@ -129,24 +119,21 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
 
             var optionsBarcode = new SearchBarcodeOptions();
             TestsSearchBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Spreadsheet;
 
-            var optionsQRCode = new SearchQRCodeOptions();
-            TestsSearchQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Spreadsheet;
+            var optionsQrCode = new SearchQRCodeOptions();
+            TestsSearchQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new SearchDigitalOptions();
             TestsSearchDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Spreadsheet;
 
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
-            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital };
+            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital };
             var request = new SearchSignaturesRequest(searchSettings);
 
             // Get and check result 
             var response = SignatureApi.SearchSignatures(request);
-            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital }, response, testFile);
+            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital }, response, testFile);
         }
 
         [Test]
@@ -158,24 +145,21 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Search
 
             var optionsBarcode = new SearchBarcodeOptions();
             TestsSearchBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.WordProcessing;
 
-            var optionsQRCode = new SearchQRCodeOptions();
-            TestsSearchQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.WordProcessing;
+            var optionsQrCode = new SearchQRCodeOptions();
+            TestsSearchQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new SearchDigitalOptions();
             TestsSearchDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.WordProcessing;
 
             var searchSettings = new SearchSettings();
             searchSettings.FileInfo = fileInfo;
-            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital };
+            searchSettings.Options = new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital };
             var request = new SearchSignaturesRequest(searchSettings);
 
             // Get and check result 
             var response = SignatureApi.SearchSignatures(request);
-            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQRCode, optionsDigital }, response, testFile);
+            CheckResponse(new List<SearchOptions>() { optionsBarcode, optionsQrCode, optionsDigital }, response, testFile);
         }
 
         public void CheckResponse(List<SearchOptions> searchOptions, SearchResult result, TestFile testFile)

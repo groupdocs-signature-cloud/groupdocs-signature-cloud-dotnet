@@ -24,14 +24,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Info
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.GetInfo
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-
     public class TestSignatureGetFileInfo : BaseApiTest
     {
         [Test]
@@ -40,19 +38,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Info
             // Set request
             var testFile = TestFiles.PdfStorage.FirstOrDefault(x => x.Name.Equals("01_pages.pdf"));
             var fileInfo = testFile.GetFileInfo();
-            var InfoSettings = new InfoSettings() { FileInfo = fileInfo };
-            var request = new GetInfoRequest(InfoSettings);
+            var infoSettings = new InfoSettings() { FileInfo = fileInfo };
+            var request = new GetInfoRequest(infoSettings);
 
             // Get and check result 
             var response = InfoApi.GetInfo(request);
 
-            Assert.AreEqual(response.Size, testFile.Size, "Size");
-            Assert.AreEqual(response.Extension, testFile.Extension, "Extension");
-            Assert.AreEqual(response.FileFormat, testFile.FileFormat, "FileFormat");
-            Assert.AreEqual(response.MaxPageHeight, testFile.MaxPageHeight, "MaxPageHeight");
-            Assert.AreEqual(response.WidthForMaxHeight, testFile.MaxPageWidth, "MaxPageWidth");
-            Assert.AreEqual(response.PagesCount, testFile.PagesCount, "PagesCount");
-            Assert.AreEqual(response.FileInfo.FilePath, testFile.Path, "Path");
+            Assert.AreEqual(testFile.Size, response.Size, "Size");
+            Assert.AreEqual(testFile.Extension, response.Extension, "Extension");
+            Assert.AreEqual(testFile.FileFormat, response.FileFormat, "FileFormat");
+            Assert.AreEqual(testFile.MaxPageHeight, response.MaxPageHeight, "MaxPageHeight");
+            Assert.AreEqual(testFile.MaxPageWidth, response.WidthForMaxHeight, "MaxPageWidth");
+            Assert.AreEqual(testFile.PagesCount, response.PagesCount, "PagesCount");
+            Assert.AreEqual(testFile.Path, response.FileInfo.FilePath, "Path");
         }
     }
 }

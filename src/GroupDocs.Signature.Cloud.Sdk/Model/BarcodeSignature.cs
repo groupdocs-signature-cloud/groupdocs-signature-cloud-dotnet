@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="BarcodeSignature.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string Text { get; set; }
 
         /// <summary>
+        /// Specifies the format of Barcode signature image.
+        /// </summary>  
+        public string Format { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -58,6 +63,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("class BarcodeSignature {\n");
           sb.Append("  BarcodeType: ").Append(this.BarcodeType).Append("\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("  Format: ").Append(this.Format).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

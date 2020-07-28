@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="OptionsBase.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,39 +38,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     /// </summary>  
     public class OptionsBase 
     {                       
-        /// <summary>
-        /// Specifies the type of document to process
-        /// </summary>
-        /// <value>Specifies the type of document to process</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DocumentTypeEnum
-        { 
-            /// <summary>
-            /// Enum Image for "Image"
-            /// </summary>            
-            Image,
-            
-            /// <summary>
-            /// Enum Pdf for "Pdf"
-            /// </summary>            
-            Pdf,
-            
-            /// <summary>
-            /// Enum Presentation for "Presentation"
-            /// </summary>            
-            Presentation,
-            
-            /// <summary>
-            /// Enum Spreadsheet for "Spreadsheet"
-            /// </summary>            
-            Spreadsheet,
-            
-            /// <summary>
-            /// Enum WordProcessing for "WordProcessing"
-            /// </summary>            
-            WordProcessing            
-        }
-
         /// <summary>
         /// Specifies the signature type of processing
         /// </summary>
@@ -115,11 +82,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies the type of document to process
-        /// </summary>
-        public DocumentTypeEnum? DocumentType { get; set; }
-
-        /// <summary>
         /// Specifies the signature type of processing
         /// </summary>
         public SignatureTypeEnum? SignatureType { get; set; }
@@ -147,7 +109,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class OptionsBase {\n");
-          sb.Append("  DocumentType: ").Append(this.DocumentType).Append("\n");
           sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
           sb.Append("  Page: ").Append(this.Page).Append("\n");
           sb.Append("  AllPages: ").Append(this.AllPages).Append("\n");

@@ -22,17 +22,17 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsSignText : BaseApiTest
     {
@@ -46,7 +46,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignTextOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -71,7 +70,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignTextOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -96,7 +94,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignTextOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -121,7 +118,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignTextOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -146,7 +142,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignTextOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -186,11 +181,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.Font = new SignatureFont()
             { FontFamily = "Arial", FontSize = 12, Bold = true, Italic = false, Underline = false };
             options.ForeColor = new Color() { Web = "BlueViolet" };
-            options.BorderColor = new Color() { Web = "DarkOrange" };
+            options.Border = new BorderLine
+            {
+                Color = new Color {Web = "DarkOrange"},
+                Visible = true,
+                Style = BorderLine.StyleEnum.Dash
+            };
             options.BackgroundColor = new Color() { Web = "DarkOrange" };
-            options.BorderVisiblity = true;
-            options.BorderDashStyle = SignTextOptions.BorderDashStyleEnum.Dash;
-            
+
             //set pages for signing (each of these page settings could be used singly)
             options.AllPages = false;
             options.Page = 1;

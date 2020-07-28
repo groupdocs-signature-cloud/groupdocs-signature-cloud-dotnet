@@ -24,16 +24,15 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Verify
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsVerifyBarcode : BaseApiTest
     {
@@ -45,7 +44,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -64,7 +62,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -83,7 +80,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -102,7 +98,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -121,7 +116,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyBarcodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };

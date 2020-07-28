@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignQRCodeOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -77,14 +77,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string QRCodeType { get; set; }
 
         /// <summary>
-        /// Gets or sets the weight of the signature border
+        /// Gets or sets the signature transparency (value from 0.0 (opaque) through 1.0 (clear)). Default value is 0 (opaque).             
         /// </summary>  
-        public double? BorderWeight { get; set; }
-
-        /// <summary>
-        /// Gets or sets the signature opacity (value from 0.0 (clear) through 1.0 (opaque)) By default the value is 1.0
-        /// </summary>  
-        public double? Opacity { get; set; }
+        public double? Transparency { get; set; }
 
         /// <summary>
         /// Gets or sets the space between QRCode elements and result image borders
@@ -94,7 +89,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the QR-code logo image file name. This property in use only if LogoStream is not specified. Using of this property could cause problems with verification. Use it carefully
         /// </summary>  
-        public string LogoGuid { get; set; }
+        public string LogoFilePath { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -105,11 +100,10 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class SignQRCodeOptions {\n");
           sb.Append("  QRCodeType: ").Append(this.QRCodeType).Append("\n");
-          sb.Append("  BorderWeight: ").Append(this.BorderWeight).Append("\n");
-          sb.Append("  Opacity: ").Append(this.Opacity).Append("\n");
+          sb.Append("  Transparency: ").Append(this.Transparency).Append("\n");
           sb.Append("  CodeTextAlignment: ").Append(this.CodeTextAlignment).Append("\n");
           sb.Append("  InnerMargins: ").Append(this.InnerMargins).Append("\n");
-          sb.Append("  LogoGuid: ").Append(this.LogoGuid).Append("\n");
+          sb.Append("  LogoFilePath: ").Append(this.LogoFilePath).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

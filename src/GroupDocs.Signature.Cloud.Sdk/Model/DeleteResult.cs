@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="SearchDigitalOptions.cs">
+// <copyright company="Aspose Pty Ltd" file="DeleteResult.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,10 +34,30 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines options to search Digital signature within a document
+    /// Delete result information
     /// </summary>  
-    public class SearchDigitalOptions : SearchOptions 
+    public class DeleteResult 
     {                       
+        /// <summary>
+        /// Source document basic info
+        /// </summary>  
+        public FileInfo FileInfo { get; set; }
+
+        /// <summary>
+        /// Source document size in bytes
+        /// </summary>  
+        public long? Size { get; set; }
+
+        /// <summary>
+        /// List of successfully deleted signatures
+        /// </summary>  
+        public List<Signature> Succeeded { get; set; }
+
+        /// <summary>
+        /// List of signatures that were not deleted
+        /// </summary>  
+        public List<Signature> Failed { get; set; }
+
         /// <summary>
         /// Get the string presentation of the object
         /// </summary>
@@ -45,7 +65,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class SearchDigitalOptions {\n");
+          sb.Append("class DeleteResult {\n");
+          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
+          sb.Append("  Size: ").Append(this.Size).Append("\n");
+          sb.Append("  Succeeded: ").Append(this.Succeeded).Append("\n");
+          sb.Append("  Failed: ").Append(this.Failed).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -25,7 +25,7 @@
 
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Info
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.GetInfo
 {
     public class TestSignatureGetFormats : BaseApiTest
     {
@@ -62,7 +62,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Info
         }
 
         [Test]
-        public void GetSupportedQRCodeFormats()
+        public void GetSupportedQrCodeFormats()
         {
             var response = InfoApi.GetSupportedQRCodes();
 

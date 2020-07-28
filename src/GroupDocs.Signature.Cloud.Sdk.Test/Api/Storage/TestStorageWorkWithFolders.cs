@@ -26,7 +26,7 @@
 using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Storage
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Storage
 {
     public class TestStorageWorkWithFolders : BaseApiTest
     {

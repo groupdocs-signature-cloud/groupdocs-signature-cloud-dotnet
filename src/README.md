@@ -2,7 +2,7 @@
 This repository contains GroupDocs.Signature Cloud SDK for .NET source code. This SDK allows you to work with GroupDocs.Signature Cloud REST APIs in your .NET applications.
 
 ## How to use the SDK?
-The complete source code is available in this repository folder, you can either directly use it in your project via NuGet package manager. For more details, please visit our [documentation website](https://docs.groupdocs.cloud/display/signaturecloud/Available+SDKs#AvailableSDKs-.NET).
+The complete source code is available in this repository folder, you can either directly use it in your project via NuGet package manager. For more details, please visit our [documentation website](https://wiki.groupdocs.cloud/display/signaturecloud/Available+SDKs#AvailableSDKs-.NET).
 
 ## Dependencies
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json)
@@ -57,7 +57,7 @@ All GroupDocs.Signature Cloud SDKs are licensed under [MIT License](LICENSE).
 ## Resources
 + [**Website**](https://www.groupdocs.cloud)
 + [**Product Home**](https://products.groupdocs.cloud/signature)
-+ [**Documentation**](https://docs.groupdocs.cloud/display/signaturecloud/Home)
++ [**Documentation**](https://wiki.groupdocs.cloud/display/signaturecloud/Home)
 + [**Free Support Forum**](https://forum.groupdocs.cloud/c/signature)
 + [**Blog**](https://blog.groupdocs.cloud/category/signature)
 

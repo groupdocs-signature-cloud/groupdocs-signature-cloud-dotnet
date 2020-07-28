@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="DigitalSignature.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,34 +39,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     public class DigitalSignature : Signature 
     {                       
         /// <summary>
-        /// Gets or sets the type of the digital signature
-        /// </summary>
-        /// <value>Gets or sets the type of the digital signature</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        { 
-            /// <summary>
-            /// Enum Unknown for "Unknown"
-            /// </summary>            
-            Unknown,
-            
-            /// <summary>
-            /// Enum CryptoApi for "CryptoApi"
-            /// </summary>            
-            CryptoApi,
-            
-            /// <summary>
-            /// Enum XmlDsig for "XmlDsig"
-            /// </summary>            
-            XmlDsig            
-        }
-
-        /// <summary>
-        /// Gets or sets the type of the digital signature
-        /// </summary>
-        public TypeEnum? Type { get; set; }
-
-        /// <summary>
         /// Gets or sets the signing purpose comment
         /// </summary>  
         public string Comments { get; set; }
@@ -91,7 +63,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("class DigitalSignature {\n");
           sb.Append("  Comments: ").Append(this.Comments).Append("\n");
           sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
-          sb.Append("  Type: ").Append(this.Type).Append("\n");
           sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

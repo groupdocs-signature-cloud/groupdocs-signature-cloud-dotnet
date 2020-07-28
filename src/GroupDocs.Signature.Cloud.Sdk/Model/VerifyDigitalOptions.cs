@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="VerifyDigitalOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         /// <summary>
         /// File Guid of Digital Certificate
         /// </summary>  
-        public string CertificateGuid { get; set; }
+        public string CertificateFilePath { get; set; }
 
         /// <summary>
         /// Comments of Digital Signature to validate Suitable for Spreadsheet and Words Processing document types
@@ -87,7 +87,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class VerifyDigitalOptions {\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
-          sb.Append("  CertificateGuid: ").Append(this.CertificateGuid).Append("\n");
+          sb.Append("  CertificateFilePath: ").Append(this.CertificateFilePath).Append("\n");
           sb.Append("  Comments: ").Append(this.Comments).Append("\n");
           sb.Append("  SignDateTimeFrom: ").Append(this.SignDateTimeFrom).Append("\n");
           sb.Append("  SignDateTimeTo: ").Append(this.SignDateTimeTo).Append("\n");

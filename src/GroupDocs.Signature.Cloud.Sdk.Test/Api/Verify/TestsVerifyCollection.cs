@@ -22,18 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Verify
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
-
     public class TestsVerifyCollection : BaseApiTest
     {
         [Test]
@@ -46,19 +44,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
 
             var optionsBarcode = new VerifyBarcodeOptions();
             TestsVerifyBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Image;
 
             //Digital verification is not supported for images
 
-            var optionsQRCode = new VerifyQRCodeOptions();
-            TestsVerifyQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Image;
+            var optionsQrCode = new VerifyQRCodeOptions();
+            TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
             //Text verification is not supported for images
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQRCode };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 
@@ -77,23 +73,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
 
             var optionsBarcode = new VerifyBarcodeOptions();
             TestsVerifyBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Pdf;
 
-            var optionsQRCode = new VerifyQRCodeOptions();
-            TestsVerifyQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Pdf;
+            var optionsQrCode = new VerifyQRCodeOptions();
+            TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new VerifyDigitalOptions();
             TestsVerifyDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Pdf;
 
             var optionsText = new VerifyTextOptions();
             TestsVerifyText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Pdf;
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 
@@ -112,21 +104,18 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
 
             var optionsBarcode = new VerifyBarcodeOptions();
             TestsVerifyBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Presentation;
 
             //Digital verification is not supported for presentations
 
-            var optionsQRCode = new VerifyQRCodeOptions();
-            TestsVerifyQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Presentation;
+            var optionsQrCode = new VerifyQRCodeOptions();
+            TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
             var optionsText = new VerifyTextOptions();
             TestsVerifyText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Presentation;
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQRCode, optionsText };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsText };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 
@@ -144,23 +133,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
 
             var optionsBarcode = new VerifyBarcodeOptions();
             TestsVerifyBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Spreadsheet;
 
-            var optionsQRCode = new VerifyQRCodeOptions();
-            TestsVerifyQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Spreadsheet;
+            var optionsQrCode = new VerifyQRCodeOptions();
+            TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new VerifyDigitalOptions();
             TestsVerifyDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Spreadsheet;
 
             var optionsText = new VerifyTextOptions();
             TestsVerifyText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Spreadsheet;
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 
@@ -178,23 +163,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
 
             var optionsBarcode = new VerifyBarcodeOptions();
             TestsVerifyBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.WordProcessing;
 
-            var optionsQRCode = new VerifyQRCodeOptions();
-            TestsVerifyQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.WordProcessing;
+            var optionsQrCode = new VerifyQRCodeOptions();
+            TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
             var optionsDigital = new VerifyDigitalOptions();
             TestsVerifyDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.WordProcessing;
 
             var optionsText = new VerifyTextOptions();
             TestsVerifyText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.WordProcessing;
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 

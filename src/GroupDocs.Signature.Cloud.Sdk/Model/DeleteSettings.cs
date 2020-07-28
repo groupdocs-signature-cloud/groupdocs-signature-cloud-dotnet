@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="AssemblyInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="DeleteSettings.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -23,6 +23,37 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace GroupDocs.Signature.Cloud.Sdk.Model 
+{
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    
+    /// <summary>
+    /// Defines delete sign document settings
+    /// </summary>  
+    public class DeleteSettings : BaseSettings 
+    {                       
+        /// <summary>
+        /// Gets or sets options to perform signatures delete
+        /// </summary>  
+        public List<DeleteOptions> Options { get; set; }
 
-[assembly: InternalsVisibleTo("GroupDocs.Signature.Cloud.Sdk.Test")]
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class DeleteSettings {\n");
+          sb.Append("  Options: ").Append(this.Options).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
+    }
+}

@@ -24,28 +24,26 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Verify
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
-    public class TestsVerifyQRCode : BaseApiTest
+    public class TestsVerifyQrCode : BaseApiTest
     {
         [Test]
-        public void VerifyQRCodeImage()
+        public void VerifyQrCodeImage()
         {
             // Set request
             var testFile = TestFiles.ImageStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -57,14 +55,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
         }
 
         [Test]
-        public void VerifyQRCodePdf()
+        public void VerifyQrCodePdf()
         {
             // Set request
             var testFile = TestFiles.PdfStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -76,14 +73,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
         }
 
         [Test]
-        public void VerifyQRCodePresentation()
+        public void VerifyQrCodePresentation()
         {
             // Set request
             var testFile = TestFiles.PresentationStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -95,14 +91,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
         }
 
         [Test]
-        public void VerifyQRCodeSpreadsheet()
+        public void VerifyQrCodeSpreadsheet()
         {
             // Set request
             var testFile = TestFiles.SpreadsheetStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };
@@ -114,14 +109,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Verify
         }
 
         [Test]
-        public void VerifyQRCodeWordProcessing()
+        public void VerifyQrCodeWordProcessing()
         {
             // Set request
             var testFile = TestFiles.WordProcessingStorageSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyQRCodeOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
             verifySettings.Options = new List<VerifyOptions>() { options };

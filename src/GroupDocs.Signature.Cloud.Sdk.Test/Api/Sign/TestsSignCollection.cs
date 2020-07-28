@@ -22,18 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
-
     public class TestsSignCollection : BaseApiTest
     {
         [Test]
@@ -46,35 +44,30 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var optionsBarcode = new SignBarcodeOptions();
             TestsSignBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Image;
             optionsBarcode.Top = 0;
 
-            var optionsQRCode = new SignQRCodeOptions();
-            TestsSignQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Image;
-            optionsQRCode.Top = optionsBarcode.Height + 20;
+            var optionsQrCode = new SignQRCodeOptions();
+            TestsSignQrCode.PopulateOptions(optionsQrCode);
+            optionsQrCode.Top = optionsBarcode.Height + 20;
 
             //Digital signature is not supported for Images.
 
             var optionsText = new SignTextOptions();
             TestsSignText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Image;
-            optionsText.Top = optionsQRCode.Top + optionsQRCode.Height + 20;
+            optionsText.Top = optionsQrCode.Top + optionsQrCode.Height + 20;
 
             var optionsImage = new SignImageOptions();
             TestsSignImage.PopulateOptions(optionsImage);
-            optionsImage.DocumentType = DocumentTypeEnum.Image;
             optionsImage.Top = optionsText.Top + optionsText.Height + 20;
 
             var optionsStamp = new SignStampOptions();
             TestsSignStamp.PopulateOptions(optionsStamp);
-            optionsStamp.DocumentType = DocumentTypeEnum.Image;
             optionsStamp.Top = optionsImage.Top + optionsImage.Height + 20;
 
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
-            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQRCode, optionsText, optionsImage, optionsStamp };
+            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQrCode, optionsText, optionsImage, optionsStamp };
             var request = new CreateSignaturesRequest(signSettings);
 
             // Get and check result 
@@ -96,38 +89,32 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var optionsBarcode = new SignBarcodeOptions();
             TestsSignBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Pdf;
             optionsBarcode.Top = 0;
 
-            var optionsQRCode = new SignQRCodeOptions();
-            TestsSignQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Pdf;
-            optionsQRCode.Top = optionsBarcode.Height + 20;
+            var optionsQrCode = new SignQRCodeOptions();
+            TestsSignQrCode.PopulateOptions(optionsQrCode);
+            optionsQrCode.Top = optionsBarcode.Height + 20;
 
             var optionsDigital = new SignDigitalOptions();
             TestsSignDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Pdf;
-            optionsDigital.Top = optionsQRCode.Top + optionsQRCode.Height + 20;
+            optionsDigital.Top = optionsQrCode.Top + optionsQrCode.Height + 20;
 
             var optionsText = new SignTextOptions();
             TestsSignText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Pdf;
             optionsText.Top = optionsDigital.Top + optionsDigital.Height + 20;
 
             var optionsImage = new SignImageOptions();
             TestsSignImage.PopulateOptions(optionsImage);
-            optionsImage.DocumentType = DocumentTypeEnum.Pdf;
             optionsImage.Top = optionsText.Top + optionsText.Height + 20;
 
             var optionsStamp = new SignStampOptions();
             TestsSignStamp.PopulateOptions(optionsStamp);
-            optionsStamp.DocumentType = DocumentTypeEnum.Pdf;
             optionsStamp.Top = optionsImage.Top + optionsImage.Height + 20;
 
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
-            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText, optionsImage, optionsStamp };
+            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText, optionsImage, optionsStamp };
             var request = new CreateSignaturesRequest(signSettings);
 
             // Get and check result 
@@ -148,35 +135,30 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var optionsBarcode = new SignBarcodeOptions();
             TestsSignBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Presentation;
             optionsBarcode.Top = 0;
 
-            var optionsQRCode = new SignQRCodeOptions();
-            TestsSignQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Presentation;
-            optionsQRCode.Top = optionsBarcode.Height + 20;
+            var optionsQrCode = new SignQRCodeOptions();
+            TestsSignQrCode.PopulateOptions(optionsQrCode);
+            optionsQrCode.Top = optionsBarcode.Height + 20;
 
             //Digital signature is not supported for Presentations.
 
             var optionsText = new SignTextOptions();
             TestsSignText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Presentation;
-            optionsText.Top = optionsQRCode.Top + optionsQRCode.Height + 20;
+            optionsText.Top = optionsQrCode.Top + optionsQrCode.Height + 20;
 
             var optionsImage = new SignImageOptions();
             TestsSignImage.PopulateOptions(optionsImage);
-            optionsImage.DocumentType = DocumentTypeEnum.Presentation;
             optionsImage.Top = optionsText.Top + optionsText.Height + 20;
 
             var optionsStamp = new SignStampOptions();
             TestsSignStamp.PopulateOptions(optionsStamp);
-            optionsStamp.DocumentType = DocumentTypeEnum.Presentation;
             optionsStamp.Top = optionsImage.Top + optionsImage.Height + 20;
 
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
-            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQRCode, optionsText, optionsImage, optionsStamp };
+            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQrCode, optionsText, optionsImage, optionsStamp };
             var request = new CreateSignaturesRequest(signSettings);
 
             // Get and check result 
@@ -197,38 +179,32 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var optionsBarcode = new SignBarcodeOptions();
             TestsSignBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.Spreadsheet;
             optionsBarcode.Top = 0;
 
-            var optionsQRCode = new SignQRCodeOptions();
-            TestsSignQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.Spreadsheet;
-            optionsQRCode.Top = optionsBarcode.Height + 20;
+            var optionsQrCode = new SignQRCodeOptions();
+            TestsSignQrCode.PopulateOptions(optionsQrCode);
+            optionsQrCode.Top = optionsBarcode.Height + 20;
 
             var optionsDigital = new SignDigitalOptions();
             TestsSignDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.Spreadsheet;
-            optionsDigital.Top = optionsQRCode.Top + optionsQRCode.Height + 20;
+            optionsDigital.Top = optionsQrCode.Top + optionsQrCode.Height + 20;
 
             var optionsText = new SignTextOptions();
             TestsSignText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.Spreadsheet;
             optionsText.Top = optionsDigital.Top + optionsDigital.Height + 20;
 
             var optionsImage = new SignImageOptions();
             TestsSignImage.PopulateOptions(optionsImage);
-            optionsImage.DocumentType = DocumentTypeEnum.Spreadsheet;
             optionsImage.Top = optionsText.Top + optionsText.Height + 20;
 
             var optionsStamp = new SignStampOptions();
             TestsSignStamp.PopulateOptions(optionsStamp);
-            optionsStamp.DocumentType = DocumentTypeEnum.Spreadsheet;
             optionsStamp.Top = optionsImage.Top + optionsImage.Height + 20;
 
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
-            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText, optionsImage, optionsStamp };
+            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText, optionsImage, optionsStamp };
             var request = new CreateSignaturesRequest(signSettings);
 
             // Get and check result 
@@ -249,38 +225,32 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var optionsBarcode = new SignBarcodeOptions();
             TestsSignBarcode.PopulateOptions(optionsBarcode);
-            optionsBarcode.DocumentType = DocumentTypeEnum.WordProcessing;
             optionsBarcode.Top = 0;
 
-            var optionsQRCode = new SignQRCodeOptions();
-            TestsSignQRCode.PopulateOptions(optionsQRCode);
-            optionsQRCode.DocumentType = DocumentTypeEnum.WordProcessing;
-            optionsQRCode.Top = optionsBarcode.Height + 20;
+            var optionsQrCode = new SignQRCodeOptions();
+            TestsSignQrCode.PopulateOptions(optionsQrCode);
+            optionsQrCode.Top = optionsBarcode.Height + 20;
 
             var optionsDigital = new SignDigitalOptions();
             TestsSignDigital.PopulateOptions(optionsDigital);
-            optionsDigital.DocumentType = DocumentTypeEnum.WordProcessing;
-            optionsDigital.Top = optionsQRCode.Top + optionsQRCode.Height + 20;
+            optionsDigital.Top = optionsQrCode.Top + optionsQrCode.Height + 20;
 
             var optionsText = new SignTextOptions();
             TestsSignText.PopulateOptions(optionsText);
-            optionsText.DocumentType = DocumentTypeEnum.WordProcessing;
             optionsText.Top = optionsDigital.Top + optionsDigital.Height + 20;
 
             var optionsImage = new SignImageOptions();
             TestsSignImage.PopulateOptions(optionsImage);
-            optionsImage.DocumentType = DocumentTypeEnum.WordProcessing;
             optionsImage.Top = optionsText.Top + optionsText.Height + 20;
 
             var optionsStamp = new SignStampOptions();
             TestsSignStamp.PopulateOptions(optionsStamp);
-            optionsStamp.DocumentType = DocumentTypeEnum.WordProcessing;
             optionsStamp.Top = optionsImage.Top + optionsImage.Height + 20;
 
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
-            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQRCode, optionsDigital, optionsText, optionsImage, optionsStamp };
+            signSettings.Options = new List<SignOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText, optionsImage, optionsStamp };
             var request = new CreateSignaturesRequest(signSettings);
 
             // Get and check result 

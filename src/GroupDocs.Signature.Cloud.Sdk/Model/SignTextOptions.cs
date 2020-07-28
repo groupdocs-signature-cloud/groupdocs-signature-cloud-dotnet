@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignTextOptions.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -120,11 +120,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public enum HorizontalAlignmentEnum
         { 
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
-            /// <summary>
             /// Enum None for "None"
             /// </summary>            
             None,
@@ -152,11 +147,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         { 
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -199,54 +189,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             /// Enum Millimeters for "Millimeters"
             /// </summary>            
             Millimeters            
-        }
-
-        /// <summary>
-        /// Gets or sets the signature border style It is not suitable for PDF
-        /// </summary>
-        /// <value>Gets or sets the signature border style It is not suitable for PDF</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum BorderDashStyleEnum
-        { 
-            /// <summary>
-            /// Enum Dash for "Dash"
-            /// </summary>            
-            Dash,
-            
-            /// <summary>
-            /// Enum DashDot for "DashDot"
-            /// </summary>            
-            DashDot,
-            
-            /// <summary>
-            /// Enum DashDotDot for "DashDotDot"
-            /// </summary>            
-            DashDotDot,
-            
-            /// <summary>
-            /// Enum DashLongDash for "DashLongDash"
-            /// </summary>            
-            DashLongDash,
-            
-            /// <summary>
-            /// Enum DashLongDashDot for "DashLongDashDot"
-            /// </summary>            
-            DashLongDashDot,
-            
-            /// <summary>
-            /// Enum RoundDot for "RoundDot"
-            /// </summary>            
-            RoundDot,
-            
-            /// <summary>
-            /// Enum Solid for "Solid"
-            /// </summary>            
-            Solid,
-            
-            /// <summary>
-            /// Enum SquareDot for "SquareDot"
-            /// </summary>            
-            SquareDot            
         }
 
         /// <summary>
@@ -326,11 +268,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public MarginMeasureTypeEnum? MarginMeasureType { get; set; }
 
         /// <summary>
-        /// Gets or sets the signature border style It is not suitable for PDF
-        /// </summary>
-        public BorderDashStyleEnum? BorderDashStyle { get; set; }
-
-        /// <summary>
         /// Horizontal alignment of text inside a signature
         /// </summary>
         public TextHorizontalAlignmentEnum? TextHorizontalAlignment { get; set; }
@@ -386,11 +323,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Color ForeColor { get; set; }
 
         /// <summary>
-        /// Gets or sets the border color of signature
-        /// </summary>  
-        public Color BorderColor { get; set; }
-
-        /// <summary>
         /// Gets or sets the background color of signature
         /// </summary>  
         public Color BackgroundColor { get; set; }
@@ -401,14 +333,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Brush BackgroundBrush { get; set; }
 
         /// <summary>
-        /// Gets or sets the signature border visibility It is not suitable for PDF
+        /// Gets or sets the signature border properties
         /// </summary>  
-        public bool? BorderVisiblity { get; set; }
+        public BorderLine Border { get; set; }
 
         /// <summary>
-        /// Gets or sets the signature border transparency (value from 0.0 (opaque) through 1.0 (clear)) It is not suitable for PDF
+        /// Gets or sets the Z-order position of text signature. Determines the display order of overlapping signatures.             
         /// </summary>  
-        public double? BorderTransparency { get; set; }
+        public int? ZOrder { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -433,14 +365,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  Font: ").Append(this.Font).Append("\n");
           sb.Append("  ForeColor: ").Append(this.ForeColor).Append("\n");
-          sb.Append("  BorderColor: ").Append(this.BorderColor).Append("\n");
           sb.Append("  BackgroundColor: ").Append(this.BackgroundColor).Append("\n");
           sb.Append("  BackgroundBrush: ").Append(this.BackgroundBrush).Append("\n");
-          sb.Append("  BorderVisiblity: ").Append(this.BorderVisiblity).Append("\n");
-          sb.Append("  BorderDashStyle: ").Append(this.BorderDashStyle).Append("\n");
-          sb.Append("  BorderTransparency: ").Append(this.BorderTransparency).Append("\n");
+          sb.Append("  Border: ").Append(this.Border).Append("\n");
           sb.Append("  TextHorizontalAlignment: ").Append(this.TextHorizontalAlignment).Append("\n");
           sb.Append("  TextVerticalAlignment: ").Append(this.TextVerticalAlignment).Append("\n");
+          sb.Append("  ZOrder: ").Append(this.ZOrder).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

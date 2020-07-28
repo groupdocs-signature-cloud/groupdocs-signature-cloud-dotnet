@@ -25,11 +25,10 @@
 
 using GroupDocs.Signature.Cloud.Sdk.Api;
 using GroupDocs.Signature.Cloud.Sdk.Client;
+using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Storage
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Storage
 {
-    using NUnit.Framework;
-
     public class TestStorageAuthentication
     {
         /// <summary>

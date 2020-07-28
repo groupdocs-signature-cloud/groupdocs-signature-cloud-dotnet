@@ -22,17 +22,17 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Model;
+using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
-namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
+namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 {
-    using GroupDocs.Signature.Cloud.Sdk.Api;
-    using GroupDocs.Signature.Cloud.Sdk.Model;
-    using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
-    using static GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase;
+    using static Model.OptionsBase;
 
     public class TestsSignStamp : BaseApiTest
     {
@@ -46,7 +46,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignStampOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Image;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -71,7 +70,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignStampOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Pdf;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -96,7 +94,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignStampOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Presentation;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -121,7 +118,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignStampOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.Spreadsheet;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -146,7 +142,6 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
 
             var options = new SignStampOptions();
             PopulateOptions(options);
-            options.DocumentType = DocumentTypeEnum.WordProcessing;
             var signSettings = new SignSettings();
             signSettings.FileInfo = fileInfo;
             signSettings.SaveOptions = new SaveOptions() { OutputFilePath = signedFileName };
@@ -166,7 +161,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.SignatureType = SignatureTypeEnum.Stamp;
 
             // set signature properties
-            options.ImageGuid = @"Additional\JohnSmithSign.png";
+            options.ImageFilePath = @"Additional\JohnSmithSign.png";
 
             // set signature position on a page
             options.Left = 100;
@@ -185,7 +180,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Sign
             options.BackgroundColor = new Color() { Web = "CornflowerBlue" };
             options.BackgroundColorCropType = SignStampOptions.BackgroundColorCropTypeEnum.InnerArea;
             options.BackgroundImageCropType = SignStampOptions.BackgroundImageCropTypeEnum.MiddleArea;
-            options.Opacity = 0.8;
+            options.Transparency = 0.8;
 
             options.OuterLines = new List<StampLine> {
                  new StampLine()

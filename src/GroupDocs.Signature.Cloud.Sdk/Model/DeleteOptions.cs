@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="FileInfo.cs">
+// <copyright company="Aspose Pty Ltd" file="DeleteOptions.cs">
 //  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,62 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// File info
+    /// Base container class for delete signature options
     /// </summary>  
-    public class FileInfo 
+    public class DeleteOptions 
     {                       
         /// <summary>
-        /// File path in storage
-        /// </summary>  
-        public string FilePath { get; set; }
+        /// Specifies the type of signature
+        /// </summary>
+        /// <value>Specifies the type of signature</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SignatureTypeEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum Text for "Text"
+            /// </summary>            
+            Text,
+            
+            /// <summary>
+            /// Enum Image for "Image"
+            /// </summary>            
+            Image,
+            
+            /// <summary>
+            /// Enum Digital for "Digital"
+            /// </summary>            
+            Digital,
+            
+            /// <summary>
+            /// Enum Barcode for "Barcode"
+            /// </summary>            
+            Barcode,
+            
+            /// <summary>
+            /// Enum QRCode for "QRCode"
+            /// </summary>            
+            QRCode,
+            
+            /// <summary>
+            /// Enum Stamp for "Stamp"
+            /// </summary>            
+            Stamp            
+        }
 
         /// <summary>
-        /// Storage name
-        /// </summary>  
-        public string StorageName { get; set; }
+        /// Specifies the type of signature
+        /// </summary>
+        public SignatureTypeEnum? SignatureType { get; set; }
 
         /// <summary>
-        /// Version ID
+        /// Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.              
         /// </summary>  
-        public string VersionId { get; set; }
-
-        /// <summary>
-        /// Password to open file
-        /// </summary>  
-        public string Password { get; set; }
+        public string SignatureId { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +98,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FileInfo {\n");
-          sb.Append("  FilePath: ").Append(this.FilePath).Append("\n");
-          sb.Append("  StorageName: ").Append(this.StorageName).Append("\n");
-          sb.Append("  VersionId: ").Append(this.VersionId).Append("\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("class DeleteOptions {\n");
+          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
+          sb.Append("  SignatureId: ").Append(this.SignatureId).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ApiInvoker.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2020 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,6 +46,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client
             this.AddDefaultHeader(GroupDocsClientVersionHeaderName, string.Format("{0}.{1}", sdkVersion.Major, sdkVersion.Minor));
             this.requestHandlers = requestHandlers;
             this._timeout = timeout;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
         }
 
         public string InvokeApi(
@@ -89,82 +90,47 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client
             Stream formDataStream = new MemoryStream();
             bool needsClrf = false;
 
-            if (postParameters.Count > 1)
+            foreach (var param in postParameters)
             {
-                foreach (var param in postParameters)
+                // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
+                // Skip it on the first parameter, add it to subsequent parameters.
+                if (needsClrf)
                 {
-                    // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
-                    // Skip it on the first parameter, add it to subsequent parameters.
-                    if (needsClrf)
-                    {
-                        formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
-                    }
-
-                    needsClrf = true;
-
-                    if (param.Value is FileInfo)
-                    {
-                        var fileInfo = (FileInfo)param.Value;
-                        string postData =
-                            string.Format(
-                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
-                                boundary,
-                                param.Key,
-                                fileInfo.MimeType);
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-
-                        // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
-                    }
-                    else
-                    {
-                        var stringDaa = SerializationHelper.Serialize(param.Value);
-                        string postData =
-                            string.Format(
-                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
-                                boundary,
-                                param.Key,
-                                stringDaa);
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-                    }
+                    formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
                 }
 
-                // Add the end of the request.  Start with a newline
-                string footer = "\r\n--" + boundary + "--\r\n";
-                formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
-            }
-            else
-            {
-                foreach (var param in postParameters)
+                needsClrf = true;
+
+                if (param.Value is FileInfo)
                 {
-                    if (param.Value is FileInfo)
-                    {
-                        var fileInfo = (FileInfo)param.Value;
+                    var fileInfo = (FileInfo)param.Value;
+                    string postData =
+                        string.Format(
+                            "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
+                            boundary,
+                            param.Key,
+                            fileInfo.MimeType);
+                    formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
 
-                        // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
-                    }
-                    else if (param.Value is byte[])
-                    {
-                        // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(param.Value as byte[], 0, (param.Value as byte[]).Length);
-                    }
-                    else
-                    {
-                        string postData;
-                        if (!(param.Value is string))
-                        {
-                            postData = SerializationHelper.Serialize(param.Value);
-                        }
-                        else
-                        {
-                            postData = (string)param.Value;
-                        }
-
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-                    }
+                    // Write the file data directly to the Stream, rather than serializing it to a string.
+                    formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
+                }
+                else
+                {
+                    var stringDaa = SerializationHelper.Serialize(param.Value);
+                    string postData =
+                        string.Format(
+                            "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
+                            boundary,
+                            param.Key,
+                            stringDaa);
+                    formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
                 }
             }
+
+            // Add the end of the request.  Start with a newline
+            string footer = "\r\n--" + boundary + "--\r\n";
+            formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
 
             // Dump the Stream into a byte[]
             formDataStream.Position = 0;
@@ -226,16 +192,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client
             byte[] formData = null;
             if (formParams.Count > 0)
             {
+                string formDataBoundary = "GroupDocsViewerForCloud_NETSDKFormBoundary";
+                client.ContentType = "multipart/form-data; boundary=" + formDataBoundary;
+
                 if (formParams.Count > 1)
                 {
-                    string formDataBoundary = "GroupDocsSignatureForCloud_NETSDKFormBoundary";
-                    client.ContentType = "multipart/form-data; boundary=" + formDataBoundary;
                     formData = GetMultipartFormData(formParams, formDataBoundary);
                 }
                 else
                 {
-                    client.ContentType = "multipart/form-data";
-                    formData = GetMultipartFormData(formParams, string.Empty);
+                    formData = GetMultipartFormData(formParams, formDataBoundary);
                 }
 
                 client.ContentLength = formData.Length;
