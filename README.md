@@ -20,12 +20,12 @@ Check out the [Developer's Guide](https://docs.groupdocs.cloud/signature/develop
 
 ## Supported Signature Types
 
-- Text Signature - adds text label with the ability to align the signature location on page area, set font and colors, and so on.
-- Image Signature - adds image label with the ability to control opacity, gray scale filter, brightness, contracts etc.
-- Barcode Signature - puts barcode on document pages with the ability to control appearance and alignment.
-- QR-Code Signature - places QR-code on document pages with additional settings.
-- Digital Signature - adds digital signatures via certificate files (PFX, CRT) on a document or separate pages (PDF only).
-- Stamp Signature - stamps document pages.
+- **Text Signature** 
+- **Image Signature** 
+- **Barcode Signature** 
+- **QR-Code Signature**
+- **Digital Signature** 
+- **Stamp Signature**
 
 ## Microsoft Office Formats
 
