@@ -4,7 +4,7 @@
 
 [GroupDocs.Signature Cloud SDK for .NET](https://products.groupdocs.cloud/signature/net) wraps GroupDocs.Signature RESTful APIs so you may integrate Document Signing features in your own apps with zero initial cost.
 
-GroupDocs.Signature Cloud API allows the developers to create, remove, verify and search different types of signature objects in a number of document formats including Word documents, Excel speradsheets, PowerPoint presentations, PDF, OpenDocument formats & images.
+GroupDocs.Signature Cloud API allows the developers to create, remove, verify and search different types of signature objects in a number of document formats including Word documents, Excel spreadsheets, PowerPoint presentations, PDF, OpenDocument formats & images.
 
 ## Manipulate Digital Signatures
 
