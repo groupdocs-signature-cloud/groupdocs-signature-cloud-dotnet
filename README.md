@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/api-v2.0-lightgrey) ![Nuget](https://img.shields.io/nuget/v/GroupDocs.Signature-Cloud) ![Nuget](https://img.shields.io/nuget/dt/GroupDocs.Signature-Cloud) [![GitHub license](https://img.shields.io/github/license/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet)](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet/blob/master/LICENSE) 
+![](https://img.shields.io/badge/api-v2.0-lightgrey) ![Nuget](https://img.shields.io/nuget/v/GroupDocs.Signature-Cloud) ![Nuget](https://img.shields.io/nuget/dt/GroupDocs.Signature-Cloud) [![GitHub license](https://img.shields.io/github/license/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet)](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet/blob/master/LICENSE)
 
 # .NET SDK to e-Sign Documents in the Cloud
 
@@ -20,11 +20,11 @@ Check out the [Developer's Guide](https://docs.groupdocs.cloud/signature/develop
 
 ## Supported Signature Types
 
-- **Text Signature** 
-- **Image Signature** 
-- **Barcode Signature** 
+- **Text Signature**
+- **Image Signature**
+- **Barcode Signature**
 - **QR-Code Signature**
-- **Digital Signature** 
+- **Digital Signature**
 - **Stamp Signature**
 
 ## Microsoft Office Formats
@@ -51,44 +51,20 @@ First create an account at [GroupDocs for Cloud](https://dashboard.groupdocs.clo
 ## Get List of Supported Formats for e-Signing
 
 ```csharp
-using System;
-using System.Diagnostics;
-using GroupDocs.Signature.Cloud.Sdk.Api;
-using GroupDocs.Signature.Cloud.Sdk.Client;
+// Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+string MyClientId = "";
+string MyClientSecret = "";
 
-namespace Example
+// Create instance of the API
+var configuration = new Configuration(MyClientId, MyClientSecret);
+var api = new InfoApi(configuration);
+
+// Get supported file formats
+var response = api.GetSupportedFileFormats();
+
+foreach (var format in response.Formats)
 {
-    public class Example
-    {
-        public void Main()
-        {
-            //TODO: Get your AppSID and AppKey at https://dashboard.groupdocs.cloud (free registration is required).
-            var appSid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
-            var appKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-
-            var config = new Configuration(appSid, appKey)
-            {
-                ApiBaseUrl = "https://api.groupdocs.cloud"
-            };
-
-            var api = new InfoApi(config);
-
-            try
-            {
-                // Get supported file formats
-                var response = api.GetSupportedFileFormats();
-
-                foreach (var format in response.Formats)
-                {
-                    Debug.Print(format.ToString());
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Something went wrong: " + e.Message);
-            }
-        }
-    }
+	Debug.Print(format.ToString());
 }
 ```
 
@@ -97,6 +73,6 @@ namespace Example
 | .NET | Java | PHP | Python | Ruby | Node.js |
 |---|---|---|---|---|---|
 | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet) | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-java) | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-php) | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-python) | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-ruby)  | [GitHub](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-node) |
-| [NuGet](https://www.nuget.org/packages/GroupDocs.Signature-Cloud/) | [Maven](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-signature-cloud) | [Composer](https://packagist.org/packages/groupdocscloud/groupdocs-signature-cloud) | [PIP](https://pypi.org/project/groupdocs-signature-cloud/) | [GEM](https://rubygems.org/gems/groupdocs_signature_cloud)  | [NPM](https://www.npmjs.com/package/groupdocs-signature-cloud) | 
+| [NuGet](https://www.nuget.org/packages/GroupDocs.Signature-Cloud/) | [Maven](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-signature-cloud) | [Composer](https://packagist.org/packages/groupdocscloud/groupdocs-signature-cloud) | [PIP](https://pypi.org/project/groupdocs-signature-cloud/) | [GEM](https://rubygems.org/gems/groupdocs_signature_cloud)  | [NPM](https://www.npmjs.com/package/groupdocs-signature-cloud) |
 
 [Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/signature/net) | [Documentation](https://docs.groupdocs.cloud/signature/) | [Live Demo](https://products.groupdocs.app/signature/total) | [API Reference](https://apireference.groupdocs.cloud/signature/) | [Code Samples](https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet-samples) | [Blog](https://blog.groupdocs.cloud/category/signature/) | [Free Support](https://forum.groupdocs.cloud/c/signature) | [Free Trial](https://dashboard.groupdocs.cloud)
