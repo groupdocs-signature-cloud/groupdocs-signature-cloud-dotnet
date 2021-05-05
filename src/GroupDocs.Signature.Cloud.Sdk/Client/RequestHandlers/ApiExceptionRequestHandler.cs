@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ApiExceptionRequestHandler.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -77,18 +77,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client.RequestHandlers
                 {
                     var responseData = responseReader.ReadToEnd();
 
-                    var authErrorResponse = SerializationHelper
-                        .Deserialize(responseData, typeof(AuthErrorResponse)) as AuthErrorResponse;
-                    if (authErrorResponse != null && authErrorResponse.ErrorMessage != null)
+                    if (SerializationHelper
+                        .Deserialize(responseData, typeof(AuthErrorResponse)) is AuthErrorResponse authErrorResponse && authErrorResponse.ErrorMessage != null)
                     {
                         throw new ApiException(statusCode, authErrorResponse.ErrorMessage);
                     }
 
-                    var apiErrorResponse = SerializationHelper
-                        .Deserialize(responseData, typeof(ApiErrorResponse)) as ApiErrorResponse;
-                    if (apiErrorResponse != null)
+                    if (SerializationHelper
+                        .Deserialize(responseData, typeof(Error)) is Error apiError)
                     {
-                        throw new ApiException(statusCode, apiErrorResponse.Error.Message);
+                        throw new ApiException(statusCode, apiError.Message);
                     }
                 }
 

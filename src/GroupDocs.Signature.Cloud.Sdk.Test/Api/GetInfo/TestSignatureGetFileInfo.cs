@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,6 +24,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Linq;
+using GroupDocs.Signature.Cloud.Sdk.Client;
 using GroupDocs.Signature.Cloud.Sdk.Model;
 using GroupDocs.Signature.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
@@ -51,6 +52,20 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.GetInfo
             Assert.AreEqual(testFile.MaxPageWidth, response.WidthForMaxHeight, "MaxPageWidth");
             Assert.AreEqual(testFile.PagesCount, response.PagesCount, "PagesCount");
             Assert.AreEqual(testFile.Path, response.FileInfo.FilePath, "Path");
+        }
+
+        [Test]
+        public void TestGetInfoReturnsFileNotFound()
+        {
+            // Arrange
+            var infoSettings = new InfoSettings { FileInfo = TestFiles.NotExist.GetFileInfo() };
+            var request = new GetInfoRequest(infoSettings);
+
+            // Act & Assert
+            var ex = Assert.Throws<ApiException>(() => {
+                InfoApi.GetInfo(request);
+            });
+            Assert.AreEqual("Can't find file located at 'some-folder\\NotExist.docx'.", ex.Message);
         }
     }
 }

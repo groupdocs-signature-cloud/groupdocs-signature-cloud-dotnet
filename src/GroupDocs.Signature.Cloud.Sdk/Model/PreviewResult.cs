@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="DigitalSignature.cs">
+// <copyright company="Aspose Pty Ltd" file="PreviewResult.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,29 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Contains digital Signature properties
+    /// Document preview result
     /// </summary>  
-    public class DigitalSignature : Signature 
+    public class PreviewResult 
     {                       
         /// <summary>
-        /// Gets or sets the signing purpose comment
+        /// Input File info
         /// </summary>  
-        public string Comments { get; set; }
+        public FileInfo FileInfo { get; set; }
 
         /// <summary>
-        /// Keeps true if this digital signature is valid and the document has not been tampered with
+        /// Input File size
         /// </summary>  
-        public bool? IsValid { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
-        /// Gets or sets the time the document was signed
+        /// Count of pages
         /// </summary>  
-        public DateTime? SignTime { get; set; }
+        public int? PagesCount { get; set; }
 
         /// <summary>
-        /// Pdf digital signature properties
+        /// Document preview pages
         /// </summary>  
-        public PdfDigitalSignature PdfDigitalSignature { get; set; }
+        public List<PreviewPage> Pages { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +65,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DigitalSignature {\n");
-          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
-          sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
-          sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
-          sb.Append("  PdfDigitalSignature: ").Append(this.PdfDigitalSignature).Append("\n");
+          sb.Append("class PreviewResult {\n");
+          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
+          sb.Append("  Size: ").Append(this.Size).Append("\n");
+          sb.Append("  PagesCount: ").Append(this.PagesCount).Append("\n");
+          sb.Append("  Pages: ").Append(this.Pages).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

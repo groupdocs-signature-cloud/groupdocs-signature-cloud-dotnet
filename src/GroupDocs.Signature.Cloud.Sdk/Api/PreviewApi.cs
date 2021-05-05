@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoApi.cs">
+// <copyright company="Aspose Pty Ltd" file="PreviewApi.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -36,26 +36,26 @@ namespace GroupDocs.Signature.Cloud.Sdk.Api
     /// <summary>
     /// GroupDocs.Signature.Cloud.Sdk API.
     /// </summary>
-    public class InfoApi
+    public class PreviewApi
     {        
         private readonly ApiInvoker apiInvoker;
         private readonly Configuration configuration;     
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InfoApi"/> class.
+        /// Initializes a new instance of the <see cref="PreviewApi"/> class.
         /// </summary>
         /// <param name="appSid">Application identifier (App SID)</param>
         /// <param name="appKey">Application private key (App Key)</param>
-        public InfoApi(string appSid, string appKey)
+        public PreviewApi(string appSid, string appKey)
             : this(new Configuration(appSid, appKey))
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InfoApi"/> class.
+        /// Initializes a new instance of the <see cref="PreviewApi"/> class.
         /// </summary>    
         /// <param name="configuration">Configuration settings</param>
-        public InfoApi(Configuration configuration)
+        public PreviewApi(Configuration configuration)
         {
             this.configuration = configuration;
             
@@ -67,25 +67,25 @@ namespace GroupDocs.Signature.Cloud.Sdk.Api
         }                            
 
         /// <summary>
-        /// Retrieves basic document info - path, extension, formats, size etc 
+        /// Creates document preview images 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetInfoRequest" /></param>
-        /// <returns><see cref="InfoResult"/></returns>
-        public InfoResult GetInfo(GetInfoRequest request)
+        /// <param name="request">Request. <see cref="PreviewDocumentRequest" /></param>
+        /// <returns><see cref="PreviewResult"/></returns>
+        public PreviewResult PreviewDocument(PreviewDocumentRequest request)
         {
-            // verify the required parameter 'infoSettings' is set
-            if (request.infoSettings == null) 
+            // verify the required parameter 'previewSettings' is set
+            if (request.previewSettings == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'infoSettings' when calling GetInfo");
+                throw new ApiException(400, "Missing required parameter 'previewSettings' when calling PreviewDocument");
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetServerUrl() + "/signature/info";
+            var resourcePath = this.configuration.GetServerUrl() + "/signature/preview";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-            var postBody = SerializationHelper.Serialize(request.infoSettings); // http body (model) parameter
+            var postBody = SerializationHelper.Serialize(request.previewSettings); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                 "POST", 
@@ -95,91 +95,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Api
 
             if (response != null)
             {
-                return (InfoResult)SerializationHelper.Deserialize(response, typeof(InfoResult));
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Retrieves supported Barcodes list 
-        /// </summary>
-        /// <returns><see cref="BarcodesResult"/></returns>
-        public BarcodesResult GetSupportedBarcodes()
-        {
-            // create path and map variables
-            var resourcePath = this.configuration.GetServerUrl() + "/signature/barcodes";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-                "GET", 
-                null, 
-                null, 
-                null);
-
-            if (response != null)
-            {
-                return (BarcodesResult)SerializationHelper.Deserialize(response, typeof(BarcodesResult));
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Retrieves supported file formats list  
-        /// </summary>
-        /// <returns><see cref="FormatsResult"/></returns>
-        public FormatsResult GetSupportedFileFormats()
-        {
-            // create path and map variables
-            var resourcePath = this.configuration.GetServerUrl() + "/signature/formats";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-                "GET", 
-                null, 
-                null, 
-                null);
-
-            if (response != null)
-            {
-                return (FormatsResult)SerializationHelper.Deserialize(response, typeof(FormatsResult));
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Retrieves supported QR-codes list 
-        /// </summary>
-        /// <returns><see cref="QRCodesResult"/></returns>
-        public QRCodesResult GetSupportedQRCodes()
-        {
-            // create path and map variables
-            var resourcePath = this.configuration.GetServerUrl() + "/signature/qrcodes";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-                "GET", 
-                null, 
-                null, 
-                null);
-
-            if (response != null)
-            {
-                return (QRCodesResult)SerializationHelper.Deserialize(response, typeof(QRCodesResult));
+                return (PreviewResult)SerializationHelper.Deserialize(response, typeof(PreviewResult));
             }
 
             return null;
@@ -187,7 +103,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Api
     }
 }
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="GetInfoRequest.cs">
+// <copyright company="Aspose Pty Ltd" file="PreviewDocumentRequest.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -216,29 +132,29 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model.Requests
     using GroupDocs.Signature.Cloud.Sdk.Model; 
 
     /// <summary>
-    /// Request model for <see cref="GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetInfo" /> operation.
+    /// Request model for <see cref="GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi.PreviewDocument" /> operation.
     /// </summary>  
-    public class GetInfoRequest  
+    public class PreviewDocumentRequest  
     {
           /// <summary>
-          /// Initializes a new instance of the <see cref="GetInfoRequest"/> class.
+          /// Initializes a new instance of the <see cref="PreviewDocumentRequest"/> class.
           /// </summary>        
-          public GetInfoRequest()
+          public PreviewDocumentRequest()
           {
           }
 
           /// <summary>
-          /// Initializes a new instance of the <see cref="GetInfoRequest"/> class.
+          /// Initializes a new instance of the <see cref="PreviewDocumentRequest"/> class.
           /// </summary>
-          /// <param name="infoSettings">Settings required for obtaining document info</param>
-          public GetInfoRequest(InfoSettings infoSettings)             
+          /// <param name="previewSettings">Document preview settings</param>
+          public PreviewDocumentRequest(PreviewSettings previewSettings)             
           {
-              this.infoSettings = infoSettings;
+              this.previewSettings = previewSettings;
           }
           
           /// <summary>
-          /// Settings required for obtaining document info
+          /// Document preview settings
           /// </summary>  
-          public InfoSettings infoSettings { get; set; }
+          public PreviewSettings previewSettings { get; set; }
     }
 }

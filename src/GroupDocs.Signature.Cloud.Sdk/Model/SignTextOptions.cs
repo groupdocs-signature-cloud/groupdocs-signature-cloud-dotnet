@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="SignTextOptions.cs">
-//  Copyright (c) 2003-2020 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -343,6 +343,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public int? ZOrder { get; set; }
 
         /// <summary>
+        /// Gets or sets the native attribute. If it is set document specific signatures could be used. Native text watermark for WordProcessing documents is different than regular, for example.             
+        /// </summary>  
+        public bool? Native { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -371,6 +376,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  TextHorizontalAlignment: ").Append(this.TextHorizontalAlignment).Append("\n");
           sb.Append("  TextVerticalAlignment: ").Append(this.TextVerticalAlignment).Append("\n");
           sb.Append("  ZOrder: ").Append(this.ZOrder).Append("\n");
+          sb.Append("  Native: ").Append(this.Native).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

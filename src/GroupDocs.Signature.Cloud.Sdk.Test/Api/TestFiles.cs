@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="TestFiles.cs">
-//  Copyright (c) 2003-2019 Aspose Pty Ltd
+//  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -104,6 +104,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             new TestFile(@"Additional\signature_02.jpg"),
             new TestFile(@"Additional\signature_03.jpg")
         };
+
+        public static readonly TestFile NotExist = new TestFile("some-folder\\NotExist.docx");
 
         private static List<TestFile> _allFiles;
 

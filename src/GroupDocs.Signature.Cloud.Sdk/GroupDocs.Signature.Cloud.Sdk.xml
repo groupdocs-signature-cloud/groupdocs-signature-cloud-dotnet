@@ -1,0 +1,3957 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroupDocs.Signature.Cloud.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.FileApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.FileApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.FileApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.CopyFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest)">
+            <summary>
+            Copy file 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.DeleteFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest)">
+            <summary>
+            Delete file 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.DownloadFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest)">
+            <summary>
+            Download file 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest" /></param>
+            <returns><see cref="T:System.IO.Stream"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.MoveFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest)">
+            <summary>
+            Move file 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.UploadFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest)">
+            <summary>
+            Upload file 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.FilesUploadResult"/></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.CopyFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest)">
+            <summary>
+            Copy folder 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.CreateFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest)">
+            <summary>
+            Create the folder 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.DeleteFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest)">
+            <summary>
+            Delete folder 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest" /></param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.GetFilesList(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest)">
+            <summary>
+            Get all files and folders within a folder 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.FilesList"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.MoveFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest)">
+            <summary>
+            Move folder 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest" /></param>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetInfo(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest)">
+            <summary>
+            Retrieves basic document info - path, extension, formats, size etc 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetSupportedBarcodes">
+            <summary>
+            Retrieves supported Barcodes list 
+            </summary>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.BarcodesResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetSupportedFileFormats">
+            <summary>
+            Retrieves supported file formats list  
+            </summary>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.FormatsResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetSupportedQRCodes">
+            <summary>
+            Retrieves supported QR-codes list 
+            </summary>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.QRCodesResult"/></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi.PreviewDocument(GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest)">
+            <summary>
+            Creates document preview images 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult"/></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.SignApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.SignApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.SignApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.CreateSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest)">
+            <summary>
+            Creates new signatures in the document and saves resultant document into &#39;Output&#39; folder  
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.SignResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.DeleteSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest)">
+            <summary>
+            Deletes signatures in the document 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.SearchSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest)">
+            <summary>
+            Searches for signatures applied to the document 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.UpdateSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest)">
+            <summary>
+            Updates signatures in the document 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.VerifySignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest)">
+            <summary>
+            Verifies whether document contains signatures that meet the specified criteria 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult"/></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi">
+            <summary>
+            GroupDocs.Signature.Cloud.Sdk API.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi"/> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.#ctor(GroupDocs.Signature.Cloud.Sdk.Client.Configuration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi"/> class.
+            </summary>    
+            <param name="configuration">Configuration settings</param>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.GetDiscUsage(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest)">
+            <summary>
+            Get disc usage 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.DiscUsage"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.GetFileVersions(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest)">
+            <summary>
+            Get file versions 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.FileVersions"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.ObjectExists(GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest)">
+            <summary>
+            Check if file or folder exists 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.ObjectExist"/></returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.StorageExists(GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest)">
+            <summary>
+            Check if storage exists 
+            </summary>
+            <param name="request">Request. <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest" /></param>
+            <returns><see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.StorageExist"/></returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.CopyFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest"/> class.
+            </summary>
+            <param name="srcPath">Source file path e.g. &#39;/folder/file.ext&#39;</param>
+            <param name="destPath">Destination file path</param>
+            <param name="srcStorageName">Source storage name</param>
+            <param name="destStorageName">Destination storage name</param>
+            <param name="versionId">File version ID to copy</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.srcPath">
+            <summary>
+            Source file path e.g. '/folder/file.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.destPath">
+            <summary>
+            Destination file path
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.srcStorageName">
+            <summary>
+            Source storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.destStorageName">
+            <summary>
+            Destination storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFileRequest.versionId">
+            <summary>
+            File version ID to copy
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.DeleteFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest"/> class.
+            </summary>
+            <param name="path">File path e.g. &#39;/folder/file.ext&#39;</param>
+            <param name="storageName">Storage name</param>
+            <param name="versionId">File version ID to delete</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest.path">
+            <summary>
+            File path e.g. '/folder/file.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFileRequest.versionId">
+            <summary>
+            File version ID to delete
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.DownloadFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest"/> class.
+            </summary>
+            <param name="path">File path e.g. &#39;/folder/file.ext&#39;</param>
+            <param name="storageName">Storage name</param>
+            <param name="versionId">File version ID to download</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest.path">
+            <summary>
+            File path e.g. '/folder/file.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DownloadFileRequest.versionId">
+            <summary>
+            File version ID to download
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.MoveFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest"/> class.
+            </summary>
+            <param name="srcPath">Source file path e.g. &#39;/src.ext&#39;</param>
+            <param name="destPath">Destination file path e.g. &#39;/dest.ext&#39;</param>
+            <param name="srcStorageName">Source storage name</param>
+            <param name="destStorageName">Destination storage name</param>
+            <param name="versionId">File version ID to move</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.srcPath">
+            <summary>
+            Source file path e.g. '/src.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.destPath">
+            <summary>
+            Destination file path e.g. '/dest.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.srcStorageName">
+            <summary>
+            Source storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.destStorageName">
+            <summary>
+            Destination storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFileRequest.versionId">
+            <summary>
+            File version ID to move
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FileApi.UploadFile(GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest.#ctor(System.String,System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest"/> class.
+            </summary>
+            <param name="path">Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             </param>
+            <param name="file">File to upload</param>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest.path">
+            <summary>
+            Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest.File">
+            <summary>
+            File to upload
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UploadFileRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.CopyFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest"/> class.
+            </summary>
+            <param name="srcPath">Source folder path e.g. &#39;/src&#39;</param>
+            <param name="destPath">Destination folder path e.g. &#39;/dst&#39;</param>
+            <param name="srcStorageName">Source storage name</param>
+            <param name="destStorageName">Destination storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.srcPath">
+            <summary>
+            Source folder path e.g. '/src'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.destPath">
+            <summary>
+            Destination folder path e.g. '/dst'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.srcStorageName">
+            <summary>
+            Source storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CopyFolderRequest.destStorageName">
+            <summary>
+            Destination storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.CreateFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest"/> class.
+            </summary>
+            <param name="path">Folder path to create e.g. &#39;folder_1/folder_2/&#39;</param>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest.path">
+            <summary>
+            Folder path to create e.g. 'folder_1/folder_2/'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateFolderRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.DeleteFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest.#ctor(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest"/> class.
+            </summary>
+            <param name="path">Folder path e.g. &#39;/folder&#39;</param>
+            <param name="storageName">Storage name</param>
+            <param name="recursive">Enable to delete folders, subfolders and files</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest.path">
+            <summary>
+            Folder path e.g. '/folder'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteFolderRequest.recursive">
+            <summary>
+            Enable to delete folders, subfolders and files
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.GetFilesList(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest"/> class.
+            </summary>
+            <param name="path">Folder path e.g. &#39;/folder&#39;</param>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest.path">
+            <summary>
+            Folder path e.g. '/folder'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFilesListRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.FolderApi.MoveFolder(GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest"/> class.
+            </summary>
+            <param name="srcPath">Folder path to move e.g. &#39;/folder&#39;</param>
+            <param name="destPath">Destination folder path to move to e.g &#39;/dst&#39;</param>
+            <param name="srcStorageName">Source storage name</param>
+            <param name="destStorageName">Destination storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.srcPath">
+            <summary>
+            Folder path to move e.g. '/folder'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.destPath">
+            <summary>
+            Destination folder path to move to e.g '/dst'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.srcStorageName">
+            <summary>
+            Source storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.MoveFolderRequest.destStorageName">
+            <summary>
+            Destination storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.InfoApi.GetInfo(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest"/> class.
+            </summary>
+            <param name="infoSettings">Settings required for obtaining document info</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetInfoRequest.infoSettings">
+            <summary>
+            Settings required for obtaining document info
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.PreviewApi.PreviewDocument(GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest"/> class.
+            </summary>
+            <param name="previewSettings">Document preview settings</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.PreviewDocumentRequest.previewSettings">
+            <summary>
+            Document preview settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.CreateSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.SignSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest"/> class.
+            </summary>
+            <param name="signSettings">Document sign settings</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.CreateSignaturesRequest.signSettings">
+            <summary>
+            Document sign settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.DeleteSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.DeleteSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest"/> class.
+            </summary>
+            <param name="deleteSettings">Delete signatures settings</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.DeleteSignaturesRequest.deleteSettings">
+            <summary>
+            Delete signatures settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.SearchSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.SearchSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest"/> class.
+            </summary>
+            <param name="searchSettings">Signatures search settings</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.SearchSignaturesRequest.searchSettings">
+            <summary>
+            Signatures search settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.UpdateSignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.UpdateSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest"/> class.
+            </summary>
+            <param name="updateSettings">Update signatures settings</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.UpdateSignaturesRequest.updateSettings">
+            <summary>
+            Update signatures settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.SignApi.VerifySignatures(GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest.#ctor(GroupDocs.Signature.Cloud.Sdk.Model.VerifySettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest"/> class.
+            </summary>
+            <param name="verifySettings">Settings that includes different criteria to verify document signatures</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.VerifySignaturesRequest.verifySettings">
+            <summary>
+            Settings that includes different criteria to verify document signatures
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.GetDiscUsage(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest"/> class.
+            </summary>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetDiscUsageRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.GetFileVersions(GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest"/> class.
+            </summary>
+            <param name="path">File path e.g. &#39;/file.ext&#39;</param>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest.path">
+            <summary>
+            File path e.g. '/file.ext'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.GetFileVersionsRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.ObjectExists(GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest"/> class.
+            </summary>
+            <param name="path">File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;</param>
+            <param name="storageName">Storage name</param>
+            <param name="versionId">File version ID</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest.path">
+            <summary>
+            File or folder path e.g. '/file.ext' or '/folder'
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.ObjectExistsRequest.versionId">
+            <summary>
+            File version ID
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest">
+            <summary>
+            Request model for <see cref="M:GroupDocs.Signature.Cloud.Sdk.Api.StorageApi.StorageExists(GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest)" /> operation.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest"/> class.
+            </summary>        
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest"/> class.
+            </summary>
+            <param name="storageName">Storage name</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Requests.StorageExistsRequest.storageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeSignature">
+            <summary>
+            Contains Barcode signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeSignature.BarcodeType">
+            <summary>
+            Specifies the Barcode type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeSignature.Text">
+            <summary>
+            Specifies text of Bar-code
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeSignature.Format">
+            <summary>
+            Specifies the format of Barcode signature image.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BarcodesResult">
+            <summary>
+            Describes collection of supported Barcode types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BarcodesResult.BarcodeTypes">
+            <summary>
+            List of Barcode types
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.BarcodesResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeType">
+            <summary>
+            Describes Barcode type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeType.Name">
+            <summary>
+            Barcode type name
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.BarcodeType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BaseSettings">
+            <summary>
+            Defines base class for settings
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BaseSettings.FileInfo">
+            <summary>
+            File info
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.BaseSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine">
+            <summary>
+            Instance to keep Border line properties
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum">
+            <summary>
+            Gets or sets the signature border style
+            </summary>
+            <value>Gets or sets the signature border style</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.Solid">
+            <summary>
+            Enum Solid for "Solid"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.ShortDash">
+            <summary>
+            Enum ShortDash for "ShortDash"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.ShortDot">
+            <summary>
+            Enum ShortDot for "ShortDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.ShortDashDot">
+            <summary>
+            Enum ShortDashDot for "ShortDashDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.ShortDashDotDot">
+            <summary>
+            Enum ShortDashDotDot for "ShortDashDotDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.Dot">
+            <summary>
+            Enum Dot for "Dot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.Dash">
+            <summary>
+            Enum Dash for "Dash"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.LongDash">
+            <summary>
+            Enum LongDash for "LongDash"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.DashDot">
+            <summary>
+            Enum DashDot for "DashDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.LongDashDot">
+            <summary>
+            Enum LongDashDot for "LongDashDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.LongDashDotDot">
+            <summary>
+            Enum LongDashDotDot for "LongDashDotDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.RoundDot">
+            <summary>
+            Enum RoundDot for "RoundDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.SquareDot">
+            <summary>
+            Enum SquareDot for "SquareDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.DashDotDot">
+            <summary>
+            Enum DashDotDot for "DashDotDot"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.DashLongDash">
+            <summary>
+            Enum DashLongDash for "DashLongDash"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.StyleEnum.DashLongDashDot">
+            <summary>
+            Enum DashLongDashDot for "DashLongDashDot"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.Style">
+            <summary>
+            Gets or sets the signature border style
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.Transparency">
+            <summary>
+            Gets or sets the signature border transparency (value from 0.0 (opaque) through 1.0 (clear))
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.Weight">
+            <summary>
+            Gets or sets the weight of the signature border
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.Color">
+            <summary>
+            Gets or sets the border color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.Visible">
+            <summary>
+            Gets or sets the border visibility
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.BorderLine.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Brush">
+            <summary>
+            Represents base class for various brushes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Brush.BrushType">
+            <summary>
+            Internal property that specify the current brush type
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Brush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.CodeTextAlignment">
+            <summary>
+            Alignment of code text for Bar-codes and QR-codes.             
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.CodeTextAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Color">
+            <summary>
+            Keep color value
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Color.Web">
+            <summary>
+            HTML string color representation
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Color.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DashStyle">
+            <summary>
+            Represents style of dash drawing lines on documents.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DashStyle.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions">
+            <summary>
+            Base container class for delete signature options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum">
+            <summary>
+            Specifies the type of signature
+            </summary>
+            <value>Specifies the type of signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Text">
+            <summary>
+            Enum Text for "Text"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Image">
+            <summary>
+            Enum Image for "Image"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Digital">
+            <summary>
+            Enum Digital for "Digital"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Barcode">
+            <summary>
+            Enum Barcode for "Barcode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.QRCode">
+            <summary>
+            Enum QRCode for "QRCode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Stamp">
+            <summary>
+            Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureType">
+            <summary>
+            Specifies the type of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureId">
+            <summary>
+            Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.              
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult">
+            <summary>
+            Delete result information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult.FileInfo">
+            <summary>
+            Source document file info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult.Size">
+            <summary>
+            Source document size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult.Succeeded">
+            <summary>
+            List of successfully deleted signatures
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult.Failed">
+            <summary>
+            List of signatures that were not deleted
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DeleteResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DeleteSettings">
+            <summary>
+            Defines delete sign document settings
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteSettings.Options">
+            <summary>
+            Gets or sets options to perform signatures delete
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DeleteSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature">
+            <summary>
+            Contains digital Signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.Comments">
+            <summary>
+            Gets or sets the signing purpose comment
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.IsValid">
+            <summary>
+            Keeps true if this digital signature is valid and the document has not been tampered with
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.SignTime">
+            <summary>
+            Gets or sets the time the document was signed
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.PdfDigitalSignature">
+            <summary>
+            Pdf digital signature properties
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureType">
+            <summary>
+            Digital Signature Type define the method to sign.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DiscUsage">
+            <summary>
+            Class for disc space information.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DiscUsage.UsedSize">
+            <summary>
+            Application used disc space.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DiscUsage.TotalSize">
+            <summary>
+            Total disc space.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DiscUsage.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Error">
+            <summary>
+            Error
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Error.Code">
+            <summary>
+            Code             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Error.Message">
+            <summary>
+            Message             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Error.Description">
+            <summary>
+            Description             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Error.InnerError">
+            <summary>
+            Inner Error             
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Error.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.ErrorDetails">
+            <summary>
+            The error details
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ErrorDetails.RequestId">
+            <summary>
+            The request id
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ErrorDetails.Date">
+            <summary>
+            Date
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.ErrorDetails.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo">
+            <summary>
+            File info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo.FilePath">
+            <summary>
+            File path in storage
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo.StorageName">
+            <summary>
+            Storage name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo.VersionId">
+            <summary>
+            Version ID
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo.Password">
+            <summary>
+            Password to open file
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FileInfo.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FilesList">
+            <summary>
+            Files list
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FilesList.Value">
+            <summary>
+            Files and folders contained by folder StorageFile.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FilesList.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FilesUploadResult">
+            <summary>
+            File upload result
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FilesUploadResult.Uploaded">
+            <summary>
+            List of uploaded file names
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FilesUploadResult.Errors">
+            <summary>
+            List of errors.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FilesUploadResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FileVersion">
+            <summary>
+            File Version
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileVersion.VersionId">
+            <summary>
+            File Version ID.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileVersion.IsLatest">
+            <summary>
+            Specifies whether the file is (true) or is not (false) the latest version of an file.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FileVersion.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FileVersions">
+            <summary>
+            File versions FileVersion.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FileVersions.Value">
+            <summary>
+            File versions FileVersion.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FileVersions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Format">
+            <summary>
+            File format
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Format.Extension">
+            <summary>
+            File format extension
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Format.FileFormat">
+            <summary>
+            File format name
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Format.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FormatsResult">
+            <summary>
+            Describes list of supported file formats
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FormatsResult.Formats">
+            <summary>
+            Supported file formats
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FormatsResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.HorizontalAlignment">
+            <summary>
+            Specifies horizontal alignment of element on Document Page
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.HorizontalAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.ImageSignature">
+            <summary>
+            Contains Image signature properties             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageSignature.Size">
+            <summary>
+            Specifies the image size
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageSignature.Format">
+            <summary>
+            Specifies the format of image
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.ImageSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult">
+            <summary>
+            Document info result
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.FileInfo">
+            <summary>
+            Input File info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.Extension">
+            <summary>
+            Document extension
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.FileFormat">
+            <summary>
+            Document file format
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.Size">
+            <summary>
+            Document size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.PagesCount">
+            <summary>
+            Count of pages in document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.DateCreated">
+            <summary>
+            Document created date
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.DateModified">
+            <summary>
+            Document modification date
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.WidthForMaxHeight">
+            <summary>
+            Specifies width for max height of document page
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.MaxPageHeight">
+            <summary>
+            Specifies max page height
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.Pages">
+            <summary>
+            List of document pages descriptions
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings">
+            <summary>
+            Defines document information request settings
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.LinearGradientBrush">
+            <summary>
+            Represents linear gradient brush
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.LinearGradientBrush.StartColor">
+            <summary>
+            Gets or sets start gradient color
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.LinearGradientBrush.EndColor">
+            <summary>
+            Gets or sets finish gradient color
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.LinearGradientBrush.Angle">
+            <summary>
+            Gets or sets gradient angle
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.LinearGradientBrush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.MeasureType">
+            <summary>
+            Specifies measure units of signature on document page.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.MeasureType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.ObjectExist">
+            <summary>
+            Object exists
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ObjectExist.Exists">
+            <summary>
+            Indicates that the file or folder exists.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ObjectExist.IsFolder">
+            <summary>
+            True if it is a folder, false if it is a file.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.ObjectExist.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase">
+            <summary>
+            Base container class for all possible options data
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum">
+            <summary>
+            Specifies the signature type of processing
+            </summary>
+            <value>Specifies the signature type of processing</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Text">
+            <summary>
+            Enum Text for "Text"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Image">
+            <summary>
+            Enum Image for "Image"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Digital">
+            <summary>
+            Enum Digital for "Digital"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Barcode">
+            <summary>
+            Enum Barcode for "Barcode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.QRCode">
+            <summary>
+            Enum QRCode for "QRCode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Stamp">
+            <summary>
+            Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureType">
+            <summary>
+            Specifies the signature type of processing
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.Page">
+            <summary>
+            Gets or sets a document page number for processing. Value is optional
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.AllPages">
+            <summary>
+            Process all document pages. Type of processing depends on SignatureType For Images Document Type it can be used only for multi-frames images like .tiff
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.PagesSetup">
+            <summary>
+            Options to specify pages for processing
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Padding">
+            <summary>
+            Represents padding or margin information associated with element
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Padding.All">
+            <summary>
+            Gets or sets the padding value for all the edges
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Padding.Left">
+            <summary>
+            Gets or sets the padding value for the left edge
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Padding.Top">
+            <summary>
+            Gets or sets the padding value for the top edge
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Padding.Right">
+            <summary>
+            Gets or sets the padding value for the right edge
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Padding.Bottom">
+            <summary>
+            Gets or sets the padding value for the bottom edge
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Padding.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo">
+            <summary>
+            Page information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Number">
+            <summary>
+            Page number
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Name">
+            <summary>
+            Page name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Width">
+            <summary>
+            Page width
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Height">
+            <summary>
+            Page height
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Angle">
+            <summary>
+            Page angle
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.Visible">
+            <summary>
+            Page visibility
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PageInfo.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup">
+            <summary>
+            Describes special pages of document to process
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.FirstPage">
+            <summary>
+            Get or set flag to use first document page
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.LastPage">
+            <summary>
+            Get or set flag to use last document page
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.OddPages">
+            <summary>
+            Get or set flag to use odd pages of document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.EvenPages">
+            <summary>
+            Get or set flag to use even pages of document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.PageNumbers">
+            <summary>
+            Set arbitrary pages of document to use
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PagesSetup.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature">
+            <summary>
+            Contains pdf digital Signature properties
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.TypeEnum">
+            <summary>
+            Type of Pdf digital signature.
+            </summary>
+            <value>Type of Pdf digital signature.</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.TypeEnum.Signature">
+            <summary>
+            Enum Signature for "Signature"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.TypeEnum.Certificate">
+            <summary>
+            Enum Certificate for "Certificate"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.Type">
+            <summary>
+            Type of Pdf digital signature.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.ContactInfo">
+            <summary>
+            Information provided by the signer to enable a recipient to contact the signer
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.Location">
+            <summary>
+            The CPU host name or physical location of the signing.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.Reason">
+            <summary>
+            The reason for the signing, such as (I agreeРІР‚В¦).
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.TimeStamp">
+            <summary>
+            Time stamp for Pdf digital signature. Default value is null.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.ShowProperties">
+            <summary>
+            Force to show/hide signature properties
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage">
+            <summary>
+            Document preview page
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage.PageNumber">
+            <summary>
+            Page number
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage.FilePath">
+            <summary>
+            Page file path in storage
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage.Size">
+            <summary>
+            Page file size
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage.DownloadUrl">
+            <summary>
+            Download url
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PreviewPage.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult">
+            <summary>
+            Document preview result
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult.FileInfo">
+            <summary>
+            Input File info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult.Size">
+            <summary>
+            Input File size
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult.PagesCount">
+            <summary>
+            Count of pages
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult.Pages">
+            <summary>
+            Document preview pages
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PreviewResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings">
+            <summary>
+            Defines preview request settings
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PreviewFormatEnum">
+            <summary>
+            Preview format
+            </summary>
+            <value>Preview format</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PreviewFormatEnum.PNG">
+            <summary>
+            Enum PNG for "PNG"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PreviewFormatEnum.JPEG">
+            <summary>
+            Enum JPEG for "JPEG"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PreviewFormatEnum.BMP">
+            <summary>
+            Enum BMP for "BMP"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PreviewFormat">
+            <summary>
+            Preview format
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.Width">
+            <summary>
+            Preview images width
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.Height">
+            <summary>
+            Preview images height
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.PageNumbers">
+            <summary>
+            Preview page numbers
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.HideSignatures">
+            <summary>
+            Flag to hide signatures from page preview image. Only signatures are marked as IsSignature will be hidden from generated document page image
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.OutputPath">
+            <summary>
+            Set path for output pages. If not set then default path used.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PreviewSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeSignature">
+            <summary>
+            Contains QRCode signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeSignature.QRCodeType">
+            <summary>
+            Specifies the QRCode type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeSignature.Text">
+            <summary>
+            Specifies text of Barcode
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeSignature.Format">
+            <summary>
+            Specifies the format of QR-code signature image.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.QRCodesResult">
+            <summary>
+            Describes collection of supported QR-code types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.QRCodesResult.QRCodeTypes">
+            <summary>
+            List of QRCode Types
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.QRCodesResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeType">
+            <summary>
+            Describes QR-code type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeType.Name">
+            <summary>
+            QR-code type name
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.QRCodeType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.RadialGradientBrush">
+            <summary>
+            Represents radial gradient brush
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.RadialGradientBrush.InnerColor">
+            <summary>
+            Gets or sets inner gradient color
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.RadialGradientBrush.OuterColor">
+            <summary>
+            Gets or sets outer gradient color
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.RadialGradientBrush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SaveOptions">
+            <summary>
+            Base document save options class
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SaveOptions.OverwriteExisting">
+            <summary>
+            Overwrite existing file with new output file. Otherwise new file will be created with number as suffix
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SaveOptions.OutputFilePath">
+            <summary>
+            Output file name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SaveOptions.SaveFormat">
+            <summary>
+            format of save
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SaveOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions">
+            <summary>
+            Defines options to Search barcode signature within a document
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchTypeEnum">
+            <summary>
+            Get or set barcode text match type search. It is used only when Text property is set
+            </summary>
+            <value>Get or set barcode text match type search. It is used only when Text property is set</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchTypeEnum.Exact">
+            <summary>
+            Enum Exact for "Exact"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchTypeEnum.StartsWith">
+            <summary>
+            Enum StartsWith for "StartsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchTypeEnum.EndsWith">
+            <summary>
+            Enum EndsWith for "EndsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchTypeEnum.Contains">
+            <summary>
+            Enum Contains for "Contains"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.MatchType">
+            <summary>
+            Get or set barcode text match type search. It is used only when Text property is set
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.BarcodeType">
+            <summary>
+            Specifies encode type property to search barcodes. If this value is not set, search is processed for all supported barcode Types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.Text">
+            <summary>
+            Specifies text for searching and matching in barcode signature
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchBarcodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchDigitalOptions">
+            <summary>
+            Defines options to search Digital signature within a document
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchDigitalOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchOptions">
+            <summary>
+            Defines options for signature Search within a document
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions">
+            <summary>
+            Defines options to search QR-Code signature of document
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchTypeEnum">
+            <summary>
+            Get or set barcode text Match Type search. It is used only when Text property is set
+            </summary>
+            <value>Get or set barcode text Match Type search. It is used only when Text property is set</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchTypeEnum.Exact">
+            <summary>
+            Enum Exact for "Exact"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchTypeEnum.StartsWith">
+            <summary>
+            Enum StartsWith for "StartsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchTypeEnum.EndsWith">
+            <summary>
+            Enum EndsWith for "EndsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchTypeEnum.Contains">
+            <summary>
+            Enum Contains for "Contains"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.MatchType">
+            <summary>
+            Get or set barcode text Match Type search. It is used only when Text property is set
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.QRCodeType">
+            <summary>
+            Specifies Encode Type property to search barcodes. If this value is not set, search is processed for all supported barcode types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.Text">
+            <summary>
+            Specifies text for searching and matching in barcode signature
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchQRCodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult">
+            <summary>
+            Search result information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult.FileInfo">
+            <summary>
+            Processed file info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult.Size">
+            <summary>
+            Size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult.Signatures">
+            <summary>
+            List of document signatures that were found during search
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SearchSettings">
+            <summary>
+            Defines signatures search settings request
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SearchSettings.Options">
+            <summary>
+            Gets or sets options collection to perform search in a document
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SearchSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Signature">
+            <summary>
+            Describes base class for signatures
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum">
+            <summary>
+            Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
+            </summary>
+            <value>Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Text">
+            <summary>
+            Enum Text for "Text"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Image">
+            <summary>
+            Enum Image for "Image"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Digital">
+            <summary>
+            Enum Digital for "Digital"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Barcode">
+            <summary>
+            Enum Barcode for "Barcode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.QRCode">
+            <summary>
+            Enum QRCode for "QRCode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Stamp">
+            <summary>
+            Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureType">
+            <summary>
+            Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.PageNumber">
+            <summary>
+            Specifies the page signature was found on
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureId">
+            <summary>
+            Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.IsSignature">
+            <summary>
+            Get or set flag to indicate if this component is Signature or document content. This property is being used with Update method to set element as signature (true) or document element (false).             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.CreatedOn">
+            <summary>
+            Get or set the signature creation date
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.ModifiedOn">
+            <summary>
+            Get or set the signature modification date
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.Top">
+            <summary>
+            Specifies top position of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.Left">
+            <summary>
+            Specifies left position of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.Width">
+            <summary>
+            Specifies width of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.Height">
+            <summary>
+            Specifies height of signature
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Signature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont">
+            <summary>
+            Create instance of SignatureFont class to specify Font properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.FontFamily">
+            <summary>
+            Font Family Name
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.FontSize">
+            <summary>
+            Font Size 
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.Bold">
+            <summary>
+            Apply Font Bold Style
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.Italic">
+            <summary>
+            Apply Font Italic Style
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.Underline">
+            <summary>
+            Apply Underline Style
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignatureFont.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions">
+            <summary>
+            Represents the Barcode signature options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignmentEnum">
+            <summary>
+            Gets or sets the alignment of text in the result Barcode Default value is None
+            </summary>
+            <value>Gets or sets the alignment of text in the result Barcode Default value is None</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignmentEnum.Above">
+            <summary>
+            Enum Above for "Above"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignmentEnum.Below">
+            <summary>
+            Enum Below for "Below"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignmentEnum.Right">
+            <summary>
+            Enum Right for "Right"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.CodeTextAlignment">
+            <summary>
+            Gets or sets the alignment of text in the result Barcode Default value is None
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.BarcodeType">
+            <summary>
+            Get or set Barcode type. Pick one from supported barcode types list
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.Transparency">
+            <summary>
+            Gets or sets the signature transparency (value from 0.0 (opaque) through 1.0 (clear)). Default value is 0 (opaque).
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.InnerMargins">
+            <summary>
+            Gets or sets the space between Barcode elements and result image borders
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignBarcodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions">
+            <summary>
+            Represents the Digital sign options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.XAdESTypeEnum">
+            <summary>
+            XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             
+            </summary>
+            <value>XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             </value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.XAdESTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.XAdESTypeEnum.XAdES">
+            <summary>
+            Enum XAdES for "XAdES"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.XAdESType">
+            <summary>
+            XAdES type GroupDocs.Signature.Options.DigitalSignOptions.XAdESType. Default value is None (XAdES is off). At this moment XAdES signature type is supported only for Spreadsheet documents.             
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.Reason">
+            <summary>
+            Gets or sets the reason of signature.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.Contact">
+            <summary>
+            Gets or sets the signature contact.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.Location">
+            <summary>
+            Gets or sets the signature location.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.Visible">
+            <summary>
+            Gets or sets the visibility of signature.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.Password">
+            <summary>
+            Gets or sets the password of digital certificate
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.CertificateFilePath">
+            <summary>
+            Gets or sets the digital certificate file GUID
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignDigitalOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions">
+            <summary>
+            Represents the Image sign options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.LocationMeasureTypeEnum">
+            <summary>
+            Measure type (pixels or percent) for Left and Top properties
+            </summary>
+            <value>Measure type (pixels or percent) for Left and Top properties</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.LocationMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.LocationMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.LocationMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.SizeMeasureTypeEnum">
+            <summary>
+            Measure type (pixels or percent) for Width and Height properties
+            </summary>
+            <value>Measure type (pixels or percent) for Width and Height properties</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.SizeMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.SizeMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.SizeMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignmentEnum">
+            <summary>
+            Horizontal alignment of signature on document page
+            </summary>
+            <value>Horizontal alignment of signature on document page</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignmentEnum.Left">
+            <summary>
+            Enum Left for "Left"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignmentEnum.Right">
+            <summary>
+            Enum Right for "Right"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignmentEnum">
+            <summary>
+            Vertical alignment of signature on document page
+            </summary>
+            <value>Vertical alignment of signature on document page</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignmentEnum.Top">
+            <summary>
+            Enum Top for "Top"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignmentEnum.Bottom">
+            <summary>
+            Enum Bottom for "Bottom"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.MarginMeasureTypeEnum">
+            <summary>
+            Gets or sets the measure type (pixels or percent) for Margin
+            </summary>
+            <value>Gets or sets the measure type (pixels or percent) for Margin</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.MarginMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.MarginMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.MarginMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.LocationMeasureType">
+            <summary>
+            Measure type (pixels or percent) for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.SizeMeasureType">
+            <summary>
+            Measure type (pixels or percent) for Width and Height properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of signature on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of signature on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.MarginMeasureType">
+            <summary>
+            Gets or sets the measure type (pixels or percent) for Margin
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.ImageFilePath">
+            <summary>
+            Gets or sets the signature image file name. This property is used only if ImageStream is not specified
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Left">
+            <summary>
+            Left X position of Signature on Document Page in Measure values (pixels or percent see MeasureType LocationMeasureType). (works if horizontal alignment is not specified). For Spreadsheet documents this property is mutually exclusive with Column property. If Left property is set ColumnNumber will be reset to 0
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Top">
+            <summary>
+            Top Y Position of Signature on Document Page in Measure values (pixels or percent see MeasureType LocationMeasureType). (works if vertical alignment is not specified). For Spreadsheet documents this property is mutually exclusive with Row property. If Top property is set RowNumber will be reset to 0
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Width">
+            <summary>
+            Width of Signature on Document Page in Measure values (pixels or percent see MeasureType SizeMeasureType)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Height">
+            <summary>
+            Height of Signature on Document Page in Measure values (pixels or percent see MeasureType SizeMeasureType)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.RotationAngle">
+            <summary>
+            Rotation angle of signature on document page (clockwise)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Margin">
+            <summary>
+            Gets or sets the space between Sign and Document edges (works ONLY if horizontal or vertical alignment are specified)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Transparency">
+            <summary>
+            Gets or sets the signature transparency(value from 0.0 (opaque) through 1.0 (clear)). Default value is 0 (opaque).
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.Border">
+            <summary>
+            Gets or sets the signature border properties
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignOptions">
+            <summary>
+            Base container class for signature options data
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions">
+            <summary>
+            Represents the QR-code signature options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignmentEnum">
+            <summary>
+            Gets or sets the alignment of text in the result QR-code Default value is None
+            </summary>
+            <value>Gets or sets the alignment of text in the result QR-code Default value is None</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignmentEnum.Above">
+            <summary>
+            Enum Above for "Above"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignmentEnum.Below">
+            <summary>
+            Enum Below for "Below"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignmentEnum.Right">
+            <summary>
+            Enum Right for "Right"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.CodeTextAlignment">
+            <summary>
+            Gets or sets the alignment of text in the result QR-code Default value is None
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.QRCodeType">
+            <summary>
+            Get or set QRCode type. Value should be one from supported QRCode types list
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.Transparency">
+            <summary>
+            Gets or sets the signature transparency (value from 0.0 (opaque) through 1.0 (clear)). Default value is 0 (opaque).             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.InnerMargins">
+            <summary>
+            Gets or sets the space between QRCode elements and result image borders
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.LogoFilePath">
+            <summary>
+            Gets or sets the QR-code logo image file name. This property in use only if LogoStream is not specified. Using of this property could cause problems with verification. Use it carefully
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignQRCodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignResult">
+            <summary>
+            Sign result information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.FileInfo">
+            <summary>
+            Signed file info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.Size">
+            <summary>
+            Source document size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.DownloadUrl">
+            <summary>
+            ULR to retrieve signed file
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.Succeeded">
+            <summary>
+            List of newly created signatures
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.Failed">
+            <summary>
+            List of signatures that were failed to create
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignSettings">
+            <summary>
+            Defines sign document settings request
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignSettings.Options">
+            <summary>
+            Gets or sets options to perform document signing
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignSettings.SaveOptions">
+            <summary>
+            Gets or sets format specific save options for output file
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions">
+            <summary>
+            Represents the Stamp signature options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropTypeEnum">
+            <summary>
+            Gets or sets the background color crop type of signature
+            </summary>
+            <value>Gets or sets the background color crop type of signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropTypeEnum.OuterArea">
+            <summary>
+            Enum OuterArea for "OuterArea"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropTypeEnum.MiddleArea">
+            <summary>
+            Enum MiddleArea for "MiddleArea"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropTypeEnum.InnerArea">
+            <summary>
+            Enum InnerArea for "InnerArea"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropTypeEnum">
+            <summary>
+            Gets or sets the background image crop type of signature
+            </summary>
+            <value>Gets or sets the background image crop type of signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropTypeEnum.OuterArea">
+            <summary>
+            Enum OuterArea for "OuterArea"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropTypeEnum.MiddleArea">
+            <summary>
+            Enum MiddleArea for "MiddleArea"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropTypeEnum.InnerArea">
+            <summary>
+            Enum InnerArea for "InnerArea"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColorCropType">
+            <summary>
+            Gets or sets the background color crop type of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundImageCropType">
+            <summary>
+            Gets or sets the background image crop type of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.OuterLines">
+            <summary>
+            List of Outer Lines rendered as concentric circles
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.InnerLines">
+            <summary>
+            List of Inner Lines rendered as set of rectangles
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundColor">
+            <summary>
+            Gets or sets the background color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.BackgroundBrush">
+            <summary>
+            Gets or sets the signature background brush. Value by default is null.  When property has a value it is used instead BackgroundBrush property
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignStampOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions">
+            <summary>
+            Base container class for signature options data
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.LocationMeasureTypeEnum">
+            <summary>
+            Measure type (pixels or percent) for Left and Top properties
+            </summary>
+            <value>Measure type (pixels or percent) for Left and Top properties</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.LocationMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.LocationMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.LocationMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.SizeMeasureTypeEnum">
+            <summary>
+            Measure type (pixels or percent) for Width and Height properties
+            </summary>
+            <value>Measure type (pixels or percent) for Width and Height properties</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.SizeMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.SizeMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.SizeMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.StretchEnum">
+            <summary>
+            Stretch mode on document page
+            </summary>
+            <value>Stretch mode on document page</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.StretchEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.StretchEnum.PageWidth">
+            <summary>
+            Enum PageWidth for "PageWidth"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.StretchEnum.PageHeight">
+            <summary>
+            Enum PageHeight for "PageHeight"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.StretchEnum.PageArea">
+            <summary>
+            Enum PageArea for "PageArea"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignmentEnum">
+            <summary>
+            Horizontal alignment of signature on document page
+            </summary>
+            <value>Horizontal alignment of signature on document page</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignmentEnum.Left">
+            <summary>
+            Enum Left for "Left"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignmentEnum.Right">
+            <summary>
+            Enum Right for "Right"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignmentEnum">
+            <summary>
+            Vertical alignment of signature on document page
+            </summary>
+            <value>Vertical alignment of signature on document page</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignmentEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignmentEnum.Top">
+            <summary>
+            Enum Top for "Top"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignmentEnum.Bottom">
+            <summary>
+            Enum Bottom for "Bottom"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.MarginMeasureTypeEnum">
+            <summary>
+            Gets or sets the measure type (pixels or percent) for Margin
+            </summary>
+            <value>Gets or sets the measure type (pixels or percent) for Margin</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.MarginMeasureTypeEnum.Pixels">
+            <summary>
+            Enum Pixels for "Pixels"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.MarginMeasureTypeEnum.Percents">
+            <summary>
+            Enum Percents for "Percents"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.MarginMeasureTypeEnum.Millimeters">
+            <summary>
+            Enum Millimeters for "Millimeters"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextHorizontalAlignmentEnum">
+            <summary>
+            Horizontal alignment of text inside a signature
+            </summary>
+            <value>Horizontal alignment of text inside a signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextHorizontalAlignmentEnum.Left">
+            <summary>
+            Enum Left for "Left"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextHorizontalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextHorizontalAlignmentEnum.Right">
+            <summary>
+            Enum Right for "Right"
+            </summary>            
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextVerticalAlignmentEnum">
+            <summary>
+            Vertical alignment of text inside a signature
+            </summary>
+            <value>Vertical alignment of text inside a signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextVerticalAlignmentEnum.Top">
+            <summary>
+            Enum Top for "Top"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextVerticalAlignmentEnum.Center">
+            <summary>
+            Enum Center for "Center"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextVerticalAlignmentEnum.Bottom">
+            <summary>
+            Enum Bottom for "Bottom"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.LocationMeasureType">
+            <summary>
+            Measure type (pixels or percent) for Left and Top properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.SizeMeasureType">
+            <summary>
+            Measure type (pixels or percent) for Width and Height properties
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Stretch">
+            <summary>
+            Stretch mode on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.HorizontalAlignment">
+            <summary>
+            Horizontal alignment of signature on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.VerticalAlignment">
+            <summary>
+            Vertical alignment of signature on document page
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.MarginMeasureType">
+            <summary>
+            Gets or sets the measure type (pixels or percent) for Margin
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextHorizontalAlignment">
+            <summary>
+            Horizontal alignment of text inside a signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.TextVerticalAlignment">
+            <summary>
+            Vertical alignment of text inside a signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Left">
+            <summary>
+            Left X position of Signature on Document Page in Measure values (pixels or percent see MeasureType LocationMeasureType property)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Top">
+            <summary>
+            Top Y Position of Signature on Document Page in Measure values (pixels or percent see MeasureType LocationMeasureType property)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Width">
+            <summary>
+            Width of Signature area on Document Page in Measure values (pixels or percent see MeasureType SizeMeasureType property)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Height">
+            <summary>
+            Height of Signature are on Document Page in Measure values (pixels or percent see MeasureType SizeMeasureType property)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.RotationAngle">
+            <summary>
+            Rotation angle of signature on document page (clockwise)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Margin">
+            <summary>
+            Gets or sets the space between Sign and Document edges (works ONLY if horizontal or vertical alignment are specified)
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Text">
+            <summary>
+            Text of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Font">
+            <summary>
+            Gets or sets the font of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.ForeColor">
+            <summary>
+            Gets or sets the fore color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.BackgroundColor">
+            <summary>
+            Gets or sets the background color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.BackgroundBrush">
+            <summary>
+            Gets or sets the signature background brush. Value by default is null.  If this property has a value it will be used instead BackgroundBrush property. For Spreadsheet documents TextStamp implementation RadialGradientBrush is not applicable, it is replaced by LinearGradientBrush. Spreadsheets, Images, Presentations It is not used for Watermark implementation. PDF For Stamp implementation LinearGradientBrush (ColorStart) and RadialGradientBrush (ColorInner) are used as SolidBrush. PDF It is not used for Annotation, Sticker, TextToFormField and Watermark implementations. Presentations For TextStamp implementation RadialGradientBrush is not applicable, it is replaced by LinearGradientBrush. Word Processing For TextStamp implementation LinearGradientBrush (ColorStart) and RadialGradientBrush (ColorInner) are used as SolidBrush. Word Processing It is not used for TextToFormField and Watermark implementations
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Border">
+            <summary>
+            Gets or sets the signature border properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.ZOrder">
+            <summary>
+            Gets or sets the Z-order position of text signature. Determines the display order of overlapping signatures.             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.Native">
+            <summary>
+            Gets or sets the native attribute. If it is set document specific signatures could be used. Native text watermark for WordProcessing documents is different than regular, for example.             
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignTextOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SolidBrush">
+            <summary>
+            Represents solid brush. It could be used instead background color property
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SolidBrush.Color">
+            <summary>
+            Gets or sets color of solid brush
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SolidBrush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StampBackgroundCropType">
+            <summary>
+            Specifies crop type of background layer on Stamp elements.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.StampBackgroundCropType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StampLine">
+            <summary>
+            Specify Stamp line properties
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextRepeatTypeEnum">
+            <summary>
+            Gets or sets text repeat type
+            </summary>
+            <value>Gets or sets text repeat type</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextRepeatTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextRepeatTypeEnum.FullTextRepeat">
+            <summary>
+            Enum FullTextRepeat for "FullTextRepeat"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextRepeatTypeEnum.RepeatWithTruncation">
+            <summary>
+            Enum RepeatWithTruncation for "RepeatWithTruncation"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextRepeatType">
+            <summary>
+            Gets or sets text repeat type
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.Height">
+            <summary>
+            Gets or sets the line height on Stamp
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.BackgroundColor">
+            <summary>
+            Gets or sets the background color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.Text">
+            <summary>
+            Gets or sets the text of stamp line
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.Font">
+            <summary>
+            Get or set Font of Stamp Line text
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextColor">
+            <summary>
+            Gets or sets the text color of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.TextBottomIntent">
+            <summary>
+            Gets or sets the bottom intent of text
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.OuterBorder">
+            <summary>
+            Setup Outer Border
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.InnerBorder">
+            <summary>
+            Setup Internal Border
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.Visible">
+            <summary>
+            Get and set visibility of Stamp Line
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.StampLine.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StorageExist">
+            <summary>
+            Storage exists
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageExist.Exists">
+            <summary>
+            Shows that the storage exists.             
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.StorageExist.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile">
+            <summary>
+            File or folder information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.Name">
+            <summary>
+            File or folder name.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.IsFolder">
+            <summary>
+            True if it is a folder.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.ModifiedDate">
+            <summary>
+            File or folder last modified DateTime.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.Size">
+            <summary>
+            File or folder size.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.Path">
+            <summary>
+            File or folder path.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.StorageFile.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.StretchMode">
+            <summary>
+            Specifies measure units of signature on document page.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.StretchMode.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextHorizontalAlignment">
+            <summary>
+            Specifies text horizontal alignment inside a Signature.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextHorizontalAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextMatchType">
+            <summary>
+            Represents type of texts comparing.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextMatchType.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextSignature">
+            <summary>
+            Contains Text signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TextSignature.Text">
+            <summary>
+            Specifies signature text
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TextSignature.SignatureImplementation">
+            <summary>
+            Text signature implementation
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextureBrush">
+            <summary>
+            Represents texture brush
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TextureBrush.ImageFilePath">
+            <summary>
+            Gets or sets the texture image file path
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextureBrush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextVerticalAlignment">
+            <summary>
+            Specifies text vertical alignment inside a Signature.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextVerticalAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TimeStamp">
+            <summary>
+            Represents data to get time stamp from third-party site.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TimeStamp.Url">
+            <summary>
+            Url of third-party site.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TimeStamp.User">
+            <summary>
+            User.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TimeStamp.Password">
+            <summary>
+            Password.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TimeStamp.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions">
+            <summary>
+            Base container class for update signature options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum">
+            <summary>
+            Specifies the type of signature
+            </summary>
+            <value>Specifies the type of signature</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Text">
+            <summary>
+            Enum Text for "Text"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Image">
+            <summary>
+            Enum Image for "Image"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Digital">
+            <summary>
+            Enum Digital for "Digital"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Barcode">
+            <summary>
+            Enum Barcode for "Barcode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.QRCode">
+            <summary>
+            Enum QRCode for "QRCode"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Stamp">
+            <summary>
+            Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureType">
+            <summary>
+            Specifies the type of signature
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureId">
+            <summary>
+            Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.              
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.Left">
+            <summary>
+            Specifies left position of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.Top">
+            <summary>
+            Specifies top position of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.Width">
+            <summary>
+            Specifies width of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.Height">
+            <summary>
+            Specifies height of signature
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.IsSignature">
+            <summary>
+            Get or set flag to indicate if this component is Signature or document content. This property is being used with Update method to set element as signature (true) or document element (false).             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.Text">
+            <summary>
+            The text to update text signature
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult">
+            <summary>
+            Update result information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult.FileInfo">
+            <summary>
+            Updated document file info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult.Size">
+            <summary>
+            Source document size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult.Succeeded">
+            <summary>
+            List of successfully modified signatures
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult.Failed">
+            <summary>
+            List of signatures that were not updated
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.UpdateResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.UpdateSettings">
+            <summary>
+            Defines update sign document settings
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateSettings.Options">
+            <summary>
+            Gets or sets options to perform signatures update
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.UpdateSettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyBarcodeOptions">
+            <summary>
+            Defines options to verify Barcode signature within a document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyBarcodeOptions.BarcodeType">
+            <summary>
+            Get or set Barcode type name verification
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyBarcodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions">
+            <summary>
+            Defines options to verify Digital signature within a document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.Password">
+            <summary>
+            Password of Digital Certificate if required
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.CertificateFilePath">
+            <summary>
+            File Guid of Digital Certificate
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.Comments">
+            <summary>
+            Comments of Digital Signature to validate Suitable for Spreadsheet and Words Processing document types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.SignDateTimeFrom">
+            <summary>
+            Date and time range of Digital Signature to validate. Null value will be ignored. Suitable for Spreadsheet and Words Processing document types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.SignDateTimeTo">
+            <summary>
+            Date and time range of Digital Signature to validate. Null value will be ignored Suitable for Spreadsheet and Words Processing document types
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.Reason">
+            <summary>
+            Reason of Digital Signature to validate Suitable for Pdf document type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.Contact">
+            <summary>
+            Signature Contact to validate Suitable for Pdf document type
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.Location">
+            <summary>
+            Signature Location to validate Suitable for Pdf document type
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyDigitalOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyOptions">
+            <summary>
+            Keeps options for document verification
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyQRCodeOptions">
+            <summary>
+            Option keeps settings to verify QR-code signature of document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyQRCodeOptions.QRCodeType">
+            <summary>
+            Get or set QR-code type verification
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyQRCodeOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult">
+            <summary>
+            Verification result information
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult.FileInfo">
+            <summary>
+            Processed document file info
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult.Size">
+            <summary>
+            Processed document size in bytes
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult.IsSuccess">
+            <summary>
+            Indicates whether document contains signatures that meet verification criteria
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyResult.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifySettings">
+            <summary>
+            Defines verify settings request
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifySettings.Options">
+            <summary>
+            Gets or sets options to perform document verification
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifySettings.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions">
+            <summary>
+            Keeps options to verify Text signature of document
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchTypeEnum">
+            <summary>
+            Get or set text match type verification. It is used only when Text property is set
+            </summary>
+            <value>Get or set text match type verification. It is used only when Text property is set</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchTypeEnum.Exact">
+            <summary>
+            Enum Exact for "Exact"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchTypeEnum.StartsWith">
+            <summary>
+            Enum StartsWith for "StartsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchTypeEnum.EndsWith">
+            <summary>
+            Enum EndsWith for "EndsWith"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchTypeEnum.Contains">
+            <summary>
+            Enum Contains for "Contains"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.MatchType">
+            <summary>
+            Get or set text match type verification. It is used only when Text property is set
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.Text">
+            <summary>
+            Specify text of signature if it should be verified
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyTextOptions.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerticalAlignment">
+            <summary>
+            Specifies vertical alignment of element on Document Page
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerticalAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Client.ApiException">
+            <summary>
+            API exception.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Client.ApiException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Client.ApiException"/> class.
+            </summary>
+            <param name="errorCode">
+            The error code.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.ApiException.ErrorCode">
+            <summary>
+            Error code.
+            </summary>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Client.Configuration">
+            <summary>
+            Represents a set of configuration settings.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.Timeout">
+            <summary>
+            Request timeout, default value is 100000 ms 
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroupDocs.Signature.Cloud.Sdk.Client.Configuration" /> class.
+            </summary>
+            <param name="appSid">Application identifier (App SID)</param>
+            <param name="appKey">Application private key (App Key)</param>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.ApiBaseUrl">
+            <summary>
+            Server URL, default value is https://api.groupdocs.cloud
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.AppSid">
+            <summary>
+            Application identifier (App SID)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.AppKey">
+            <summary>
+            Application private key (App Key)
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.DebugMode">
+            <summary>
+            Enables printing out additional information about each request
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Client.Configuration.GetServerUrl">
+            <summary>
+            Retrieves server URL e.g. https://api.groupdocs.cloud/v1
+            </summary>
+            <returns>Server URL</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Client.SerializationHelper.JsonCreationConverter`1.Create(System.Type,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Create an instance of objectType, based properties in the JSON object.
+            </summary>
+            <param name="objectType">type of object expected.</param>
+            <param name="jsonObject">
+            Contents of JSON object that will be deserialized.
+            </param>
+            <returns>An instance of objectType.</returns>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.SearchSignatureJsonConverter.Create(System.Type,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            
+            </summary>
+            <param name="objectType"></param>
+            <param name="jObject"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

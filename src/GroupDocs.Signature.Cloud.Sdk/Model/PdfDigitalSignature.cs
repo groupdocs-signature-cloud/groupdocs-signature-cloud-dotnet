@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="DigitalSignature.cs">
+// <copyright company="Aspose Pty Ltd" file="PdfDigitalSignature.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,57 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Contains digital Signature properties
+    /// Contains pdf digital Signature properties
     /// </summary>  
-    public class DigitalSignature : Signature 
+    public class PdfDigitalSignature 
     {                       
         /// <summary>
-        /// Gets or sets the signing purpose comment
-        /// </summary>  
-        public string Comments { get; set; }
+        /// Type of Pdf digital signature.
+        /// </summary>
+        /// <value>Type of Pdf digital signature.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        { 
+            /// <summary>
+            /// Enum Signature for "Signature"
+            /// </summary>            
+            Signature,
+            
+            /// <summary>
+            /// Enum Certificate for "Certificate"
+            /// </summary>            
+            Certificate            
+        }
 
         /// <summary>
-        /// Keeps true if this digital signature is valid and the document has not been tampered with
-        /// </summary>  
-        public bool? IsValid { get; set; }
+        /// Type of Pdf digital signature.
+        /// </summary>
+        public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the time the document was signed
+        /// Information provided by the signer to enable a recipient to contact the signer
         /// </summary>  
-        public DateTime? SignTime { get; set; }
+        public string ContactInfo { get; set; }
 
         /// <summary>
-        /// Pdf digital signature properties
+        /// The CPU host name or physical location of the signing.
         /// </summary>  
-        public PdfDigitalSignature PdfDigitalSignature { get; set; }
+        public string Location { get; set; }
+
+        /// <summary>
+        /// The reason for the signing, such as (I agreeРІР‚В¦).
+        /// </summary>  
+        public string Reason { get; set; }
+
+        /// <summary>
+        /// Time stamp for Pdf digital signature. Default value is null.
+        /// </summary>  
+        public TimeStamp TimeStamp { get; set; }
+
+        /// <summary>
+        /// Force to show/hide signature properties
+        /// </summary>  
+        public bool? ShowProperties { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +93,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DigitalSignature {\n");
-          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
-          sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
-          sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
-          sb.Append("  PdfDigitalSignature: ").Append(this.PdfDigitalSignature).Append("\n");
+          sb.Append("class PdfDigitalSignature {\n");
+          sb.Append("  ContactInfo: ").Append(this.ContactInfo).Append("\n");
+          sb.Append("  Location: ").Append(this.Location).Append("\n");
+          sb.Append("  Reason: ").Append(this.Reason).Append("\n");
+          sb.Append("  Type: ").Append(this.Type).Append("\n");
+          sb.Append("  TimeStamp: ").Append(this.TimeStamp).Append("\n");
+          sb.Append("  ShowProperties: ").Append(this.ShowProperties).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

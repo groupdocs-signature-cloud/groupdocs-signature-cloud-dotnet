@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="DigitalSignature.cs">
+// <copyright company="Aspose Pty Ltd" file="PreviewSettings.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,62 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Contains digital Signature properties
+    /// Defines preview request settings
     /// </summary>  
-    public class DigitalSignature : Signature 
+    public class PreviewSettings : BaseSettings 
     {                       
         /// <summary>
-        /// Gets or sets the signing purpose comment
-        /// </summary>  
-        public string Comments { get; set; }
+        /// Preview format
+        /// </summary>
+        /// <value>Preview format</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PreviewFormatEnum
+        { 
+            /// <summary>
+            /// Enum PNG for "PNG"
+            /// </summary>            
+            PNG,
+            
+            /// <summary>
+            /// Enum JPEG for "JPEG"
+            /// </summary>            
+            JPEG,
+            
+            /// <summary>
+            /// Enum BMP for "BMP"
+            /// </summary>            
+            BMP            
+        }
 
         /// <summary>
-        /// Keeps true if this digital signature is valid and the document has not been tampered with
-        /// </summary>  
-        public bool? IsValid { get; set; }
+        /// Preview format
+        /// </summary>
+        public PreviewFormatEnum? PreviewFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the time the document was signed
+        /// Preview images width
         /// </summary>  
-        public DateTime? SignTime { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
-        /// Pdf digital signature properties
+        /// Preview images height
         /// </summary>  
-        public PdfDigitalSignature PdfDigitalSignature { get; set; }
+        public int? Height { get; set; }
+
+        /// <summary>
+        /// Preview page numbers
+        /// </summary>  
+        public List<int?> PageNumbers { get; set; }
+
+        /// <summary>
+        /// Flag to hide signatures from page preview image. Only signatures are marked as IsSignature will be hidden from generated document page image
+        /// </summary>  
+        public bool? HideSignatures { get; set; }
+
+        /// <summary>
+        /// Set path for output pages. If not set then default path used.
+        /// </summary>  
+        public string OutputPath { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +98,13 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DigitalSignature {\n");
-          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
-          sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
-          sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
-          sb.Append("  PdfDigitalSignature: ").Append(this.PdfDigitalSignature).Append("\n");
+          sb.Append("class PreviewSettings {\n");
+          sb.Append("  Width: ").Append(this.Width).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  PageNumbers: ").Append(this.PageNumbers).Append("\n");
+          sb.Append("  PreviewFormat: ").Append(this.PreviewFormat).Append("\n");
+          sb.Append("  HideSignatures: ").Append(this.HideSignatures).Append("\n");
+          sb.Append("  OutputPath: ").Append(this.OutputPath).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

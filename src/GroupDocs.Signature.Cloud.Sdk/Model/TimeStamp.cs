@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="DigitalSignature.cs">
+// <copyright company="Aspose Pty Ltd" file="TimeStamp.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,24 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Contains digital Signature properties
+    /// Represents data to get time stamp from third-party site.
     /// </summary>  
-    public class DigitalSignature : Signature 
+    public class TimeStamp 
     {                       
         /// <summary>
-        /// Gets or sets the signing purpose comment
+        /// Url of third-party site.
         /// </summary>  
-        public string Comments { get; set; }
+        public string Url { get; set; }
 
         /// <summary>
-        /// Keeps true if this digital signature is valid and the document has not been tampered with
+        /// User.
         /// </summary>  
-        public bool? IsValid { get; set; }
+        public string User { get; set; }
 
         /// <summary>
-        /// Gets or sets the time the document was signed
+        /// Password.
         /// </summary>  
-        public DateTime? SignTime { get; set; }
-
-        /// <summary>
-        /// Pdf digital signature properties
-        /// </summary>  
-        public PdfDigitalSignature PdfDigitalSignature { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +60,10 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DigitalSignature {\n");
-          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
-          sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
-          sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
-          sb.Append("  PdfDigitalSignature: ").Append(this.PdfDigitalSignature).Append("\n");
+          sb.Append("class TimeStamp {\n");
+          sb.Append("  Url: ").Append(this.Url).Append("\n");
+          sb.Append("  User: ").Append(this.User).Append("\n");
+          sb.Append("  Password: ").Append(this.Password).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
