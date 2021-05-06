@@ -82,6 +82,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Client.RequestHandlers
                     {
                         throw new ApiException(statusCode, authErrorResponse.ErrorMessage);
                     }
+                    
+                    if (SerializationHelper
+                        .Deserialize(responseData, typeof(ApiErrorResponse)) is ApiErrorResponse apiErrorResponse && apiErrorResponse.Error != null)
+                    {
+                        throw new ApiException(statusCode, apiErrorResponse.Error.Message);
+                    }
 
                     if (SerializationHelper
                         .Deserialize(responseData, typeof(Error)) is Error apiError)
