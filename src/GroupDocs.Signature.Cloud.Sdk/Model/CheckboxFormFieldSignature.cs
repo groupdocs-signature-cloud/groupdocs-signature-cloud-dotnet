@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoSettings.cs">
+// <copyright company="Aspose Pty Ltd" file="CheckboxFormFieldSignature.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines document information request settings
+    /// Contains check-box input form field signature properties
     /// </summary>  
-    public class InfoSettings : BaseSettings 
+    public class CheckboxFormFieldSignature : FormFieldSignature 
     {                       
         /// <summary>
-        /// Gets or sets flag that includes deleted signatures into Document Info result.
+        /// Gets or sets checked value of form field check-box input
         /// </summary>  
-        public bool? ShowDeletedSignaturesInfo { get; set; }
+        public bool? _Checked { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +50,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class InfoSettings {\n");
-          sb.Append("  ShowDeletedSignaturesInfo: ").Append(this.ShowDeletedSignaturesInfo).Append("\n");
+          sb.Append("class CheckboxFormFieldSignature {\n");
+          sb.Append("  _Checked: ").Append(this._Checked).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

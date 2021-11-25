@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoSettings.cs">
+// <copyright company="Aspose Pty Ltd" file="ImageAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,29 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines document information request settings
+    /// Describes extended appearance features for Image Signature.
     /// </summary>  
-    public class InfoSettings : BaseSettings 
+    public class ImageAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Gets or sets flag that includes deleted signatures into Document Info result.
+        /// Gets or sets image brightness. Default value is 1 it corresponds to original brightness of image.
         /// </summary>  
-        public bool? ShowDeletedSignaturesInfo { get; set; }
+        public double? Brightness { get; set; }
+
+        /// <summary>
+        /// Gets or sets image contrast. Default value is 1 it corresponds to original contrast of image.
+        /// </summary>  
+        public double? Contrast { get; set; }
+
+        /// <summary>
+        /// Gets or sets image gamma. Default value is 1 it corresponds to original gamma of image.
+        /// </summary>  
+        public double? GammaCorrection { get; set; }
+
+        /// <summary>
+        /// Setup this flag to true if gray-scale filter is required.
+        /// </summary>  
+        public bool? Grayscale { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +65,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class InfoSettings {\n");
-          sb.Append("  ShowDeletedSignaturesInfo: ").Append(this.ShowDeletedSignaturesInfo).Append("\n");
+          sb.Append("class ImageAppearance {\n");
+          sb.Append("  Brightness: ").Append(this.Brightness).Append("\n");
+          sb.Append("  Contrast: ").Append(this.Contrast).Append("\n");
+          sb.Append("  GammaCorrection: ").Append(this.GammaCorrection).Append("\n");
+          sb.Append("  Grayscale: ").Append(this.Grayscale).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -1085,6 +1085,22 @@
             </summary>
             <returns>String presentation of the object</returns>
         </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.CheckboxFormFieldSignature">
+            <summary>
+            Contains check-box input form field signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.CheckboxFormFieldSignature._Checked">
+            <summary>
+            Gets or sets checked value of form field check-box input
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.CheckboxFormFieldSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.CodeTextAlignment">
             <summary>
             Alignment of code text for Bar-codes and QR-codes.             
@@ -1107,6 +1123,27 @@
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Color.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.ComboboxFormFieldSignature">
+            <summary>
+            Contains combo-box input form field signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ComboboxFormFieldSignature.Selected">
+            <summary>
+            Get or set selected value
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ComboboxFormFieldSignature.Items">
+            <summary>
+            Get or set combo-box options list
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.ComboboxFormFieldSignature.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -1167,6 +1204,16 @@
         <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Stamp">
             <summary>
             Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.FormField">
+            <summary>
+            Enum FormField for "FormField"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.Metadata">
+            <summary>
+            Enum Metadata for "Metadata"
             </summary>            
         </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureType">
@@ -1232,6 +1279,22 @@
             </summary>
             <returns>String presentation of the object</returns>
         </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DigitalFormFieldSignature">
+            <summary>
+            Contains digital signature input form field properties for Pdf Documents
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalFormFieldSignature.Signed">
+            <summary>
+            Property that shows if Form-field Signature was signed with digital certificate
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DigitalFormFieldSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature">
             <summary>
             Contains digital Signature properties
@@ -1258,6 +1321,32 @@
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureAppearance">
+            <summary>
+            Describes appearance of Signature Line for Digital Signature. One Signature Line could be applied for only one Digital Signature. Signature Line always is on the first page. This feature may be useful for .docx, .doc, .odt and .xlsx file formats.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureAppearance.Email">
+            <summary>
+            Gets or sets a email that will be displayed in signature line.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureAppearance.Signer">
+            <summary>
+            Gets or sets signer name for signature line.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureAppearance.Title">
+            <summary>
+            Gets or sets a title for signature line.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.DigitalSignatureAppearance.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -1489,12 +1578,100 @@
             </summary>
             <returns>String presentation of the object</returns>
         </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature">
+            <summary>
+            Contains Form field signature properties
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum">
+            <summary>
+            Specifies Form field type
+            </summary>
+            <value>Specifies Form field type</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.Text">
+            <summary>
+            Enum Text for "Text"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.Checkbox">
+            <summary>
+            Enum Checkbox for "Checkbox"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.Combobox">
+            <summary>
+            Enum Combobox for "Combobox"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.DigitalSignature">
+            <summary>
+            Enum DigitalSignature for "DigitalSignature"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.Radio">
+            <summary>
+            Enum Radio for "Radio"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.TypeEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.Type">
+            <summary>
+            Specifies Form field type
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.Name">
+            <summary>
+            Specifies unique form field name
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.FormFieldSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.HorizontalAlignment">
             <summary>
             Specifies horizontal alignment of element on Document Page
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.HorizontalAlignment.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance">
+            <summary>
+            Describes extended appearance features for Image Signature.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance.Brightness">
+            <summary>
+            Gets or sets image brightness. Default value is 1 it corresponds to original brightness of image.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance.Contrast">
+            <summary>
+            Gets or sets image contrast. Default value is 1 it corresponds to original contrast of image.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance.GammaCorrection">
+            <summary>
+            Gets or sets image gamma. Default value is 1 it corresponds to original gamma of image.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance.Grayscale">
+            <summary>
+            Setup this flag to true if gray-scale filter is required.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.ImageAppearance.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -1576,6 +1753,11 @@
             List of document pages descriptions
             </summary>  
         </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.Signatures">
+            <summary>
+            Collection of document signatures
+            </summary>  
+        </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.InfoResult.ToString">
             <summary>
             Get the string presentation of the object
@@ -1585,6 +1767,11 @@
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings">
             <summary>
             Defines document information request settings
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings.ShowDeletedSignaturesInfo">
+            <summary>
+            Gets or sets flag that includes deleted signatures into Document Info result.
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.InfoSettings.ToString">
@@ -1695,6 +1882,16 @@
         <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Stamp">
             <summary>
             Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.FormField">
+            <summary>
+            Enum FormField for "FormField"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.Metadata">
+            <summary>
+            Enum Metadata for "Metadata"
             </summary>            
         </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureType">
@@ -1888,6 +2085,221 @@
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance">
+            <summary>
+            Describes appearance of Digital Signature are on PDF documents.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.Background">
+            <summary>
+            Get or set background color of signature appearance. By default the value is SystemColors.Windows
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.ContactInfoLabel">
+            <summary>
+            Gets or sets contact info label. Default value: \"Contact\". if this value is empty then no contact label will appear on digital signature area.             
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.DateSignedAtLabel">
+            <summary>
+            Gets or sets date signed label. Default value: \"Date\".
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.DigitalSignedLabel">
+            <summary>
+            Gets or sets digital signed label. Default value: \"Digitally signed by\".
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.FontFamilyName">
+            <summary>
+            Gets or sets the Font family name to display the labels. Default value is \"Arial\".
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.FontSize">
+            <summary>
+            Gets or sets the Font size to display the labels. Default value is 10.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.LocationLabel">
+            <summary>
+            Gets or sets location label. Default value: \"Location\". if this value is empty then no location label will appear on digital signature area.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.ReasonLabel">
+            <summary>
+            Gets or sets reason label. Default value: \"Reason\". if this value is empty then no reason label will appear on digital signature area.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance">
+            <summary>
+            Describes appearance of PDF text annotation object (Title, Subject, Content).
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.BorderEffectEnum">
+            <summary>
+            Gets or sets border effect.
+            </summary>
+            <value>Gets or sets border effect.</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.BorderEffectEnum.None">
+            <summary>
+            Enum None for "None"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.BorderEffectEnum.Cloudy">
+            <summary>
+            Enum Cloudy for "Cloudy"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.BorderEffect">
+            <summary>
+            Gets or sets border effect.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.Border">
+            <summary>
+            Represents border appearance
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.BorderEffectIntensity">
+            <summary>
+            Gets or sets border effect intensity. Valid range of value is [0..2].
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.Contents">
+            <summary>
+            Gets or sets content of annotation object.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.HCornerRadius">
+            <summary>
+            Gets or sets horizontal corner radius.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.Subject">
+            <summary>
+            Gets or sets Subject representing description of the object.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.Title">
+            <summary>
+            Gets or sets a Title that will be displayed in title bar of annotation object.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.VCornerRadius">
+            <summary>
+            Gets or sets vertical corner radius.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextAnnotationAppearance.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance">
+            <summary>
+            Describes appearance of PDF text annotation sticker object and pop-up window of sticker.
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum">
+            <summary>
+            Gets or sets the icon of sticker.
+            </summary>
+            <value>Gets or sets the icon of sticker.</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Note">
+            <summary>
+            Enum Note for "Note"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Comment">
+            <summary>
+            Enum Comment for "Comment"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Key">
+            <summary>
+            Enum Key for "Key"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Help">
+            <summary>
+            Enum Help for "Help"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.NewParagraph">
+            <summary>
+            Enum NewParagraph for "NewParagraph"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Paragraph">
+            <summary>
+            Enum Paragraph for "Paragraph"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Insert">
+            <summary>
+            Enum Insert for "Insert"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Check">
+            <summary>
+            Enum Check for "Check"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Cross">
+            <summary>
+            Enum Cross for "Cross"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Circle">
+            <summary>
+            Enum Circle for "Circle"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.IconEnum.Star">
+            <summary>
+            Enum Star for "Star"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.Icon">
+            <summary>
+            Gets or sets the icon of sticker.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.Contents">
+            <summary>
+            Gets or sets the contents of pop-up window.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.Opened">
+            <summary>
+            Setup if sticker pop-up window will be opened by default.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.Subject">
+            <summary>
+            Gets or sets subject.
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.Title">
+            <summary>
+            Gets or sets title of pop-up window.
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.PdfTextStickerAppearance.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -2091,6 +2503,27 @@
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.RadialGradientBrush.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.RadioButtonFormFieldSignature">
+            <summary>
+            Contains radio-button input form field signature properties
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.RadioButtonFormFieldSignature.Selected">
+            <summary>
+            Get or set selected value
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.RadioButtonFormFieldSignature.Items">
+            <summary>
+            Get or set radio options list
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.RadioButtonFormFieldSignature.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -2336,6 +2769,16 @@
             Enum Stamp for "Stamp"
             </summary>            
         </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.FormField">
+            <summary>
+            Enum FormField for "FormField"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.Metadata">
+            <summary>
+            Enum Metadata for "Metadata"
+            </summary>            
+        </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureType">
             <summary>
             Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
@@ -2387,6 +2830,58 @@
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.Signature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance">
+            <summary>
+            Appearance is a base class for keeping additional information for various options
+            </summary>  
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum">
+            <summary>
+            Specifies the type of appearance
+            </summary>
+            <value>Specifies the type of appearance</value>
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.Undefined">
+            <summary>
+            Enum Undefined for "Undefined"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.PdfTextAnnotation">
+            <summary>
+            Enum PdfTextAnnotation for "PdfTextAnnotation"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.PdfTextSticker">
+            <summary>
+            Enum PdfTextSticker for "PdfTextSticker"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.Image">
+            <summary>
+            Enum Image for "Image"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.DigitalSignature">
+            <summary>
+            Enum DigitalSignature for "DigitalSignature"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceTypeEnum.PdfDigitalSignature">
+            <summary>
+            Enum PdfDigitalSignature for "PdfDigitalSignature"
+            </summary>            
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.AppearanceType">
+            <summary>
+            Specifies the type of appearance
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignatureAppearance.ToString">
             <summary>
             Get the string presentation of the object
             </summary>
@@ -2746,6 +3241,11 @@
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignOptions">
             <summary>
             Base container class for signature options data
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignOptions.Appearance">
+            <summary>
+            Specifies Appearance with additional properties for this options instance
             </summary>  
         </member>
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignOptions.ToString">
@@ -3442,6 +3942,22 @@
             </summary>
             <returns>String presentation of the object</returns>
         </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextFormFieldSignature">
+            <summary>
+            Contains text input form field signature properties for Pdf Document
+            </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.TextFormFieldSignature.Text">
+            <summary>
+            Gets or sets text of form field text input
+            </summary>  
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.TextFormFieldSignature.ToString">
+            <summary>
+            Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
         <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.TextHorizontalAlignment">
             <summary>
             Specifies text horizontal alignment inside a Signature.
@@ -3582,6 +4098,16 @@
         <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Stamp">
             <summary>
             Enum Stamp for "Stamp"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.FormField">
+            <summary>
+            Enum FormField for "FormField"
+            </summary>            
+        </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.Metadata">
+            <summary>
+            Enum Metadata for "Metadata"
             </summary>            
         </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureType">

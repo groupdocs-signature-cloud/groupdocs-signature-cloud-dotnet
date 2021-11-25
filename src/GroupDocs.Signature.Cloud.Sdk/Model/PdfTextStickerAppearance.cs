@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="OptionsBase.cs">
+// <copyright company="Aspose Pty Ltd" file="PdfTextStickerAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,82 +34,97 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Base container class for all possible options data
+    /// Describes appearance of PDF text annotation sticker object and pop-up window of sticker.
     /// </summary>  
-    public class OptionsBase 
+    public class PdfTextStickerAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Gets or sets the icon of sticker.
         /// </summary>
-        /// <value>Specifies the signature type of processing</value>
+        /// <value>Gets or sets the icon of sticker.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
+        public enum IconEnum
         { 
             /// <summary>
-            /// Enum None for "None"
+            /// Enum Note for "Note"
             /// </summary>            
-            None,
+            Note,
             
             /// <summary>
-            /// Enum Text for "Text"
+            /// Enum Comment for "Comment"
             /// </summary>            
-            Text,
+            Comment,
             
             /// <summary>
-            /// Enum Image for "Image"
+            /// Enum Key for "Key"
             /// </summary>            
-            Image,
+            Key,
             
             /// <summary>
-            /// Enum Digital for "Digital"
+            /// Enum Help for "Help"
             /// </summary>            
-            Digital,
+            Help,
             
             /// <summary>
-            /// Enum Barcode for "Barcode"
+            /// Enum NewParagraph for "NewParagraph"
             /// </summary>            
-            Barcode,
+            NewParagraph,
             
             /// <summary>
-            /// Enum QRCode for "QRCode"
+            /// Enum Paragraph for "Paragraph"
             /// </summary>            
-            QRCode,
+            Paragraph,
             
             /// <summary>
-            /// Enum Stamp for "Stamp"
+            /// Enum Insert for "Insert"
             /// </summary>            
-            Stamp,
+            Insert,
             
             /// <summary>
-            /// Enum FormField for "FormField"
+            /// Enum Check for "Check"
             /// </summary>            
-            FormField,
+            Check,
             
             /// <summary>
-            /// Enum Metadata for "Metadata"
+            /// Enum Cross for "Cross"
             /// </summary>            
-            Metadata            
+            Cross,
+            
+            /// <summary>
+            /// Enum Circle for "Circle"
+            /// </summary>            
+            Circle,
+            
+            /// <summary>
+            /// Enum Star for "Star"
+            /// </summary>            
+            Star            
         }
 
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Gets or sets the icon of sticker.
         /// </summary>
-        public SignatureTypeEnum? SignatureType { get; set; }
+        public IconEnum? Icon { get; set; }
 
         /// <summary>
-        /// Gets or sets a document page number for processing. Value is optional
+        /// Gets or sets the contents of pop-up window.
         /// </summary>  
-        public int? Page { get; set; }
+        public string Contents { get; set; }
 
         /// <summary>
-        /// Process all document pages. Type of processing depends on SignatureType For Images Document Type it can be used only for multi-frames images like .tiff
+        /// Setup if sticker pop-up window will be opened by default.
         /// </summary>  
-        public bool? AllPages { get; set; }
+        public bool? Opened { get; set; }
 
         /// <summary>
-        /// Options to specify pages for processing
+        /// Gets or sets subject.
         /// </summary>  
-        public PagesSetup PagesSetup { get; set; }
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Gets or sets title of pop-up window.
+        /// </summary>  
+        public string Title { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -118,11 +133,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OptionsBase {\n");
-          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  Page: ").Append(this.Page).Append("\n");
-          sb.Append("  AllPages: ").Append(this.AllPages).Append("\n");
-          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("class PdfTextStickerAppearance {\n");
+          sb.Append("  Contents: ").Append(this.Contents).Append("\n");
+          sb.Append("  Icon: ").Append(this.Icon).Append("\n");
+          sb.Append("  Opened: ").Append(this.Opened).Append("\n");
+          sb.Append("  Subject: ").Append(this.Subject).Append("\n");
+          sb.Append("  Title: ").Append(this.Title).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

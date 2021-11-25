@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="OptionsBase.cs">
+// <copyright company="Aspose Pty Ltd" file="PdfTextAnnotationAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,16 +34,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Base container class for all possible options data
+    /// Describes appearance of PDF text annotation object (Title, Subject, Content).
     /// </summary>  
-    public class OptionsBase 
+    public class PdfTextAnnotationAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Gets or sets border effect.
         /// </summary>
-        /// <value>Specifies the signature type of processing</value>
+        /// <value>Gets or sets border effect.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
+        public enum BorderEffectEnum
         { 
             /// <summary>
             /// Enum None for "None"
@@ -51,65 +51,50 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             None,
             
             /// <summary>
-            /// Enum Text for "Text"
+            /// Enum Cloudy for "Cloudy"
             /// </summary>            
-            Text,
-            
-            /// <summary>
-            /// Enum Image for "Image"
-            /// </summary>            
-            Image,
-            
-            /// <summary>
-            /// Enum Digital for "Digital"
-            /// </summary>            
-            Digital,
-            
-            /// <summary>
-            /// Enum Barcode for "Barcode"
-            /// </summary>            
-            Barcode,
-            
-            /// <summary>
-            /// Enum QRCode for "QRCode"
-            /// </summary>            
-            QRCode,
-            
-            /// <summary>
-            /// Enum Stamp for "Stamp"
-            /// </summary>            
-            Stamp,
-            
-            /// <summary>
-            /// Enum FormField for "FormField"
-            /// </summary>            
-            FormField,
-            
-            /// <summary>
-            /// Enum Metadata for "Metadata"
-            /// </summary>            
-            Metadata            
+            Cloudy            
         }
 
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Gets or sets border effect.
         /// </summary>
-        public SignatureTypeEnum? SignatureType { get; set; }
+        public BorderEffectEnum? BorderEffect { get; set; }
 
         /// <summary>
-        /// Gets or sets a document page number for processing. Value is optional
+        /// Represents border appearance
         /// </summary>  
-        public int? Page { get; set; }
+        public BorderLine Border { get; set; }
 
         /// <summary>
-        /// Process all document pages. Type of processing depends on SignatureType For Images Document Type it can be used only for multi-frames images like .tiff
+        /// Gets or sets border effect intensity. Valid range of value is [0..2].
         /// </summary>  
-        public bool? AllPages { get; set; }
+        public int? BorderEffectIntensity { get; set; }
 
         /// <summary>
-        /// Options to specify pages for processing
+        /// Gets or sets content of annotation object.
         /// </summary>  
-        public PagesSetup PagesSetup { get; set; }
+        public string Contents { get; set; }
+
+        /// <summary>
+        /// Gets or sets horizontal corner radius.
+        /// </summary>  
+        public int? HCornerRadius { get; set; }
+
+        /// <summary>
+        /// Gets or sets Subject representing description of the object.
+        /// </summary>  
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Gets or sets a Title that will be displayed in title bar of annotation object.
+        /// </summary>  
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets vertical corner radius.
+        /// </summary>  
+        public int? VCornerRadius { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -118,11 +103,15 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OptionsBase {\n");
-          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  Page: ").Append(this.Page).Append("\n");
-          sb.Append("  AllPages: ").Append(this.AllPages).Append("\n");
-          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("class PdfTextAnnotationAppearance {\n");
+          sb.Append("  Border: ").Append(this.Border).Append("\n");
+          sb.Append("  BorderEffect: ").Append(this.BorderEffect).Append("\n");
+          sb.Append("  BorderEffectIntensity: ").Append(this.BorderEffectIntensity).Append("\n");
+          sb.Append("  Contents: ").Append(this.Contents).Append("\n");
+          sb.Append("  HCornerRadius: ").Append(this.HCornerRadius).Append("\n");
+          sb.Append("  Subject: ").Append(this.Subject).Append("\n");
+          sb.Append("  Title: ").Append(this.Title).Append("\n");
+          sb.Append("  VCornerRadius: ").Append(this.VCornerRadius).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

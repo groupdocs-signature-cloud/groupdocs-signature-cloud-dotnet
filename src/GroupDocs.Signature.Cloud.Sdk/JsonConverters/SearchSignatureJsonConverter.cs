@@ -32,27 +32,70 @@ namespace GroupDocs.Signature.Cloud.Sdk
             if (signatureType == Signature.SignatureTypeEnum.Image)
                 return new ImageSignature();
 
+            if (signatureType == Signature.SignatureTypeEnum.FormField)
+            {
+                var formFieldType = GetFormFieldType(jObject);
+
+                if (formFieldType == FormFieldSignature.TypeEnum.Checkbox)
+                    return new CheckboxFormFieldSignature();
+
+                if (formFieldType == FormFieldSignature.TypeEnum.Text)
+                    return new TextFormFieldSignature();
+
+                if (formFieldType == FormFieldSignature.TypeEnum.Combobox)
+                    return new ComboboxFormFieldSignature();
+
+                if (formFieldType == FormFieldSignature.TypeEnum.DigitalSignature)
+                    return new DigitalFormFieldSignature();
+
+                if (formFieldType == FormFieldSignature.TypeEnum.Radio)
+                    return new RadioButtonFormFieldSignature();
+
+                return new FormFieldSignature();
+            }
+
             return new Signature();
         }
 
         protected Signature.SignatureTypeEnum GetSignatureType(JObject jObject)
         {
-            Signature.SignatureTypeEnum result = Signature.SignatureTypeEnum.None;
-            string type = jObject["SignatureType"]?.ToString();
-            if (String.IsNullOrEmpty(type))
+            var result = Signature.SignatureTypeEnum.None;
+            var type = jObject["SignatureType"]?.ToString();
+            if (string.IsNullOrEmpty(type))
             {
                 type = jObject["signatureType"]?.ToString();
             }
-            if (!string.IsNullOrEmpty(type))
+
+            if (string.IsNullOrEmpty(type)) return result;
+
+            try
             {
-                try
-                {
-                    result = (Signature.SignatureTypeEnum)Enum.Parse(typeof(Signature.SignatureTypeEnum), type);
-                }
-                catch (Exception)
-                {
-                    result = Signature.SignatureTypeEnum.None;
-                }
+                result = (Signature.SignatureTypeEnum)Enum.Parse(typeof(Signature.SignatureTypeEnum), type);
+            }
+            catch (Exception)
+            {
+                result = Signature.SignatureTypeEnum.None;
+            }
+            return result;
+        }
+
+        protected FormFieldSignature.TypeEnum GetFormFieldType(JObject jObject)
+        {
+            var result = FormFieldSignature.TypeEnum.None;
+            var type = jObject["Type"]?.ToString();
+            if (string.IsNullOrEmpty(type))
+            {
+                type = jObject["type"]?.ToString();
+            }
+
+            if (string.IsNullOrEmpty(type)) return result;
+            try
+            {
+                result = (FormFieldSignature.TypeEnum)Enum.Parse(typeof(FormFieldSignature.TypeEnum), type);
+            }
+            catch (Exception)
+            {
+                result = FormFieldSignature.TypeEnum.None;
             }
             return result;
         }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoResult.cs">
+// <copyright company="Aspose Pty Ltd" file="PdfDigitalSignatureAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,64 +34,49 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Document info result
+    /// Describes appearance of Digital Signature are on PDF documents.
     /// </summary>  
-    public class InfoResult 
+    public class PdfDigitalSignatureAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Input File info
+        /// Get or set background color of signature appearance. By default the value is SystemColors.Windows
         /// </summary>  
-        public FileInfo FileInfo { get; set; }
+        public Color Background { get; set; }
 
         /// <summary>
-        /// Document extension
+        /// Gets or sets contact info label. Default value: \"Contact\". if this value is empty then no contact label will appear on digital signature area.             
         /// </summary>  
-        public string Extension { get; set; }
+        public string ContactInfoLabel { get; set; }
 
         /// <summary>
-        /// Document file format
+        /// Gets or sets date signed label. Default value: \"Date\".
         /// </summary>  
-        public string FileFormat { get; set; }
+        public string DateSignedAtLabel { get; set; }
 
         /// <summary>
-        /// Document size in bytes
+        /// Gets or sets digital signed label. Default value: \"Digitally signed by\".
         /// </summary>  
-        public long? Size { get; set; }
+        public string DigitalSignedLabel { get; set; }
 
         /// <summary>
-        /// Count of pages in document
+        /// Gets or sets the Font family name to display the labels. Default value is \"Arial\".
         /// </summary>  
-        public int? PagesCount { get; set; }
+        public string FontFamilyName { get; set; }
 
         /// <summary>
-        /// Document created date
+        /// Gets or sets the Font size to display the labels. Default value is 10.
         /// </summary>  
-        public DateTime? DateCreated { get; set; }
+        public double? FontSize { get; set; }
 
         /// <summary>
-        /// Document modification date
+        /// Gets or sets location label. Default value: \"Location\". if this value is empty then no location label will appear on digital signature area.
         /// </summary>  
-        public DateTime? DateModified { get; set; }
+        public string LocationLabel { get; set; }
 
         /// <summary>
-        /// Specifies width for max height of document page
+        /// Gets or sets reason label. Default value: \"Reason\". if this value is empty then no reason label will appear on digital signature area.
         /// </summary>  
-        public int? WidthForMaxHeight { get; set; }
-
-        /// <summary>
-        /// Specifies max page height
-        /// </summary>  
-        public int? MaxPageHeight { get; set; }
-
-        /// <summary>
-        /// List of document pages descriptions
-        /// </summary>  
-        public List<PageInfo> Pages { get; set; }
-
-        /// <summary>
-        /// Collection of document signatures
-        /// </summary>  
-        public List<Signature> Signatures { get; set; }
+        public string ReasonLabel { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -100,18 +85,15 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class InfoResult {\n");
-          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
-          sb.Append("  Extension: ").Append(this.Extension).Append("\n");
-          sb.Append("  FileFormat: ").Append(this.FileFormat).Append("\n");
-          sb.Append("  Size: ").Append(this.Size).Append("\n");
-          sb.Append("  PagesCount: ").Append(this.PagesCount).Append("\n");
-          sb.Append("  DateCreated: ").Append(this.DateCreated).Append("\n");
-          sb.Append("  DateModified: ").Append(this.DateModified).Append("\n");
-          sb.Append("  WidthForMaxHeight: ").Append(this.WidthForMaxHeight).Append("\n");
-          sb.Append("  MaxPageHeight: ").Append(this.MaxPageHeight).Append("\n");
-          sb.Append("  Pages: ").Append(this.Pages).Append("\n");
-          sb.Append("  Signatures: ").Append(this.Signatures).Append("\n");
+          sb.Append("class PdfDigitalSignatureAppearance {\n");
+          sb.Append("  Background: ").Append(this.Background).Append("\n");
+          sb.Append("  ContactInfoLabel: ").Append(this.ContactInfoLabel).Append("\n");
+          sb.Append("  DateSignedAtLabel: ").Append(this.DateSignedAtLabel).Append("\n");
+          sb.Append("  DigitalSignedLabel: ").Append(this.DigitalSignedLabel).Append("\n");
+          sb.Append("  FontFamilyName: ").Append(this.FontFamilyName).Append("\n");
+          sb.Append("  FontSize: ").Append(this.FontSize).Append("\n");
+          sb.Append("  LocationLabel: ").Append(this.LocationLabel).Append("\n");
+          sb.Append("  ReasonLabel: ").Append(this.ReasonLabel).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

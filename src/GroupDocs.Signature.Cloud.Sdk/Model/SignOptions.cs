@@ -39,6 +39,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     public class SignOptions : OptionsBase 
     {                       
         /// <summary>
+        /// Specifies Appearance with additional properties for this options instance
+        /// </summary>  
+        public SignatureAppearance Appearance { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -46,6 +51,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class SignOptions {\n");
+          sb.Append("  Appearance: ").Append(this.Appearance).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

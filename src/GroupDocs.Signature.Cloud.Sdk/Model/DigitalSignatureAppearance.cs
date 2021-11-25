@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoSettings.cs">
+// <copyright company="Aspose Pty Ltd" file="DigitalSignatureAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,24 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines document information request settings
+    /// Describes appearance of Signature Line for Digital Signature. One Signature Line could be applied for only one Digital Signature. Signature Line always is on the first page. This feature may be useful for .docx, .doc, .odt and .xlsx file formats.
     /// </summary>  
-    public class InfoSettings : BaseSettings 
+    public class DigitalSignatureAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Gets or sets flag that includes deleted signatures into Document Info result.
+        /// Gets or sets a email that will be displayed in signature line.
         /// </summary>  
-        public bool? ShowDeletedSignaturesInfo { get; set; }
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Gets or sets signer name for signature line.
+        /// </summary>  
+        public string Signer { get; set; }
+
+        /// <summary>
+        /// Gets or sets a title for signature line.
+        /// </summary>  
+        public string Title { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +60,10 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class InfoSettings {\n");
-          sb.Append("  ShowDeletedSignaturesInfo: ").Append(this.ShowDeletedSignaturesInfo).Append("\n");
+          sb.Append("class DigitalSignatureAppearance {\n");
+          sb.Append("  Email: ").Append(this.Email).Append("\n");
+          sb.Append("  Signer: ").Append(this.Signer).Append("\n");
+          sb.Append("  Title: ").Append(this.Title).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

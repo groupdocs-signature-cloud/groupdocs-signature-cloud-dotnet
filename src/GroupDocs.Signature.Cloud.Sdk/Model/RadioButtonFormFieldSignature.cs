@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="InfoSettings.cs">
+// <copyright company="Aspose Pty Ltd" file="RadioButtonFormFieldSignature.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Defines document information request settings
+    /// Contains radio-button input form field signature properties
     /// </summary>  
-    public class InfoSettings : BaseSettings 
+    public class RadioButtonFormFieldSignature : FormFieldSignature 
     {                       
         /// <summary>
-        /// Gets or sets flag that includes deleted signatures into Document Info result.
+        /// Get or set selected value
         /// </summary>  
-        public bool? ShowDeletedSignaturesInfo { get; set; }
+        public string Selected { get; set; }
+
+        /// <summary>
+        /// Get or set radio options list
+        /// </summary>  
+        public List<string> Items { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +55,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class InfoSettings {\n");
-          sb.Append("  ShowDeletedSignaturesInfo: ").Append(this.ShowDeletedSignaturesInfo).Append("\n");
+          sb.Append("class RadioButtonFormFieldSignature {\n");
+          sb.Append("  Selected: ").Append(this.Selected).Append("\n");
+          sb.Append("  Items: ").Append(this.Items).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -78,7 +78,17 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             /// <summary>
             /// Enum Stamp for "Stamp"
             /// </summary>            
-            Stamp            
+            Stamp,
+            
+            /// <summary>
+            /// Enum FormField for "FormField"
+            /// </summary>            
+            FormField,
+            
+            /// <summary>
+            /// Enum Metadata for "Metadata"
+            /// </summary>            
+            Metadata            
         }
 
         /// <summary>

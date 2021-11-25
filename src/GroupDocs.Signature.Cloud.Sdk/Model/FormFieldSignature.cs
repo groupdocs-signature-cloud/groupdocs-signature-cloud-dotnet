@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="OptionsBase.cs">
+// <copyright company="Aspose Pty Ltd" file="FormFieldSignature.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,82 +34,57 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Base container class for all possible options data
+    /// Contains Form field signature properties
     /// </summary>  
-    public class OptionsBase 
+    public class FormFieldSignature : Signature 
     {                       
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Specifies Form field type
         /// </summary>
-        /// <value>Specifies the signature type of processing</value>
+        /// <value>Specifies Form field type</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
+        public enum TypeEnum
         { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
             /// <summary>
             /// Enum Text for "Text"
             /// </summary>            
             Text,
             
             /// <summary>
-            /// Enum Image for "Image"
+            /// Enum Checkbox for "Checkbox"
             /// </summary>            
-            Image,
+            Checkbox,
             
             /// <summary>
-            /// Enum Digital for "Digital"
+            /// Enum Combobox for "Combobox"
             /// </summary>            
-            Digital,
+            Combobox,
             
             /// <summary>
-            /// Enum Barcode for "Barcode"
+            /// Enum DigitalSignature for "DigitalSignature"
             /// </summary>            
-            Barcode,
+            DigitalSignature,
             
             /// <summary>
-            /// Enum QRCode for "QRCode"
+            /// Enum Radio for "Radio"
             /// </summary>            
-            QRCode,
+            Radio,
             
             /// <summary>
-            /// Enum Stamp for "Stamp"
+            /// Enum None for "None"
             /// </summary>            
-            Stamp,
-            
-            /// <summary>
-            /// Enum FormField for "FormField"
-            /// </summary>            
-            FormField,
-            
-            /// <summary>
-            /// Enum Metadata for "Metadata"
-            /// </summary>            
-            Metadata            
+            None            
         }
 
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Specifies Form field type
         /// </summary>
-        public SignatureTypeEnum? SignatureType { get; set; }
+        public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Gets or sets a document page number for processing. Value is optional
+        /// Specifies unique form field name
         /// </summary>  
-        public int? Page { get; set; }
-
-        /// <summary>
-        /// Process all document pages. Type of processing depends on SignatureType For Images Document Type it can be used only for multi-frames images like .tiff
-        /// </summary>  
-        public bool? AllPages { get; set; }
-
-        /// <summary>
-        /// Options to specify pages for processing
-        /// </summary>  
-        public PagesSetup PagesSetup { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -118,11 +93,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OptionsBase {\n");
-          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  Page: ").Append(this.Page).Append("\n");
-          sb.Append("  AllPages: ").Append(this.AllPages).Append("\n");
-          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("class FormFieldSignature {\n");
+          sb.Append("  Name: ").Append(this.Name).Append("\n");
+          sb.Append("  Type: ").Append(this.Type).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

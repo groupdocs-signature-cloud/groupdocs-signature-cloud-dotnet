@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="OptionsBase.cs">
+// <copyright company="Aspose Pty Ltd" file="SignatureAppearance.cs">
 //  Copyright (c) 2003-2021 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,26 +34,31 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Base container class for all possible options data
+    /// Appearance is a base class for keeping additional information for various options
     /// </summary>  
-    public class OptionsBase 
+    public class SignatureAppearance 
     {                       
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Specifies the type of appearance
         /// </summary>
-        /// <value>Specifies the signature type of processing</value>
+        /// <value>Specifies the type of appearance</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
+        public enum AppearanceTypeEnum
         { 
             /// <summary>
-            /// Enum None for "None"
+            /// Enum Undefined for "Undefined"
             /// </summary>            
-            None,
+            Undefined,
             
             /// <summary>
-            /// Enum Text for "Text"
+            /// Enum PdfTextAnnotation for "PdfTextAnnotation"
             /// </summary>            
-            Text,
+            PdfTextAnnotation,
+            
+            /// <summary>
+            /// Enum PdfTextSticker for "PdfTextSticker"
+            /// </summary>            
+            PdfTextSticker,
             
             /// <summary>
             /// Enum Image for "Image"
@@ -61,55 +66,20 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             Image,
             
             /// <summary>
-            /// Enum Digital for "Digital"
+            /// Enum DigitalSignature for "DigitalSignature"
             /// </summary>            
-            Digital,
+            DigitalSignature,
             
             /// <summary>
-            /// Enum Barcode for "Barcode"
+            /// Enum PdfDigitalSignature for "PdfDigitalSignature"
             /// </summary>            
-            Barcode,
-            
-            /// <summary>
-            /// Enum QRCode for "QRCode"
-            /// </summary>            
-            QRCode,
-            
-            /// <summary>
-            /// Enum Stamp for "Stamp"
-            /// </summary>            
-            Stamp,
-            
-            /// <summary>
-            /// Enum FormField for "FormField"
-            /// </summary>            
-            FormField,
-            
-            /// <summary>
-            /// Enum Metadata for "Metadata"
-            /// </summary>            
-            Metadata            
+            PdfDigitalSignature            
         }
 
         /// <summary>
-        /// Specifies the signature type of processing
+        /// Specifies the type of appearance
         /// </summary>
-        public SignatureTypeEnum? SignatureType { get; set; }
-
-        /// <summary>
-        /// Gets or sets a document page number for processing. Value is optional
-        /// </summary>  
-        public int? Page { get; set; }
-
-        /// <summary>
-        /// Process all document pages. Type of processing depends on SignatureType For Images Document Type it can be used only for multi-frames images like .tiff
-        /// </summary>  
-        public bool? AllPages { get; set; }
-
-        /// <summary>
-        /// Options to specify pages for processing
-        /// </summary>  
-        public PagesSetup PagesSetup { get; set; }
+        public AppearanceTypeEnum? AppearanceType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -118,11 +88,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OptionsBase {\n");
-          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  Page: ").Append(this.Page).Append("\n");
-          sb.Append("  AllPages: ").Append(this.AllPages).Append("\n");
-          sb.Append("  PagesSetup: ").Append(this.PagesSetup).Append("\n");
+          sb.Append("class SignatureAppearance {\n");
+          sb.Append("  AppearanceType: ").Append(this.AppearanceType).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
