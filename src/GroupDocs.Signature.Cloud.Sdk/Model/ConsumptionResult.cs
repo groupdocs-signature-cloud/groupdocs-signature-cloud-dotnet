@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="QRCodeType.cs">
+// <copyright company="Aspose Pty Ltd" file="ConsumptionResult.cs">
 //  Copyright (c) 2003-2022 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,14 +34,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Describes QR-code type
+    /// Metered license consumption information
     /// </summary>  
-    public class QRCodeType 
+    public class ConsumptionResult 
     {                       
         /// <summary>
-        /// QR-code type name
+        /// Amount of used credits
         /// </summary>  
-        public string Name { get; set; }
+        public decimal? Credit { get; set; }
+
+        /// <summary>
+        /// Amount of MBs processed
+        /// </summary>  
+        public decimal? Quantity { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +55,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class QRCodeType {\n");
-          sb.Append("  Name: ").Append(this.Name).Append("\n");
+          sb.Append("class ConsumptionResult {\n");
+          sb.Append("  Credit: ").Append(this.Credit).Append("\n");
+          sb.Append("  Quantity: ").Append(this.Quantity).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

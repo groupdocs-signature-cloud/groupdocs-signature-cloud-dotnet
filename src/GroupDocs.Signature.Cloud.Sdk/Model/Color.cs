@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="Color.cs">
-//  Copyright (c) 2003-2021 Aspose Pty Ltd
+//  Copyright (c) 2003-2022 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,6 +44,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public string Web { get; set; }
 
         /// <summary>
+        /// Alpha component of color structure
+        /// </summary>  
+        public int? Alpha { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -52,6 +57,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class Color {\n");
           sb.Append("  Web: ").Append(this.Web).Append("\n");
+          sb.Append("  Alpha: ").Append(this.Alpha).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
