@@ -4,9 +4,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net20</TargetFrameworks>
-    <AssemblyVersion>22.6.0.0</AssemblyVersion>
-    <FileVersion>22.6.0.0</FileVersion>
-    <Version>22.6</Version>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <AssemblyVersion>23.4.0.0</AssemblyVersion>
+    <FileVersion>23.4.0.0</FileVersion>
+    <Version>23.4.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <Company>GroupDocs</Company>
     <Authors>GroupDocs Product Team</Authors>
@@ -15,9 +16,6 @@
     <PackageLicenseUrl>https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://products.groupdocs.cloud/signature/family</PackageProjectUrl>
     <RepositoryUrl>https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet</RepositoryUrl>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DocumentationFile>C:\GroupDocsCloud\Signature\CodeGen\sdk\csharp\GroupDocs.Signature.Cloud.Sdk\GroupDocs.Signature.Cloud.Sdk.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
