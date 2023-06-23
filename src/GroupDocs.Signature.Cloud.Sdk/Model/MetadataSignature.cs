@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="UpdateOptions.cs">
+// <copyright company="Aspose Pty Ltd" file="MetadataSignature.cs">
 //  Copyright (c) 2003-2023 Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,16 +34,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Base container class for update signature options
+    /// Contains Metadata signature properties.
     /// </summary>  
-    public class UpdateOptions 
+    public class MetadataSignature : Signature 
     {                       
         /// <summary>
-        /// Specifies the type of signature
+        /// Specifies metadata type.
         /// </summary>
-        /// <value>Specifies the type of signature</value>
+        /// <value>Specifies metadata type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
+        public enum TypeEnum
         { 
             /// <summary>
             /// Enum None for "None"
@@ -51,9 +51,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             None,
             
             /// <summary>
-            /// Enum Text for "Text"
+            /// Enum Certificate for "Certificate"
             /// </summary>            
-            Text,
+            Certificate,
             
             /// <summary>
             /// Enum Image for "Image"
@@ -61,75 +61,103 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             Image,
             
             /// <summary>
-            /// Enum Digital for "Digital"
+            /// Enum Pdf for "Pdf"
             /// </summary>            
-            Digital,
+            Pdf,
             
             /// <summary>
-            /// Enum Barcode for "Barcode"
+            /// Enum Presentation for "Presentation"
             /// </summary>            
-            Barcode,
+            Presentation,
             
             /// <summary>
-            /// Enum QRCode for "QRCode"
+            /// Enum Spreadsheet for "Spreadsheet"
             /// </summary>            
-            QRCode,
+            Spreadsheet,
             
             /// <summary>
-            /// Enum Stamp for "Stamp"
+            /// Enum WordProcessing for "WordProcessing"
             /// </summary>            
-            Stamp,
-            
-            /// <summary>
-            /// Enum FormField for "FormField"
-            /// </summary>            
-            FormField,
-            
-            /// <summary>
-            /// Enum Metadata for "Metadata"
-            /// </summary>            
-            Metadata            
+            WordProcessing            
         }
 
         /// <summary>
-        /// Specifies the type of signature
+        /// Specifies metadata value type.
         /// </summary>
-        public SignatureTypeEnum? SignatureType { get; set; }
+        /// <value>Specifies metadata value type.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DataTypeEnum
+        { 
+            /// <summary>
+            /// Enum Undefined for "Undefined"
+            /// </summary>            
+            Undefined,
+            
+            /// <summary>
+            /// Enum Boolean for "Boolean"
+            /// </summary>            
+            Boolean,
+            
+            /// <summary>
+            /// Enum Integer for "Integer"
+            /// </summary>            
+            Integer,
+            
+            /// <summary>
+            /// Enum Double for "Double"
+            /// </summary>            
+            Double,
+            
+            /// <summary>
+            /// Enum DateTime for "DateTime"
+            /// </summary>            
+            DateTime,
+            
+            /// <summary>
+            /// Enum String for "String"
+            /// </summary>            
+            String            
+        }
 
         /// <summary>
-        /// Unique signature identifier to modify signature in the document over Update or Delete methods. This property will be set automatically after Sign or Search method being called. If this property was saved before it can be set manually to manipulate the signature.              
-        /// </summary>  
-        public string SignatureId { get; set; }
+        /// Specifies metadata type.
+        /// </summary>
+        public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Specifies left position of signature
-        /// </summary>  
-        public int? Left { get; set; }
+        /// Specifies metadata value type.
+        /// </summary>
+        public DataTypeEnum? DataType { get; set; }
 
         /// <summary>
-        /// Specifies top position of signature
+        /// Specifies metadata object value
         /// </summary>  
-        public int? Top { get; set; }
+        public string Value { get; set; }
 
         /// <summary>
-        /// Specifies width of signature
+        /// Specifies unique metadata name
         /// </summary>  
-        public int? Width { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Specifies height of signature
+        /// The identifier of Image Metadata signature. See GroupDocs.Signature.Domain.ImageMetadataSignatures class that contains standard Signature with predefined Id value.
         /// </summary>  
-        public int? Height { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
-        /// Get or set flag to indicate if this component is Signature or document content. This property is being used with Update method to set element as signature (true) or document element (false).             
+        /// Size of  Image Metadata value
         /// </summary>  
-        public bool? IsSignature { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
-        /// The text to update text signature
+        /// Description for standard Image Metadata signature
         /// </summary>  
-        public string Text { get; set; }
+        public string Description { get; set; }
+
+        /// <summary>
+        /// The prefix tag of Pdf Metadata signature name. By default this property is set to \"xmp\". Possible values are
+        /// </summary>  
+        public string TagPrefix { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -138,15 +166,15 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class UpdateOptions {\n");
-          sb.Append("  SignatureType: ").Append(this.SignatureType).Append("\n");
-          sb.Append("  SignatureId: ").Append(this.SignatureId).Append("\n");
-          sb.Append("  Left: ").Append(this.Left).Append("\n");
-          sb.Append("  Top: ").Append(this.Top).Append("\n");
-          sb.Append("  Width: ").Append(this.Width).Append("\n");
-          sb.Append("  Height: ").Append(this.Height).Append("\n");
-          sb.Append("  IsSignature: ").Append(this.IsSignature).Append("\n");
-          sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("class MetadataSignature {\n");
+          sb.Append("  Type: ").Append(this.Type).Append("\n");
+          sb.Append("  DataType: ").Append(this.DataType).Append("\n");
+          sb.Append("  Value: ").Append(this.Value).Append("\n");
+          sb.Append("  Name: ").Append(this.Name).Append("\n");
+          sb.Append("  Id: ").Append(this.Id).Append("\n");
+          sb.Append("  Size: ").Append(this.Size).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  TagPrefix: ").Append(this.TagPrefix).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
