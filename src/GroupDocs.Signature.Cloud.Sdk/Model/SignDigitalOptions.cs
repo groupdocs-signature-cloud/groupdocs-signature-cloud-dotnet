@@ -97,6 +97,16 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public DigitalVBA DigitalVBA { get; set; }
 
         /// <summary>
+        /// The time the document was signed.
+        /// </summary>  
+        public DateTime? SignTime { get; set; }
+
+        /// <summary>
+        /// The signing purpose comment.
+        /// </summary>  
+        public string Comments { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -112,6 +122,8 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("  CertificateFilePath: ").Append(this.CertificateFilePath).Append("\n");
           sb.Append("  XAdESType: ").Append(this.XAdESType).Append("\n");
           sb.Append("  DigitalVBA: ").Append(this.DigitalVBA).Append("\n");
+          sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
+          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
