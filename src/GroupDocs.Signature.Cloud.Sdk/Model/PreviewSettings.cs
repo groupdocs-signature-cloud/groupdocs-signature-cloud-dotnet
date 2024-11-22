@@ -77,6 +77,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public int? Height { get; set; }
 
         /// <summary>
+        /// Gets or sets the resolution of the preview images in DPI (dots per inch).
+        /// </summary>  
+        public int? Resolution { get; set; }
+
+        /// <summary>
         /// Preview page numbers
         /// </summary>  
         public List<int?> PageNumbers { get; set; }
@@ -101,6 +106,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("class PreviewSettings {\n");
           sb.Append("  Width: ").Append(this.Width).Append("\n");
           sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
           sb.Append("  PageNumbers: ").Append(this.PageNumbers).Append("\n");
           sb.Append("  PreviewFormat: ").Append(this.PreviewFormat).Append("\n");
           sb.Append("  HideSignatures: ").Append(this.HideSignatures).Append("\n");

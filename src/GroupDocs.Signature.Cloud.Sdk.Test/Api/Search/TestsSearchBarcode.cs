@@ -139,7 +139,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Search
                 PageNumbers = new List<int?>() { 1 }
             };
             options.SignatureType = SignatureTypeEnum.Barcode;
-            options.BarcodeType = "Code39Standard";
+            options.BarcodeType = "Code39";
             options.Text = "123456789012";
             options.MatchType = SearchBarcodeOptions.MatchTypeEnum.Contains;
         }
