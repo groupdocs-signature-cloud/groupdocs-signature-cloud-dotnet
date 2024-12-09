@@ -39,9 +39,14 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     public class PdfDigitalSignatureAppearance : SignatureAppearance 
     {                       
         /// <summary>
-        /// Get or set background color of signature appearance. By default the value is SystemColors.Windows
+        /// Get or set background color of signature appearance. 
         /// </summary>  
         public Color Background { get; set; }
+
+        /// <summary>
+        /// Get or set foreground text color of signature appearance. By default the value is Color.FromArgb(76, 100, 255)
+        /// </summary>  
+        public Color Foreground { get; set; }
 
         /// <summary>
         /// Gets or sets contact info label. Default value: \"Contact\". if this value is empty then no contact label will appear on digital signature area.             
@@ -87,6 +92,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class PdfDigitalSignatureAppearance {\n");
           sb.Append("  Background: ").Append(this.Background).Append("\n");
+          sb.Append("  Foreground: ").Append(this.Foreground).Append("\n");
           sb.Append("  ContactInfoLabel: ").Append(this.ContactInfoLabel).Append("\n");
           sb.Append("  DateSignedAtLabel: ").Append(this.DateSignedAtLabel).Append("\n");
           sb.Append("  DigitalSignedLabel: ").Append(this.DigitalSignedLabel).Append("\n");
