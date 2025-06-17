@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="ConsumptionResult.cs">
-//  Copyright (c) 2003-2023 Aspose Pty Ltd
+//  Copyright (c) Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public decimal? Quantity { get; set; }
 
         /// <summary>
+        /// Billed API calls number
+        /// </summary>  
+        public decimal? BilledApiCalls { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -58,6 +63,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("class ConsumptionResult {\n");
           sb.Append("  Credit: ").Append(this.Credit).Append("\n");
           sb.Append("  Quantity: ").Append(this.Quantity).Append("\n");
+          sb.Append("  BilledApiCalls: ").Append(this.BilledApiCalls).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

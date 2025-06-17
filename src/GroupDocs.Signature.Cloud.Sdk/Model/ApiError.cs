@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PreviewResult.cs">
+// <copyright company="Aspose Pty Ltd" file="ApiError.cs">
 //  Copyright (c) Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,34 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Document preview result
+    /// 
     /// </summary>  
-    public class PreviewResult 
+    public class ApiError 
     {                       
         /// <summary>
-        /// Input File info
+        /// Gets or sets Code
         /// </summary>  
-        public FileInfo FileInfo { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
-        /// Input File size
+        /// Gets or sets Message
         /// </summary>  
-        public long? Size { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
-        /// Count of pages
+        /// Gets or sets Description
         /// </summary>  
-        public int? PagesCount { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Document preview pages
+        /// Gets or sets DateTime
         /// </summary>  
-        public List<PreviewPage> Pages { get; set; }
+        public DateTime? DateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets InnerError
+        /// </summary>  
+        public ApiError InnerError { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +70,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PreviewResult {\n");
-          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
-          sb.Append("  Size: ").Append(this.Size).Append("\n");
-          sb.Append("  PagesCount: ").Append(this.PagesCount).Append("\n");
-          sb.Append("  Pages: ").Append(this.Pages).Append("\n");
+          sb.Append("class ApiError {\n");
+          sb.Append("  Code: ").Append(this.Code).Append("\n");
+          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

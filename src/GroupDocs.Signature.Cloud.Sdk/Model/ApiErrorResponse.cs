@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose Pty Ltd" file="PreviewResult.cs">
+// <copyright company="Aspose Pty Ltd" file="ApiErrorResponse.cs">
 //  Copyright (c) Aspose Pty Ltd
 // </copyright>
 // <summary>
@@ -34,29 +34,19 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
     
     /// <summary>
-    /// Document preview result
+    /// 
     /// </summary>  
-    public class PreviewResult 
+    public class ApiErrorResponse 
     {                       
         /// <summary>
-        /// Input File info
+        /// Gets or sets RequestId
         /// </summary>  
-        public FileInfo FileInfo { get; set; }
+        public string RequestId { get; set; }
 
         /// <summary>
-        /// Input File size
+        /// Gets or sets Error
         /// </summary>  
-        public long? Size { get; set; }
-
-        /// <summary>
-        /// Count of pages
-        /// </summary>  
-        public int? PagesCount { get; set; }
-
-        /// <summary>
-        /// Document preview pages
-        /// </summary>  
-        public List<PreviewPage> Pages { get; set; }
+        public ApiError Error { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +55,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PreviewResult {\n");
-          sb.Append("  FileInfo: ").Append(this.FileInfo).Append("\n");
-          sb.Append("  Size: ").Append(this.Size).Append("\n");
-          sb.Append("  PagesCount: ").Append(this.PagesCount).Append("\n");
-          sb.Append("  Pages: ").Append(this.Pages).Append("\n");
+          sb.Append("class ApiErrorResponse {\n");
+          sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
+          sb.Append("  Error: ").Append(this.Error).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

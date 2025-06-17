@@ -5,9 +5,9 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net20</TargetFrameworks>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyVersion>24.12.0.0</AssemblyVersion>
-    <FileVersion>24.12.0.0</FileVersion>
-    <Version>24.12.0</Version>
+    <AssemblyVersion>25.6.0.0</AssemblyVersion>
+    <FileVersion>25.6.0.0</FileVersion>
+    <Version>25.6.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <Company>GroupDocs</Company>
     <Authors>GroupDocs Product Team</Authors>
