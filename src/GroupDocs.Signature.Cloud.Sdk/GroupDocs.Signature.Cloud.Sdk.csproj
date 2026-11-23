@@ -18,7 +18,7 @@
     <RepositoryUrl>https://github.com/groupdocs-signature-cloud/groupdocs-signature-cloud-dotnet</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net20'">
     <Reference Include="System.Web" />
