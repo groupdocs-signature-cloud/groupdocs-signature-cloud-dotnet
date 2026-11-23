@@ -77,15 +77,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Verify
             var optionsQrCode = new VerifyQRCodeOptions();
             TestsVerifyQrCode.PopulateOptions(optionsQrCode);
 
-            var optionsDigital = new VerifyDigitalOptions();
-            TestsVerifyDigital.PopulateOptions(optionsDigital);
-
             var optionsText = new VerifyTextOptions();
             TestsVerifyText.PopulateOptions(optionsText);
 
             var verifySettings = new VerifySettings();
             verifySettings.FileInfo = fileInfo;
-            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsDigital, optionsText };
+            verifySettings.Options = new List<VerifyOptions>() { optionsBarcode, optionsQrCode, optionsText };
             var request = new VerifySignaturesRequest(verifySettings);
 
             // Get and check result 

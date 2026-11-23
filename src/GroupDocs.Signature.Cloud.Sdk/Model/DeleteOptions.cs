@@ -88,7 +88,12 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
             /// <summary>
             /// Enum Metadata for "Metadata"
             /// </summary>            
-            Metadata            
+            Metadata,
+
+            /// <summary>
+            /// Enum ImageDigital for "ImageDigital"
+            /// </summary>
+            ImageDigital
         }
 
         /// <summary>

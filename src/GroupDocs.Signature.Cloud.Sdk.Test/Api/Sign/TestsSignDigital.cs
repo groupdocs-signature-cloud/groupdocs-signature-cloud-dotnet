@@ -124,7 +124,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Sign
 
             // set signature properties
             options.ImageFilePath = @"Additional\signature_01.jpg";
-            options.CertificateFilePath = @"Additional\SherlockHolmes.pfx";
+            options.CertificateFilePath = @"Additional\TestCertificate.pfx";
             options.Password = "1234567890";
 
             // set signature position on a page

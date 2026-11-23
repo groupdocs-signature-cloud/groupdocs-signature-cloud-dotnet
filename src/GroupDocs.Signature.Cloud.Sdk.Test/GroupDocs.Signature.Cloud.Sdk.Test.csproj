@@ -18,7 +18,7 @@
     <None Update="TestData\Additional\JohnSmithSign.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\Additional\SherlockHolmes.pfx">
+    <None Update="TestData\Additional\TestCertificate.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\Additional\signature_01.jpg">
@@ -58,6 +58,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\Signed\SignedForVerificationAll.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Signed\SignedForVerificationDigital.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\Signed\SignedForVerificationAll.png">

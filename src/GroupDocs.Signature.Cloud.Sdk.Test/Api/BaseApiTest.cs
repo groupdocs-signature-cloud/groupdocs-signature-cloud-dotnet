@@ -108,7 +108,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 
         private byte[] GetTestFileBytes(TestFile file)
         {
-            var filePath = Path.Combine(GetTestDataPathBin(), file.Path);
+            var filePath = file.GetLocalPath(GetTestDataPathBin());
             if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException("File not found: " + filePath);

@@ -49,6 +49,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
         public Color Foreground { get; set; }
 
         /// <summary>
+        /// Gets or sets whether the signature image is drawn in front of the text.
+        /// </summary>
+        public bool IsForegroundImage { get; set; }
+
+        /// <summary>
         /// Gets or sets contact info label. Default value: \"Contact\". if this value is empty then no contact label will appear on digital signature area.             
         /// </summary>  
         public string ContactInfoLabel { get; set; }
@@ -93,6 +98,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Model
           sb.Append("class PdfDigitalSignatureAppearance {\n");
           sb.Append("  Background: ").Append(this.Background).Append("\n");
           sb.Append("  Foreground: ").Append(this.Foreground).Append("\n");
+          sb.Append("  IsForegroundImage: ").Append(this.IsForegroundImage).Append("\n");
           sb.Append("  ContactInfoLabel: ").Append(this.ContactInfoLabel).Append("\n");
           sb.Append("  DateSignedAtLabel: ").Append(this.DateSignedAtLabel).Append("\n");
           sb.Append("  DigitalSignedLabel: ").Append(this.DigitalSignedLabel).Append("\n");

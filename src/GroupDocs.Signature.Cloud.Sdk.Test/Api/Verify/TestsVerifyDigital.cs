@@ -45,7 +45,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api.Verify
         public void VerifyDigitalPdf()
         {
             // Set request
-            var testFile = TestFiles.PdfStorageSigned.FirstOrDefault();
+            var testFile = TestFiles.PdfStorageDigitalSigned.FirstOrDefault();
             var fileInfo = testFile.GetFileInfo();
             var options = new VerifyDigitalOptions();
             PopulateOptions(options);

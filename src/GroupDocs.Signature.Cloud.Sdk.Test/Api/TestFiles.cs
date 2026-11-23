@@ -56,6 +56,11 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
             new TestFile(@"Signed\SignedForVerificationAll.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", Size = 164060},
         };
 
+        public static readonly List<TestFile> PdfStorageDigitalSigned = new List<TestFile>
+        {
+            new TestFile(@"Signed\SignedForVerificationDigital.pdf"){ Extension = "pdf", FileFormat = "Portable Document Format File", Size = 581574},
+        };
+
         //Presentations
         public static readonly List<TestFile> PresentationStorage = new List<TestFile>
         {
@@ -72,9 +77,9 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         //SpreadSheets
         public static readonly List<TestFile> SpreadsheetStorage = new List<TestFile>
         {
-            new TestFile(@"Spreadsheets\01_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 637, MaxPageWidth = 765, PagesCount = 1, Size = 12260},
-            new TestFile(@"Spreadsheets\01_pages_pwd.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 1424, MaxPageWidth = 1165, PagesCount = 1, Size = 1001472, Password = TestFiles.CommonPassword},
-            new TestFile(@"Spreadsheets\02_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 846, MaxPageWidth = 867, PagesCount = 2, Size = 22396},
+            new TestFile(@"SpreadSheets\01_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 637, MaxPageWidth = 765, PagesCount = 1, Size = 12260},
+            new TestFile(@"SpreadSheets\01_pages_pwd.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 1424, MaxPageWidth = 1165, PagesCount = 1, Size = 1001472, Password = TestFiles.CommonPassword},
+            new TestFile(@"SpreadSheets\02_pages.xlsx"){ Extension = "xlsx", FileFormat = "Microsoft Excel Open XML Spreadsheet", MaxPageHeight = 846, MaxPageWidth = 867, PagesCount = 2, Size = 22396},
         };
 
         public static readonly List<TestFile> SpreadsheetStorageSigned = new List<TestFile>
@@ -99,7 +104,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
         public static readonly List<TestFile> AdditionalStorage = new List<TestFile>
         {
             new TestFile(@"Additional\JohnSmithSign.png"),
-            new TestFile(@"Additional\SherlockHolmes.pfx"),
+            new TestFile(@"Additional\TestCertificate.pfx"),
             new TestFile(@"Additional\signature_01.jpg"),
             new TestFile(@"Additional\signature_02.jpg"),
             new TestFile(@"Additional\signature_03.jpg")
@@ -118,6 +123,7 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
                     _allFiles.AddRange(ImageStorageSigned);
                     _allFiles.AddRange(PdfStorage);
                     _allFiles.AddRange(PdfStorageSigned);
+                    _allFiles.AddRange(PdfStorageDigitalSigned);
                     _allFiles.AddRange(PresentationStorage);
                     _allFiles.AddRange(PresentationStorageSigned);
                     _allFiles.AddRange(SpreadsheetStorage);

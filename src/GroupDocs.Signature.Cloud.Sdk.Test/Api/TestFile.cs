@@ -48,17 +48,28 @@ namespace GroupDocs.Signature.Cloud.Sdk.Test.Api
 
         public string Name
         {
-            get { return System.IO.Path.GetFileName(Path); }
+            get { return System.IO.Path.GetFileName(GetPlatformPath()); }
         }
 
         public string Folder
         {
-            get { return System.IO.Path.GetDirectoryName(Path); }
+            get { return System.IO.Path.GetDirectoryName(GetPlatformPath()); }
         }
 
         public TestFile(string path)
         {
             Path = path;
+        }
+
+        public string GetLocalPath(string rootPath)
+        {
+            return System.IO.Path.Combine(rootPath, GetPlatformPath());
+        }
+
+        private string GetPlatformPath()
+        {
+            return Path.Replace('\\', System.IO.Path.DirectorySeparatorChar)
+                .Replace('/', System.IO.Path.DirectorySeparatorChar);
         }
 
         public FileInfo GetFileInfo()

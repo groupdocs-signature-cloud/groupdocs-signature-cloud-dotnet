@@ -1216,6 +1216,11 @@
             Enum Metadata for "Metadata"
             </summary>            
         </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureTypeEnum.ImageDigital">
+            <summary>
+            Enum ImageDigital for "ImageDigital"
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.DeleteOptions.SignatureType">
             <summary>
             Specifies the type of signature
@@ -1894,6 +1899,11 @@
             Enum Metadata for "Metadata"
             </summary>            
         </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureTypeEnum.ImageDigital">
+            <summary>
+            Enum ImageDigital for "ImageDigital"
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.OptionsBase.SignatureType">
             <summary>
             Specifies the signature type of processing
@@ -2094,6 +2104,11 @@
             <summary>
             Describes appearance of Digital Signature are on PDF documents.
             </summary>  
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.IsForegroundImage">
+            <summary>
+            Gets or sets whether the signature image is drawn in front of the text.
+            </summary>
         </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.PdfDigitalSignatureAppearance.Background">
             <summary>
@@ -2779,6 +2794,11 @@
             Enum Metadata for "Metadata"
             </summary>            
         </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureTypeEnum.ImageDigital">
+            <summary>
+            Enum ImageDigital for "ImageDigital"
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.Signature.SignatureType">
             <summary>
             Specifies the signature type (Text, Image, Digital, Barcode, QRCode, Stamp)
@@ -3235,6 +3255,22 @@
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignImageOptions.ToString">
             <summary>
             Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.SignImageDigitalOptions">
+            <summary>
+            Represents the ImageDigital sign options.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.SignImageDigitalOptions.Password">
+            <summary>
+            Gets or sets the password used to embed the signature.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.SignImageDigitalOptions.ToString">
+            <summary>
+            Get the string presentation of the object.
             </summary>
             <returns>String presentation of the object</returns>
         </member>
@@ -4110,6 +4146,11 @@
             Enum Metadata for "Metadata"
             </summary>            
         </member>
+        <member name="F:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureTypeEnum.ImageDigital">
+            <summary>
+            Enum ImageDigital for "ImageDigital"
+            </summary>
+        </member>
         <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.UpdateOptions.SignatureType">
             <summary>
             Specifies the type of signature
@@ -4278,6 +4319,32 @@
         <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyOptions.ToString">
             <summary>
             Get the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="T:GroupDocs.Signature.Cloud.Sdk.Model.VerifyImageDigitalOptions">
+            <summary>
+            Defines options to verify an ImageDigital signature within a document.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyImageDigitalOptions.Password">
+            <summary>
+            Gets or sets the password used to embed the signature.
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyImageDigitalOptions.DetectionThresholdPercent">
+            <summary>
+            Gets or sets the detection threshold percentage (0-100).
+            </summary>
+        </member>
+        <member name="P:GroupDocs.Signature.Cloud.Sdk.Model.VerifyImageDigitalOptions.UseFullDataExtraction">
+            <summary>
+            Gets or sets whether to use full data extraction for maximum accuracy.
+            </summary>
+        </member>
+        <member name="M:GroupDocs.Signature.Cloud.Sdk.Model.VerifyImageDigitalOptions.ToString">
+            <summary>
+            Get the string presentation of the object.
             </summary>
             <returns>String presentation of the object</returns>
         </member>
